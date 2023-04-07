@@ -3,8 +3,8 @@
 The initial docs structure is detailed in [this comment](https://github.com/gatewayd-io/docs/issues/1#issuecomment-1442331491) and is as follows. This will be updated over time as the docs is written and shaped.
 
 - Getting started
-  - [x] [Welcome](pages/getting-started/welcome.md)
-  - [x] [Installation](pages/getting-started/installation.md)
+  - [x] [Welcome](pages/getting-started/01-welcome.md)
+  - [x] [Installation](pages/getting-started/02-installation.md)
   - [ ] Running GatewayD
   - [ ] Resources
 - Using GatewayD
