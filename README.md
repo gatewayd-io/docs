@@ -1,1 +1,84 @@
-# gatewayd-docs
+# Documentation
+
+The initial docs structure is detailed in [this comment](https://github.com/gatewayd-io/docs/issues/1#issuecomment-1442331491) and is as follows. This will be updated over time as the docs is written and shaped.
+
+- Getting started
+  - [x] Welcome
+  - [ ] Installation
+  - [ ] Running GatewayD
+  - [ ] Resources
+- Using GatewayD
+  - [ ] Configuration
+    - Global
+    - Plugins
+    - Environment variables
+    - Runtime configuration
+  - [ ] CLI
+  - [ ] Servers
+  - [ ] Clients
+  - [ ] Pools
+  - [ ] Proxies
+    - L4 transparent proxy
+    - Health check
+  - [ ] Observability
+    - Loggers
+    - Metrics
+    - Traces
+  - [ ] API
+    - gRPC
+    - HTTP
+  - [ ] Connection lifecycle
+  - [ ] Protocols
+- Using plugins
+  - [ ] Plugins
+    - Policies
+      - Verification
+      - Compatibility
+      - Acceptance
+    - Reload on crash
+    - Health check
+    - Metrics merger
+    - Command-line arguments
+    - Environment variables
+    - Checksum verification
+  - [ ] Hooks
+    - Types (traffic and notification)
+    - Timeout
+  - [ ] Plugin registry
+  - [ ] Hook registry
+  - [ ] Plugin types
+    - Built-in plugins
+    - Community plugins
+    - Enterprise plugins
+  - [ ] Proposals
+- Developing plugins
+  - [ ] Plugin lifecycle
+  - [ ] SDK reference
+  - [ ] gRPC API reference
+  - [ ] Template projects (Go and Python)
+- GatewayD versus
+  - [ ] MaxScale
+  - [ ] ProxySQL
+  - [ ] Acra
+  - [ ] Stargate
+  - [ ] Heimdall Data
+  - [ ] Bytebase
+  - [ ] Airbyte
+  - [ ] Arana
+  - [ ] Bouncers (PgBouncer, PgPool-II and pgcat)
+- Community
+  - [ ] Learning
+  - [ ] Contributing
+    - GatewayD public roadmap
+    - Plugins public roadmap
+    - Public proposals
+  - [ ] Forum
+  - [ ] Chat
+  - [ ] Social accounts
+  - [ ] Code of conduct
+  - [ ] Test server
+- Misc
+  - [ ] Telemetry and usage report
+  - [ ] Error reporting
+  - [ ] Release notes
+  - [ ] Glossary
