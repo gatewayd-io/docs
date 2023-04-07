@@ -4,7 +4,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
 
 - Getting started
   - [x] [Welcome](pages/getting-started/welcome.md)
-  - [ ] Installation
+  - [x] [Installation](pages/getting-started/installation.md)
   - [ ] Running GatewayD
   - [ ] Resources
 - Using GatewayD
