@@ -59,7 +59,7 @@ sha256sum gatewayd-plugin-cache -c checksum.txt
 ```
 
 **🗒️ Note**
-If you want to see the details of what is happening behind the scenes, open the `gatewayd.io` and set the default logger's level to `debug` or `trace`.
+If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` and set the log level of the default logger to `debug` or `trace`.
 
 Run the following command to start GatewayD:
 
