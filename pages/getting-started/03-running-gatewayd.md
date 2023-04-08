@@ -92,7 +92,7 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 2023-04-08T02:01:04+02:00 INF GatewayD is running pid=41568
 ```
 
-## 5. Test you setup with `psql`
+## 5. Test your setup with `psql`
 
 GatewayD is running on the host, while PostgreSQL is running inside a container. So, you need to run the following command to test it. Notice that `172.17.0.1` is the IP address of the host machine.
 
@@ -100,7 +100,7 @@ GatewayD is running on the host, while PostgreSQL is running inside a container.
 docker exec -it postgres-test psql postgresql://postgres:postgres@172.17.0.1:15432/postgres
 ```
 
-Now you can create a table and insert data into it. Selecting the data will trigger the cache plugin to store the results in Redis and subsequent SELECT queries will be served from the cache. The moment you insert a new value into the table or update a row, all the cached values from that table will be invalidated.
+Now you can create a table and insert data into it. Querying the data will trigger the cache plugin to store the results in Redis and subsequent SELECT queries will be served from the cache. The moment you insert a new value into the table or update a row, all the cached values from that table will be invalidated.
 
 ```
 postgres=# create table test (id int);
