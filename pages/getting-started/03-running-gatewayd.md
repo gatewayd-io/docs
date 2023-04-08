@@ -7,8 +7,10 @@ These are the steps to make GatewayD work for you:
 3. Install GatewayD and the cache plugin.
 4. Configure and start GatewayD.
 5. Test your setup with [`psql`](https://www.postgresql.org/docs/current/app-psql.html) or any other PostgreSQL client or driver.
+6. Clean up.
 
-For demo purposes, we'll use Docker to start the databases.
+**🗒️ Note**
+For demo purposes, we'll use Docker to start the databases. Also, you can skip step one if you already have a database up and running.
 
 ## 1. Start your PostgreSQL database
 
@@ -18,13 +20,13 @@ Use the following command to start a PostgreSQL database server inside a contain
 docker run --rm --name postgres-test -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ```
 
-Note that the database container and its data will be purged when you stop it. Test you database by running the following command:
+Test you database by running the following command:
 
 ```bash
-docker exec -it postgres-test psql postgresql://postgres:postgres@localhost:5432/postgres
+docker exec -it postgres-test psql postgresql://postgres:postgres@localhost:5432/postgres -c "\d"
 ```
 
-You can exit `psql` by typing `Ctrl+D` or `\q` and hitting `Enter`.
+Since the database is just created, no relations exist.
 
 ## 2. Start your Redis database
 
@@ -38,7 +40,7 @@ You can verify if both of the above worked correctly by running `docker ps`.
 
 ## 3. Install GatewayD and the cache plugin
 
-Install and extract GatewayD and the cache plugin using the following command:
+Download and extract GatewayD and the cache plugin using the following commands:
 
 ```bash
 mkdir gatewayd && cd gatewayd
@@ -56,6 +58,7 @@ Open the `gatewayd_plugins.yaml` file with your favorite editor and change the `
 sha256sum gatewayd-plugin-cache -c checksum.txt
 ```
 
+**🗒️ Note**
 If you want to see the details of what is happening behind the scenes, open the `gatewayd.io` and set the default logger's level to `debug` or `trace`.
 
 Run the following command to start GatewayD:
@@ -64,7 +67,13 @@ Run the following command to start GatewayD:
 ./gatewayd run
 ```
 
-Running GatewayD will produce this log output, which means that GatewayD is started listening on port `15432`.
+Running GatewayD will produce this log output, which means that GatewayD is started and is:
+
+1. listening on port `15432` with 10 connections to postgres in the pool.
+2. running the `gatewayd-plugin-cache`.
+3. having the pid `41568`.
+4. exposing aggregated Prometheus metrics on `http://localhost:2112/`.
+5. exposing an HTTP and a gRPC API on ports `18080` and `19090`.
 
 ```
 2023-04-08T02:01:04+02:00 INF configuring client automatic mTLS plugin=gatewayd-plugin-cache
@@ -119,18 +128,10 @@ postgres=# select * from test; -- This is read from the cache.
 (3 rows)
 ```
 
-You can check the cached keys using the following command.
+You can check the cached keys using the following command and it should contain three keys.
 
 ```bash
-docker exec -it redis-test redis-cli keys '*'
-```
-
-It should contain three keys like below:
-
-```
-1) "test:127.0.0.1:5432:postgres:UQAAABhzZWxlY3QgKiBmcm9tIHRlc3Q7AA=="
-2) "127.0.0.1:5432:postgres:UQAAABhzZWxlY3QgKiBmcm9tIHRlc3Q7AA=="
-3) "172.17.0.2:58136"
+docker exec -it redis-test redis-cli dbsize
 ```
 
 Now, insert a new row into the `test` table:
@@ -140,4 +141,12 @@ postgres=# insert into test values (1); -- The cache is invalidated.
 INSERT 0 1
 ```
 
-Now, check the cache keys again, and you'll see that there is only a single key, which means that the cached values are gone.
+Now, check the total number of keys again, and you'll see that there is only a single key, which means that the cached values are gone.
+
+## 6. Clean up
+
+You can clean up all of the above by following these steps:
+
+1. Exit `psql` by typing `Ctrl+D` or `\q` and hitting `Enter`.
+2. Stop `gatewayd` gracefully by typing `Ctrl+C`.
+3. Stop the container by running `docker stop postgres-test redis-test`. The continers will be removed automatically.
