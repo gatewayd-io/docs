@@ -6,7 +6,8 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Welcome](pages/getting-started/01-welcome.md)
   - [x] [Installation](pages/getting-started/02-installation.md)
   - [x] [Running GatewayD](pages/getting-started/03-running-gatewayd.md)
-  - [ ] Resources
+  - [x] [Observability](pages/getting-started/04-observability.md)
+  - [ ] [Resources](pages/getting-started/05-resources.md)
 - Using GatewayD
   - [ ] Configuration
     - Global
