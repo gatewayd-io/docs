@@ -7,7 +7,7 @@ This documentation will help you go from a beginner to an advanced user and deve
 - [Installation](/installation)
 - [Running GatewayD](/running-gatewayd)
 
-## What is GatewayD?
+## What is GatewayD
 
 GatewayD is a free and open-source cloud-native database gateway and framework for building data-driven applications. It sits between your database servers and clients and proxies all their communication. It is like API gateways, but for databases.
 
@@ -40,7 +40,7 @@ The `gatewayd-plugin-idp` is an entperise plugin that uses a machine-learning mo
 
 These are just a few examples and the list is by no means exhastive, as new plugins are constantly developed.
 
-## What GatewayD does not do?
+## What GatewayD does not do
 
 GatewayD is not a silver bullet and won't solve all your database problems over night. You still have to design and normalize your database schema, take and test backups, secure your database and do whatever you used to do before GatewayD. GatewayD came into exsitence to fix the black box mentality that surrounds databases to this very day.
 
