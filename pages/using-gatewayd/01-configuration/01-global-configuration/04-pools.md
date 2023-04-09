@@ -9,3 +9,9 @@ The size of the pool defines the maximum capacity of the pool. Upon start, Gatew
 | Name | Type   | Default value | Possible values   | Description                                                                                                                             |
 | ---- | ------ | ------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | size | number | 10            | Positive integers | Since this creates many parallel connections to the database, setting it to a very high value will degrade performance of the database. |
+
+```yaml
+pools:
+  default:
+    size: 10
+```

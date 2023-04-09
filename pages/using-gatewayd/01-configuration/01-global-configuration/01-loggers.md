@@ -35,3 +35,26 @@ GatewayD supports multiple loggers, and each logger supports sending logs to mul
 | rsyslogNetwork | string | tcp           | unix, udp, tcp                                        | The network protocol to use                                                                                                               |
 | rsyslogAddress | string | localhost:514 | Valid host:port                                       | The address of the rsyslog server                                                                                                         |
 | syslogPriority | string | info          | debug, notice, info, warning, err, crit, alert, emerg | [Priority](https://pkg.go.dev/log/syslog#Priority) is a combination of the syslog facility and severity. Facility is set to `LOG_DAEMON`. |
+
+## Example configuration
+
+```yaml
+loggers:
+  default:
+    output: ["console"] # "stdout", "stderr", "syslog", "rsyslog" and "file"
+    level: "info" # panic, fatal, error, warn, info (default), debug, trace
+    noColor: False
+    timeFormat: "unix" # unixms, unixmicro and unixnano
+    consoleTimeFormat: "RFC3339" # Go time format string
+    # If output is file, the following fields are used.
+    fileName: "gatewayd.log"
+    maxSize: 500 # MB
+    maxBackups: 5
+    maxAge: 30 # days
+    compress: True
+    localTime: False
+    # Rsyslog config
+    rsyslogNetwork: "tcp"
+    rsyslogAddress: "localhost:514"
+    syslogPriority: "info" # emerg, alert, crit, err, warning, notice, debug
+```

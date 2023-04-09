@@ -40,3 +40,13 @@ The following are built-in metrics emitted by GatewayD. The namespace of all the
 | proxied_connections                  | Gauge   | Number of proxy connects                                           |
 | proxy_passthroughs_total             | Counter | Number of successful proxy passthroughs                            |
 | proxy_passthrough_terminations_total | Counter | Number of proxy passthrough terminations by plugins                |
+
+## Example configuration
+
+```yaml
+metrics:
+  default:
+    enabled: True
+    address: localhost:2112
+    path: /metrics
+```

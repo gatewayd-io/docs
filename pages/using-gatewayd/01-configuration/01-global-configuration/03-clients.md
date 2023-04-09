@@ -13,3 +13,15 @@ GatewayD supports multiple client configurations. Each client in each configurat
 | receiveChunkSize   | number            | 8192           | Positive integers      | The amount of bytes to read per each call to receive (bytes)                                                   |
 | receiveDeadline    | duration (string) | 0s             | Valid duration strings | The amount of time the client should wait before giving up on call to receive. `0s` disables receive deadline. |
 | sendDeadline       | duration (string) | 0s             | Valid duration strings | The amount of time the client should wait before giving up on call to send. `0s` disables send deadline.       |
+
+```yaml
+clients:
+  default:
+    network: tcp
+    address: localhost:5432
+    tcpKeepAlive: False
+    tcpKeepAlivePeriod: 30s # duration
+    receiveChunkSize: 8192
+    receiveDeadline: 0s # duration, 0ms/0s means no deadline
+    sendDeadline: 0s # duration, 0ms/0s means no deadline
+```

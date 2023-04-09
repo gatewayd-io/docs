@@ -21,3 +21,13 @@ Each proxy has two pools:
 | elastic             | boolean           | False         | True, False            | Whether it is an elastic or a fixed proxy.                                           |
 | reuseElasticClients | boolean           | False         | True, False            | Whether the disconnected clients will be put back into the pool (reused) or removed. |
 | healthCheckPeriod   | duration (string) | 60s           | Valid duration strings | Intervals between health checks                                                      |
+
+## Example configuration
+
+```yaml
+proxies:
+  default:
+    elastic: False
+    reuseElasticClients: False
+    healthCheckPeriod: 60s # duration
+```

@@ -23,3 +23,27 @@ The server object runs to listen for incoming connections from database clients.
 | reusePort        | boolean | True          | True, False        | Whether to reuse the port or not                                                     |
 | tcpKeepAlive     | string  | 3s            | Valid duration     | The TCP keep alive duration                                                          |
 | tcpNoDelay       | boolean | True          | True, False        | Whether to enable TCP no delay or not                                                |
+
+## Example configuration
+
+```yaml
+servers:
+  default:
+    network: tcp
+    address: 0.0.0.0:15432
+    softLimit: 0
+    hardLimit: 0
+    enableTicker: False
+    tickInterval: 5s # duration
+    multiCore: True
+    lockOSThread: False
+    loadBalancer: roundrobin
+    readBufferCap: 134217728
+    writeBufferCap: 134217728
+    socketRecvBuffer: 134217728
+    socketSendBuffer: 134217728
+    reuseAddress: True
+    reusePort: True
+    tcpKeepAlive: 3s # duration
+    tcpNoDelay: True
+```
