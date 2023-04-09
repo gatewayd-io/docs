@@ -17,17 +17,21 @@ Global configuration contains all the config parameters for managing a running G
 - [Loggers](01-configuration/01-global-configuration/01-loggers.md)
 - [Metrics](01-configuration/01-global-configuration/02-metrics.md)
 - [Clients](01-configuration/01-global-configuration/03-clients.md)
-- Pools
-- Proxies
+- [Pools](01-configuration/01-global-configuration/04-pools.md)
+- [Proxies](01-configuration/01-global-configuration/05-proxies.md)
 - Server
 - API
 
 ## Configuration groups
 
-GatewayD supports multiple configurations for any given configuration parameter listed above. There is a `default` group, which is repeated under every configuration object. Upon running `gatewayd`, it'll load the `default` values for that configuration object.
+GatewayD supports multiple configurations for any given configuration object listed above. There is a `default` group, which is repeated under every configuration object, except the `API`. Upon running `gatewayd`, it will load the `default` values for that configuration object.
 
 **🗒️ Note**
 You can define your own configuration groups to enable multi-tenancy, but it is not needed in a typical scenario.
+
+## Configuration parameters
+
+Each configuration group contains parameters related to the corresponding configuration object.
 
 This is the complete global config file with the default values:
 
