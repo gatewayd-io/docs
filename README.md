@@ -9,8 +9,8 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Observability](pages/getting-started/04-observability.md)
   - [ ] [Resources](pages/getting-started/05-resources.md)
 - Using GatewayD
-  - [ ] [Configuration](pages/using-gatewayd/01-configuration.md)
-    - [x] Global Configuration
+  - [x] [Configuration](pages/using-gatewayd/01-configuration.md)
+    - [x] [Global configuration](pages/using-gatewayd/01-configuration.md#global-configuration)
       - [x] [Loggers](pages/using-gatewayd/01-configuration/01-global-configuration/01-loggers.md)
       - [x] [Metrics](pages/using-gatewayd/01-configuration/01-global-configuration/02-metrics.md)
       - [x] [Clients](pages/using-gatewayd/01-configuration/01-global-configuration/03-clients.md)
@@ -18,11 +18,11 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
       - [x] [Proxies](pages/using-gatewayd/01-configuration/01-global-configuration/05-proxies.md)
       - [x] [Servers](pages/using-gatewayd/01-configuration/01-global-configuration/06-servers.md)
       - [x] [API](pages/using-gatewayd/01-configuration/01-global-configuration/07-api.md)
-    - [x] Plugins
+    - [x] [Plugins configuration](pages/using-gatewayd/01-configuration.md#plugins-configuration)
       - [x] [General configuration](pages/using-gatewayd/01-configuration/02-plugins/01-general-configuration.md)
       - [x] [Plugins configuration](pages/using-gatewayd/01-configuration/02-plugins/02-plugins-configuration.md)
-    - Environment variables
-    - Runtime configuration
+    - [x] [Environment variables](pages/using-gatewayd/01-configuration.md#environment-variables)
+    - [x] [Runtime configuration](pages/using-gatewayd/01-configuration.md#runtime-configuration)
   - [ ] CLI
   - [ ] Servers
   - [ ] Clients

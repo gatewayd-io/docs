@@ -10,7 +10,7 @@ GatewayD is fully configurable via various sources, including default values, YA
 6. Environment variables for global config.
 7. Global config updated by plugins via the `OnConfigLoaded` hooks. ⬆️
 
-## Global configuration objects
+## Global configuration
 
 Global configuration contains all the config parameters for managing a running GatewayD instance. It includes parameters for configuring:
 
@@ -141,4 +141,46 @@ plugins:
 
 ## Environment variables
 
+All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_LOGGERS_DEFAULT_OUTPUT` environment variable can be set to the outputs required by the default logger and consists of four parts:
+
+1. Prefix: all environment variables are prefixed with `GATEWAYD`.
+2. Group: the configuration group, in this case `DEFAULT`.
+3. Object: the configuration object, in this case `LOGGERS`.
+4. Parameter: the configuration parameter, in this case `OUTPUT`.
+
+```mermaid
+flowchart TD
+    A(GATEWAYD_LOGGERS_DEFAULT_OUTPUT) --> B(Prefix)
+    A --> C(Group)
+    A --> D(Object)
+    A --> E(Parameter)
+```
+
 ## Runtime configuration
+
+GatewayD allows plugins to update the global configuration at runtime. This is done by calling the `OnConfigLoaded` hook, which is called after the global configuration is loaded. The `OnConfigLoaded` hook is called on startup with the global configuration as a parameter. The plugin can then modify the global configuration and return it. The modified global configuration will be used by GatewayD.
+
+An example of this update can be found in the [Go plugin template](https://github.com/gatewayd-io/plugin-template-go/blob/981b36aa62b4ba059656c6dde08f67a9206c0948/plugin/plugin.go#L54-L129). The following snippet shows how to update the global configuration at runtime:
+
+```go
+func (p *Plugin) OnConfigLoaded(
+  ctx context.Context,
+  req *structpb.Struct
+) (*structpb.Struct, error) {
+  if req.Fields == nil {
+    req.Fields = make(map[string]*structpb.Value)
+  }
+  req.Fields["loggers.default.level"] = &structpb.Value{
+    Kind: &structpb.Value_StringValue{
+      StringValue: "debug",
+    },
+  }
+  req.Fields["loggers.default.noColor"] = &structpb.Value{
+    Kind: &structpb.Value_BoolValue{
+      BoolValue: false,
+    },
+  }
+
+  return req, nil
+}
+```
