@@ -3,26 +3,26 @@
 The initial docs structure is detailed in [this comment](https://github.com/gatewayd-io/docs/issues/1#issuecomment-1442331491) and is as follows. This will be updated over time as the docs is written and shaped.
 
 - Getting started
-  - [x] [Welcome](pages/getting-started/01-welcome.md)
-  - [x] [Installation](pages/getting-started/02-installation.md)
-  - [x] [Running GatewayD](pages/getting-started/03-running-gatewayd.md)
-  - [x] [Observability](pages/getting-started/04-observability.md)
-  - [ ] [Resources](pages/getting-started/05-resources.md)
+  - [x] [Welcome](pages/01-getting-started/01-welcome.md)
+  - [x] [Installation](pages/01-getting-started/02-installation.md)
+  - [x] [Running GatewayD](pages/01-getting-started/03-running-gatewayd.md)
+  - [x] [Observability](pages/01-getting-started/04-observability.md)
+  - [ ] [Resources](pages/01-getting-started/05-resources.md)
 - Using GatewayD
-  - [x] [Configuration](pages/using-gatewayd/01-configuration/index.md)
-    - [x] [Global configuration](pages/using-gatewayd/01-configuration/index.md#global-configuration)
-      - [x] [Loggers](pages/using-gatewayd/01-configuration/01-global-configuration/01-loggers.md)
-      - [x] [Metrics](pages/using-gatewayd/01-configuration/01-global-configuration/02-metrics.md)
-      - [x] [Clients](pages/using-gatewayd/01-configuration/01-global-configuration/03-clients.md)
-      - [x] [Pools](pages/using-gatewayd/01-configuration/01-global-configuration/04-pools.md)
-      - [x] [Proxies](pages/using-gatewayd/01-configuration/01-global-configuration/05-proxies.md)
-      - [x] [Servers](pages/using-gatewayd/01-configuration/01-global-configuration/06-servers.md)
-      - [x] [API](pages/using-gatewayd/01-configuration/01-global-configuration/07-api.md)
-    - [x] [Plugins configuration](pages/using-gatewayd/01-configuration/index.md#plugins-configuration)
-      - [x] [General configuration](pages/using-gatewayd/01-configuration/02-plugins/01-general-configuration.md)
-      - [x] [Plugins configuration](pages/using-gatewayd/01-configuration/02-plugins/02-plugins-configuration.md)
-    - [x] [Environment variables](pages/using-gatewayd/01-configuration/index.md#environment-variables)
-    - [x] [Runtime configuration](pages/using-gatewayd/01-configuration/index.md#runtime-configuration)
+  - [x] [Configuration](pages/02-using-gatewayd/01-configuration/index.md)
+    - [x] [Global configuration](pages/02-using-gatewayd/01-configuration/index.md#global-configuration)
+      - [x] [Loggers](pages/02-using-gatewayd/01-configuration/01-global-configuration/01-loggers.md)
+      - [x] [Metrics](pages/02-using-gatewayd/01-configuration/01-global-configuration/02-metrics.md)
+      - [x] [Clients](pages/02-using-gatewayd/01-configuration/01-global-configuration/03-clients.md)
+      - [x] [Pools](pages/02-using-gatewayd/01-configuration/01-global-configuration/04-pools.md)
+      - [x] [Proxies](pages/02-using-gatewayd/01-configuration/01-global-configuration/05-proxies.md)
+      - [x] [Servers](pages/02-using-gatewayd/01-configuration/01-global-configuration/06-servers.md)
+      - [x] [API](pages/02-using-gatewayd/01-configuration/01-global-configuration/07-api.md)
+    - [x] [Plugins configuration](pages/02-using-gatewayd/01-configuration/index.md#plugins-configuration)
+      - [x] [General configuration](pages/02-using-gatewayd/01-configuration/02-plugins/01-general-configuration.md)
+      - [x] [Plugins configuration](pages/02-using-gatewayd/01-configuration/02-plugins/02-plugins-configuration.md)
+    - [x] [Environment variables](pages/02-using-gatewayd/01-configuration/index.md#environment-variables)
+    - [x] [Runtime configuration](pages/02-using-gatewayd/01-configuration/index.md#runtime-configuration)
   - [ ] CLI
   - [ ] Servers
   - [ ] Clients
@@ -91,4 +91,4 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [ ] Telemetry and usage report
   - [ ] Error reporting
   - [ ] Release notes
-  - [ ] Glossary
+  - [ ] [Glossary](pages/07-miscellaneous/glossary.md)
