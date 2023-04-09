@@ -107,7 +107,6 @@ GatewayD supports plugins. Plugins configuration is called `gatewayd_plugins.yam
 - [General configuration](01-configuration/02-plugins-configuration/01-general-configurations.md)
 - [Plugins configuration](01-configuration/02-plugins-configuration/02-plugins-configuration.md)
 
-<!-- The order in which appear in the `plugins` group determines its priority. -->
 This is the complete plugins config file with the default values and an example plugin:
 
 ```yaml
