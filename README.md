@@ -9,8 +9,11 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Observability](pages/getting-started/04-observability.md)
   - [ ] [Resources](pages/getting-started/05-resources.md)
 - Using GatewayD
-  - [ ] Configuration
-    - Global
+  - [ ] [Configuration](pages/using-gatewayd/01-configuration.md)
+    - [ ] Global Configuration
+      - [x] [Loggers](pages/using-gatewayd/01-configuration/01-global-configuration/01-loggers.md)
+      - [x] [Metrics](pages/using-gatewayd/01-configuration/01-global-configuration/02-metrics.md)
+      - [x] [Clients](pages/using-gatewayd/01-configuration/01-global-configuration/03-clients.md)
     - Plugins
     - Environment variables
     - Runtime configuration
