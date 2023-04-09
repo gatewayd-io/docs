@@ -19,8 +19,8 @@ Global configuration contains all the config parameters for managing a running G
 - [Clients](01-configuration/01-global-configuration/03-clients.md)
 - [Pools](01-configuration/01-global-configuration/04-pools.md)
 - [Proxies](01-configuration/01-global-configuration/05-proxies.md)
-- Server
-- API
+- [Servers](01-configuration/01-global-configuration/06-servers.md)
+- [API](01-configuration/01-global-configuration/07-api.md)
 
 ## Configuration groups
 
