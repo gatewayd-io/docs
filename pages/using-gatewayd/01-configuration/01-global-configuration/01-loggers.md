@@ -32,6 +32,6 @@ GatewayD supports multiple loggers, and each logger supports sending logs to mul
 
 | Name           | Type   | Default value | Possible values                                       | Description                                                                                                                               |
 | -------------- | ------ | ------------- | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| rsyslogNetwork | string | tcp           | unix, udp, tcp                                        |                                                                                                                                           |
-| rsyslogAddress | string | localhost:514 | Valid host:port                                       |                                                                                                                                           |
+| rsyslogNetwork | string | tcp           | unix, udp, tcp                                        | The network protocol to use                                                                                                               |
+| rsyslogAddress | string | localhost:514 | Valid host:port                                       | The address of the rsyslog server                                                                                                         |
 | syslogPriority | string | info          | debug, notice, info, warning, err, crit, alert, emerg | [Priority](https://pkg.go.dev/log/syslog#Priority) is a combination of the syslog facility and severity. Facility is set to `LOG_DAEMON`. |

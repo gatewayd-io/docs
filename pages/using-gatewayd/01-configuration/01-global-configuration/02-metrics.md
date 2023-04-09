@@ -15,7 +15,7 @@ scrape_configs:
 
 | Name    | Type    | Default value  | Possible values   | Description                                    |
 | ------- | ------- | -------------- | ----------------- | ---------------------------------------------- |
-| enabled | boolean | True           | True, False       |                                                |
+| enabled | boolean | True           | True, False       | The network protocol to use                    |
 | address | string  | localhost:2112 | Valid host:port   | The HTTP address and port to expose metrics on |
 | path    | string  | /metrics       | Valid path values | The endpoint to expose metrics on              |
 

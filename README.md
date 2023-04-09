@@ -16,7 +16,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
       - [x] [Clients](pages/using-gatewayd/01-configuration/01-global-configuration/03-clients.md)
       - [x] [Pools](pages/using-gatewayd/01-configuration/01-global-configuration/04-pools.md)
       - [x] [Proxies](pages/using-gatewayd/01-configuration/01-global-configuration/05-proxies.md)
-      - [ ] [Servers](pages/using-gatewayd/01-configuration/01-global-configuration/06-servers.md)
+      - [x] [Servers](pages/using-gatewayd/01-configuration/01-global-configuration/06-servers.md)
       - [ ] [API](pages/using-gatewayd/01-configuration/01-global-configuration/07-api.md)
     - Plugins
     - Environment variables
