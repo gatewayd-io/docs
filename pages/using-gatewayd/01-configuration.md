@@ -22,17 +22,6 @@ Global configuration contains all the config parameters for managing a running G
 - [Servers](01-configuration/01-global-configuration/06-servers.md)
 - [API](01-configuration/01-global-configuration/07-api.md)
 
-## Configuration groups
-
-GatewayD supports multiple configurations for any given configuration object listed above. There is a `default` group, which is repeated under every configuration object, except the `API`. Upon running `gatewayd`, it will load the `default` values for that configuration object.
-
-**🗒️ Note**
-You can define your own configuration groups to enable multi-tenancy, but it is not needed in a typical scenario.
-
-## Configuration parameters
-
-Each configuration group contains parameters related to the corresponding configuration object.
-
 This is the complete global config file with the default values:
 
 ```yaml
@@ -112,6 +101,44 @@ api:
 ```
 
 ## Plugins configuration
+
+GatewayD supports plugins. Plugins configuration is called `gatewayd_plugins.yaml`, which contains both the general configurations that manage plugins and the configuration of plugins themselves, which are explained in the following pages:
+
+- [General configuration](01-configuration/02-plugins-configuration/01-general-configurations.md)
+- [Plugins configuration](01-configuration/02-plugins-configuration/02-plugins-configuration.md)
+
+<!-- The order in which appear in the `plugins` group determines its priority. -->
+This is the complete plugins config file with the default values and an example plugin:
+
+```yaml
+verificationPolicy: "passdown"
+compatibilityPolicy: "strict"
+acceptancePolicy: "accept"
+enableMetricsMerger: True
+metricsMergerPeriod: 5s
+healthCheckPeriod: 5s
+reloadOnCrash: True
+timeout: 30s
+plugins:
+  - name: gatewayd-plugin-cache
+    enabled: True
+    localPath: ../gatewayd-plugin-cache/gatewayd-plugin-cache
+    args: ["--log-level", "debug"]
+    env:
+      - MAGIC_COOKIE_KEY=GATEWAYD_PLUGIN
+      - MAGIC_COOKIE_VALUE=5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872
+      - REDIS_URL=redis://localhost:6379/0
+      - EXPIRY=1h
+      # - DEFAULT_DB_NAME=postgres
+      - METRICS_ENABLED=True
+      - METRICS_UNIX_DOMAIN_SOCKET=/tmp/gatewayd-plugin-cache.sock
+      - METRICS_PATH=/metrics
+      - PERIODIC_INVALIDATOR_ENABLED=True
+      - PERIODIC_INVALIDATOR_INTERVAL=1m
+      - PERIODIC_INVALIDATOR_START_DELAY=1m
+      - API_ADDRESS=localhost:18080
+    checksum: 28456728dd3427b91d2e22f38b909526355d1b2becc9379581e1b70bb9495aa9
+```
 
 ## Environment variables
 
