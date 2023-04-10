@@ -24,7 +24,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
     - [x] [Environment variables](pages/02-using-gatewayd/01-configuration/index.md#environment-variables)
     - [x] [Runtime configuration](pages/02-using-gatewayd/01-configuration/index.md#runtime-configuration)
   - [x] [CLI](pages/02-using-gatewayd/02-CLI.md)
-  - [ ] Servers
+  - [x] [Servers](pages/02-using-gatewayd/03-servers.md)
   - [ ] Clients
   - [ ] Pools
   - [ ] Proxies
