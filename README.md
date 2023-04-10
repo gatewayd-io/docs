@@ -23,7 +23,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
       - [x] [Plugins configuration](pages/02-using-gatewayd/01-configuration/02-plugins/02-plugins-configuration.md)
     - [x] [Environment variables](pages/02-using-gatewayd/01-configuration/index.md#environment-variables)
     - [x] [Runtime configuration](pages/02-using-gatewayd/01-configuration/index.md#runtime-configuration)
-  - [ ] CLI
+  - [x] [CLI](pages/02-using-gatewayd/02-CLI.md)
   - [ ] Servers
   - [ ] Clients
   - [ ] Pools
@@ -88,7 +88,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [ ] Code of conduct
   - [ ] Test server
 - Misc
-  - [ ] Telemetry and usage report
+  - [x] [Telemetry and usage report](pages/07-miscellaneous/telemetry-and-usage-report.md)
   - [ ] Error reporting
   - [ ] Release notes
   - [ ] [Glossary](pages/07-miscellaneous/glossary.md)
