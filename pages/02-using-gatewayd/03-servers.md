@@ -18,3 +18,7 @@ The server works in an event-based manner and many events will fire during the l
 The server object is responsible for accepting new connections from the database clients and creating a new [connection](../07-miscellaneous/glossary.md#connection) object for each connection. The connection object is responsible for handling the connection opened by the database client.
 
 The server object is also responsible for handling the traffic between the database client and the database server. To do so, the server passes the traffic to the [proxy](../07-miscellaneous/glossary.md#proxy) object. The proxy object is responsible for handling the traffic between the database client and the database server, which is configurable from the [`proxies`](../02-using-gatewayd/01-configuration/01-global-configuration/05-proxies.md) configuration object in the global configuration file: `gatewayd.yaml`.
+
+## Protocol support
+
+The server object works in layer 4, and doesn't care about the protocol being used in the upper layers. This means that the server object, and in turn GatewayD in general, *can* support any protocol that can be used over a TCP, UDP or UDS connection. However, it is not recommended to use GatewayD for protocols that are not database protocols, as the server object is not optimized for that. The focus of GatewayD is to be a database proxy, and not a general purpose proxy. PostgreSQL has been chosen as the first database protocol to be supported, and more protocols will be added in the future.
