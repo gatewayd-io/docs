@@ -6,8 +6,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Welcome](pages/01-getting-started/01-welcome.md)
   - [x] [Installation](pages/01-getting-started/02-installation.md)
   - [x] [Running GatewayD](pages/01-getting-started/03-running-gatewayd.md)
-  - [x] [Observability](pages/01-getting-started/04-observability.md)
-  - [ ] [Resources](pages/01-getting-started/05-resources.md)
+  - [ ] [Resources](pages/01-getting-started/04-resources.md)
 - Using GatewayD
   - [x] [Configuration](pages/02-using-gatewayd/01-configuration/index.md)
     - [x] [Global configuration](pages/02-using-gatewayd/01-configuration/index.md#global-configuration)
@@ -28,10 +27,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Clients](pages/02-using-gatewayd/04-clients.md)
   - [x] [Pools](pages/02-using-gatewayd/05-pools.md)
   - [x] [Proxies](pages/02-using-gatewayd/06-proxies.md)
-  - [ ] Observability
-    - Loggers
-    - Metrics
-    - Traces
+  - [x] [Observability](pages/02-using-gatewayd/07-observability.md)
   - [ ] API
     - gRPC
     - HTTP
