@@ -14,13 +14,13 @@ GatewayD is fully configurable via various sources, including default values, YA
 
 Global configuration contains all the config parameters for managing a running GatewayD instance. It includes parameters for configuring:
 
-- [Loggers](01-configuration/01-global-configuration/01-loggers.md)
-- [Metrics](01-configuration/01-global-configuration/02-metrics.md)
-- [Clients](01-configuration/01-global-configuration/03-clients.md)
-- [Pools](01-configuration/01-global-configuration/04-pools.md)
-- [Proxies](01-configuration/01-global-configuration/05-proxies.md)
-- [Servers](01-configuration/01-global-configuration/06-servers.md)
-- [API](01-configuration/01-global-configuration/07-api.md)
+- [Loggers](01-global-configuration/01-loggers.md)
+- [Metrics](01-global-configuration/02-metrics.md)
+- [Clients](01-global-configuration/03-clients.md)
+- [Pools](01-global-configuration/04-pools.md)
+- [Proxies](01-global-configuration/05-proxies.md)
+- [Servers](01-global-configuration/06-servers.md)
+- [API](01-global-configuration/07-api.md)
 
 This is the complete global config file with the default values:
 
@@ -104,8 +104,8 @@ api:
 
 GatewayD supports plugins. Plugins configuration is called `gatewayd_plugins.yaml`, which contains both the general configurations that manage plugins and the configuration of plugins themselves, which are explained in the following pages:
 
-- [General configuration](01-configuration/02-plugins-configuration/01-general-configurations.md)
-- [Plugins configuration](01-configuration/02-plugins-configuration/02-plugins-configuration.md)
+- [General configuration](02-plugins-configuration/01-general-configurations.md)
+- [Plugins configuration](02-plugins-configuration/02-plugins-configuration.md)
 
 This is the complete plugins config file with the default values and an example plugin:
 
