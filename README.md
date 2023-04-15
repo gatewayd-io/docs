@@ -28,9 +28,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Pools](pages/02-using-gatewayd/05-pools.md)
   - [x] [Proxies](pages/02-using-gatewayd/06-proxies.md)
   - [x] [Observability](pages/02-using-gatewayd/07-observability.md)
-  - [ ] API
-    - gRPC
-    - HTTP
+  - [x] [API](pages/02-using-gatewayd/08-API.md)
   - [ ] Connection lifecycle
   - [ ] Protocols
 - Using plugins
