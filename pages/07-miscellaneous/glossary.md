@@ -66,3 +66,16 @@ The server works in an event-based manner and many events will fire during the l
 ## Proxy
 
 The proxy object is responsible for handling the traffic between the database client and the database server and is directly connected to the [server](#server) object.
+
+## Pool
+
+The pool object is responsible for managing the [client](#client) objects and is directly connected to the [proxy](#proxy) object.
+
+## Connection health check
+
+The proxy object will periodically check the connection health by disconnecting stale connections the database server and creating the same number of new connections to the database server.
+
+## Stale connection
+
+A stale connection is a connection that has not been used for a long time and is considered unhealthy.
+

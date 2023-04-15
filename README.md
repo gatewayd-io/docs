@@ -27,9 +27,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Servers](pages/02-using-gatewayd/03-servers.md)
   - [x] [Clients](pages/02-using-gatewayd/04-clients.md)
   - [x] [Pools](pages/02-using-gatewayd/05-pools.md)
-  - [ ] [Proxies](pages/02-using-gatewayd/06-proxies.md)
-    - L4 transparent proxy
-    - Health check
+  - [x] [Proxies](pages/02-using-gatewayd/06-proxies.md)
   - [ ] Observability
     - Loggers
     - Metrics
