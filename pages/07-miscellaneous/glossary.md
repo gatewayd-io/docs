@@ -31,6 +31,10 @@ A connection is a TCP/UDP/UDS connection between GatewayD and a database client.
 
 Server is an object that listens on an address:port pair and accepts connections from database clients.
 
+## Client
+
+Client object is a client that can connect to the databas servers over TCP, UDP and Unix Domain Socket.
+
 ## Database client
 
 Database clients are either database drivers for different programming languages or any other client that can talk the database language, aka. the wire protocol.
