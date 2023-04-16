@@ -39,7 +39,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Plugin types](pages/03-using-plugins/05-plugin-types.md)
   - [x] [Proposals](pages/03-using-plugins/06-proposals.md)
 - Developing plugins
-  - [ ] [Plugin lifecycle](pages/04-developing-plugins/01-plugin-lifecycle.md)
+  - [x] [Plugin lifecycle](pages/04-developing-plugins/01-plugin-lifecycle.md)
   - [ ] SDK reference
   - [ ] gRPC API reference
   - [ ] Template projects (Go and Python)
