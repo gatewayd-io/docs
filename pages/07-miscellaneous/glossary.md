@@ -78,3 +78,7 @@ The proxy object will periodically check the connection health by disconnecting 
 ## Stale connection
 
 A stale connection is a connection that has not been used for a long time and is considered unhealthy.
+
+## PostgreSQL wire protocol
+
+The [PostgreSQL wire protocol](https://www.postgresql.org/docs/current/protocol.html) is the binary protocol that the [PostgreSQL](https://www.postgresql.org/) database server understands.
