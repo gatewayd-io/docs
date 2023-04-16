@@ -21,7 +21,7 @@ Other database protocols will be added in the future.
 
 ## Plugins
 
-Plugins play a very important role in GatewayD for adding support for different databases. They are the building blocks of GatewayD, and they are responsible for the majority of the functionality of GatewayD. GatewayD itself does not contain any database specific code, and instead relies on plugins to add support for different databases.
+Plugins play a very important role in GatewayD for adding support for different databases. They are the building blocks of GatewayD, and they are responsible for the majority of the functionality of GatewayD. GatewayD itself does not contain any database specific code, and instead relies on plugins to add support for different databases. GatewayD passes traffic in binary to the plugin, and the plugin is responsible for parsing the binary data and performing the necessary actions.
 
 Plugins are loaded on startup and are responsible for the following:
 
