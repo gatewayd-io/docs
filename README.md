@@ -49,7 +49,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
     - Timeout
   - [x] [Plugin registry](pages/03-using-plugins/03-plugin-registry.md)
   - [x] [Hook registry](pages/03-using-plugins/04-hook-registry.md)
-  - [x] Plugin types
+  - [x] [Plugin types](pages/03-using-plugins/05-plugin-types.md)
     - Built-in plugins
     - Community plugins
     - Enterprise plugins
