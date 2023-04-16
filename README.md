@@ -53,7 +53,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
     - Built-in plugins
     - Community plugins
     - Enterprise plugins
-  - [ ] Proposals
+  - [x] [Proposals](pages/03-using-plugins/06-proposals.md)
 - Developing plugins
   - [ ] Plugin lifecycle
   - [ ] SDK reference
