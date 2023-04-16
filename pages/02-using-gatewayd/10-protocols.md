@@ -18,19 +18,3 @@ GatewayD supports the following application layer protocols:
 
 **🚧 WIP**
 Other database protocols will be added in the future.
-
-## Plugins
-
-Plugins play a very important role in GatewayD for adding support for different databases. They are the building blocks of GatewayD, and they are responsible for the majority of the functionality of GatewayD. GatewayD itself does not contain any database specific code, and instead relies on plugins to add support for different databases. GatewayD passes traffic in binary to the plugin, and the plugin is responsible for parsing the binary data and performing the necessary actions.
-
-Plugins are loaded on startup and are responsible for the following:
-
-- Sending/receiving the protocol-specific data from the client and server
-- Parsing the protocol-specific data
-- Extracting information from the protocol-specific data
-- Performing actions based on the extracted information
-- Parsing SQL queries from the client
-- Parsing responses from the server
-
-For example, the [gatewayd-plugin-cache](https://github.com/gatewayd-io/gatewayd-plugin-cache) decodes the [PostgreSQL wire protocol](../07-miscellaneous/glossary.md#postgresql-wire-protocol), extracts the SQL select query from the client, and then caches the result of the query in Redis. The next time the same select query is sent, the plugin will return the cached result instead of sending the query to the server. It also checks if the query is an upsert, delete, alter or drop query, and it will invalidate the cache based on the table in the query. This is a very simple example of what a plugin can do.
-<!-- Plugins are generally written in Go, but can be written in any other language, and are compiled into a stand-alone executable file to be run by GatewayD. The executable is then loaded by GatewayD at startup. -->

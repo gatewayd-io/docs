@@ -32,13 +32,14 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Connection lifecycle](pages/02-using-gatewayd/09-connection-lifecycle.md)
   - [x] [Protocols](pages/02-using-gatewayd/10-protocols.md)
 - Using plugins
-  - [ ] Plugins
+  - [x] [Plugins](pages/03-using-plugins/01-plugins.md)
+    - Lifecycle
     - Policies
       - Verification
       - Compatibility
       - Acceptance
-    - Reload on crash
     - Health check
+      - Reload on crash
     - Metrics merger
     - Command-line arguments
     - Environment variables
