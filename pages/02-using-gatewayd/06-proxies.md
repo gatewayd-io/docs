@@ -29,10 +29,10 @@ sequenceDiagram
     server->>proxy: there is traffic from database client
     proxy->>busy pool: give me the connected client
     busy pool->>proxy: here is the connected client
-    proxy->>client: send query to database
-    client->>database: query
-    database->>client: response
-    client->>proxy: receive response from database
+    proxy->>connected client: send query to database
+    connected client->>database: send query
+    database->>connected client: receive response
+    connected client->>proxy: here is the response from database
     proxy->>server: send response to database client
     server->>database client: response
 ```
