@@ -29,7 +29,7 @@ The server object is also responsible for handling the traffic between the datab
 
 ## Protocol support
 
-The server object works in transport layer, which is layer four of the OSI model and layer three of the TCP/IP model. Therefore it doesn't care about the protocol being used in the upper layers. This means that the server object, and GatewayD in general, *can* practically support any protocol in the upper layers. However, it is not recommended to use GatewayD for non-database protocols, as it is not optimized for those protocols. The focus of GatewayD is to be a database proxy, and not a general purpose proxy. PostgreSQL has been chosen as the first database protocol to be supported, and more protocols will be added in the future.
+The server object works in the [transport layer](https://en.wikipedia.org/wiki/Transport_layer), which is Layer 4, or L4, of the [OSI model](https://en.wikipedia.org/wiki/OSI_model). Therefore it doesn't care about the protocol being used in the upper layers. This means that the server object, and GatewayD in general, *can* practically support any protocol in the upper layers. However, it is not *recommended* to use GatewayD for non-database protocols, as it is not optimized for those protocols. The focus of GatewayD is to be a database proxy, and not a general purpose proxy. PostgreSQL has been chosen as the first database protocol to be supported, and more protocols will be added in the future.
 
 ## Hard and soft limits
 
