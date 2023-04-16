@@ -2,6 +2,8 @@
 
 Plugins can be used to modify the connection lifecycle. Each step in the connection lifecycle is represented by one or more plugin hook(s). Plugins can register themselves to be called when a specific hook is triggered. The following table lists the available hooks and the corresponding plugin hook(s).
 
+Each plugin can register to one or more hooks. The plugin will be called when the hook is triggered. The plugin can then perform any action it wants. The plugin can also return a value that will be passed to the next plugin in the chain. The last plugin in the chain will return the value to GatewayD.
+
 | Hook                  | Type         | Description                                                                                                                                                                                                            |
 | --------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `onConfigLoaded`      | Config       | Called when the GatewayD configuration is loaded. Can change the global configuration.                                                                                                                                 |
@@ -26,3 +28,15 @@ Plugins can be used to modify the connection lifecycle. Each step in the connect
 | `onShutdown`          | Notification | Called when the GatewayD is shutting down.                                                                                                                                                                             |
 | `onTick`              | Notification | Called on intervals set in the global configuration of the server object.                                                                                                                                              |
 | `onHook`              | Notification | Called when a custom hook is triggered. This is reserved for future uses in GatewayD.                                                                                                                                  |
+
+## Types
+
+There are currently three types of hooks:
+
+- `Config` hooks are called when the GatewayD configuration is loaded. They can change the global configuration.
+- `Notification` hooks are called when a specific event occurs. They cannot change the objects' configuration.
+- `Traffic` hooks are called when traffic is received from a database client, aka. the request or from a database server, aka. the response. Plugins can terminate the connection and return a response or an error. They can also modify the request or the response before it is proxied to the server or sent to the client.
+
+## Timeout
+
+For more information about the timeout, see [timeout](01-plugins.md#timeout).

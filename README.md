@@ -44,7 +44,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
     - Command-line arguments
     - Environment variables
     - Checksum verification
-  - [ ] Hooks
+  - [x] [Hooks](pages/03-using-plugins/02-hooks.md)
     - Types (traffic and notification)
     - Timeout
   - [ ] Plugin registry
