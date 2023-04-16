@@ -47,8 +47,8 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Hooks](pages/03-using-plugins/02-hooks.md)
     - Types (traffic and notification)
     - Timeout
-  - [ ] Plugin registry
-  - [ ] Hook registry
+  - [x] [Plugin registry](pages/03-using-plugins/03-plugin-registry.md)
+  - [ ] [Hook registry](pages/03-using-plugins/04-hook-registry.md)
   - [ ] Plugin types
     - Built-in plugins
     - Community plugins
