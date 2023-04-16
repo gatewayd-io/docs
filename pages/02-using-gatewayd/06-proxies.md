@@ -4,6 +4,8 @@ Proxy object is used to create a binding between incoming connections from the d
 
 If any traffic comes from the incoming connection, it will be forwarded to the server. It will wait for the server to respond and forward the response back to the incoming connection. The proxy object will also handle the connection health check and the connection timeout.
 
+## Proxy object
+
 The following sequence diagram shows how the proxy object works.
 
 ```mermaid
@@ -20,6 +22,8 @@ sequenceDiagram
 
 **🗒️ Note**
 Both the available pool and the busy pool are created and managed by the proxy object.
+
+## Traffic handling
 
 The following sequence diagram shows how the proxy object handles the traffic.
 
