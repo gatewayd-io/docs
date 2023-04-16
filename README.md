@@ -29,7 +29,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Proxies](pages/02-using-gatewayd/06-proxies.md)
   - [x] [Observability](pages/02-using-gatewayd/07-observability.md)
   - [x] [API](pages/02-using-gatewayd/08-API.md)
-  - [ ] Connection lifecycle
+  - [x] [Connection lifecycle](pages/02-using-gatewayd/09-connection-lifecycle.md)
   - [ ] Protocols
 - Using plugins
   - [ ] Plugins
