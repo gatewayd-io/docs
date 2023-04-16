@@ -105,3 +105,9 @@ Plugins can be verified by their checksum, which is a SHA256SUM of the plugin's 
 **🚧 WIP**
 
 There are plans to automate the [checksum verification process](https://github.com/gatewayd-io/gatewayd/issues/78), so that the checksum is [automatically fetched](https://github.com/gatewayd-io/gatewayd/issues/122) from the plugin's repository and verified before the plugin is loaded.
+
+## Plugin naming convention
+
+Plugin names usually follow the format `gatewayd-plugin-<plugin-name>`. For example, the [gatewayd-plugin-cache](https://github.com/gatewayd-io/gatewayd-plugin-cache), but the community can choose to use any name they want. The plugin name is used to identify the plugin, and it is also used to identify the plugin's version. The plugin name is configurable in the [plugins configuration](../02-using-gatewayd/01-configuration/02-plugins-configuration/02-plugins-configuration.md).
+
+We recommend that plugin developers use unique names with the `gatewayd-plugin-` prefix to avoid naming conflicts with other plugins.
