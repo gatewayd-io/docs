@@ -14,6 +14,7 @@ There are a few steps to follow to create a plugin:
 8. Publish your plugin to the GatewayD plugin registry.
 
 > **🗒️ Note**
+>
 > You can also use the [GatewayD plugin template for Python](https://github.com/gatewayd-io/plugin-template-python) repository to create a new repository for your plugin.
 
 In the following sections, we will describe each step in more detail.
@@ -77,6 +78,7 @@ You can test your plugin locally by running GatewayD CLI in development mode. Th
 ```
 
 > **🗒️ Note**
+>
 > It is recommended to use the `trace` log level to see the logs of your plugin. For more information, see [loggers](../02-using-gatewayd/01-configuration/01-global-configuration/01-loggers.md).
 
 ## Step 5: Test your plugin in the CI pipeline
@@ -92,6 +94,7 @@ If you have written tests for your plugin, you can use the following workflow to
 If you want to publish your plugin to GitHub, you can use the following workflow and `Makefile` to release your plugin. Copy the [`release.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/release.yaml) workflow and this [`Makefile`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/Makefile) into the `.github/workflows/` and the root directory of your plugin. This workflow will release your plugin to GitHub.
 
 > **🗒️ Note**
+>
 > You must modify the example `Makefile`, `release.yaml` and `test.yaml` files to match your plugin.
 
 ## Step 8: Publish your plugin to the GatewayD plugin registry
