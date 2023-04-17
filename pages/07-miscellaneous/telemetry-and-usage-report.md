@@ -12,7 +12,7 @@ The application sends the following information to the GatewayD usage report ser
 4. Go architecture (string)
 5. Service name (constant string, `gatewayd`)
 6. Development mode (boolean)
-7. List of plugins with their name, version and checkum (list of object (strings))
+7. List of plugins with their name, version and checksum (list of object (strings))
 
 ### Implementation details of usage report service
 

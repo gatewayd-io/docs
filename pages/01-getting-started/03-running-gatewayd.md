@@ -96,7 +96,7 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 
 ## 5. Test your setup with `psql`
 
-GatewayD is running on the host, while PostgreSQL is running inside a container. So, you need to run the following command to test it. Notice that `172.17.0.1` is the IP address of the host machine.
+GatewayD is running on the host, while PostgreSQL is running inside a container. You can run the following command to test it. Notice that `172.17.0.1` is the IP address of the host machine.
 
 ```bash
 docker exec -it postgres-test psql postgresql://postgres:postgres@172.17.0.1:15432/postgres
@@ -151,4 +151,4 @@ You can clean up all of the above by following these steps:
 
 1. Exit `psql` by typing `Ctrl+D` or `\q` and hitting `Enter`.
 2. Stop `gatewayd` gracefully by typing `Ctrl+C`.
-3. Stop the container by running `docker stop postgres-test redis-test`. The continers will be removed automatically.
+3. Stop the container by running `docker stop postgres-test redis-test`. The containers will be removed automatically.

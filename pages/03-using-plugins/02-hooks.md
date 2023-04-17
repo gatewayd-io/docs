@@ -31,7 +31,7 @@ Each plugin can register to one or more hooks. The plugin will be called when th
 
 ## Types
 
-There are currently three types of hooks:
+Currently three types of hooks exist:
 
 - `Config` hooks are called when the GatewayD configuration is loaded. They can change the global configuration.
 - `Notification` hooks are called when a specific event occurs. They cannot change the objects' configuration.

@@ -33,7 +33,7 @@ Server is an object that listens on an address:port pair and accepts connections
 
 ## Client
 
-Client object is a client that can connect to the databas servers over TCP, UDP and Unix Domain Socket.
+Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket.
 
 ## Database client
 

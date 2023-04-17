@@ -1,6 +1,6 @@
 # Pools
 
-GatewayD has a generic internal pool object that is used to manage plugins and connections. There are two concrete usages of the generic pool across GatewayD for managing other objects:
+GatewayD has a generic internal pool object that is used to manage plugins and connections. Two concrete usages of the generic pool across GatewayD for managing other objects are listed below.
 
 | Name                  | Relation        | Description                                                                                                                                                                                              | key                      | value         |
 | --------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------- |
@@ -16,4 +16,4 @@ An empty pool, or zero-sized pool, has no upper-bound limit and it is used in th
 
 > **⚠️ Warning**
 >
-> It is *not* recommended to set the size of the pool to zero, as it might causes th pool to grow infinitely and cause unknown behaviors.
+> It is *not* recommended to set the size of the pool to zero, as it might causes the pool to grow infinitely and cause unknown behaviors.
