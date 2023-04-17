@@ -103,4 +103,4 @@ We have [plans](https://github.com/gatewayd-io/proposals/issues/8) to create a p
 
 ## Next steps
 
-Check out the [Using plugins](../03-using-plugins/01-plugins.md) page to know more about the details of the plugin system including hooks, plugin registry, hook registry and different plugin types.
+Check out the [using plugins](../03-using-plugins/01-plugins.md) page to know more about the details of the plugin system including hooks, plugin registry, hook registry and different plugin types.
