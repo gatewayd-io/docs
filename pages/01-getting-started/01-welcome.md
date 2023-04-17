@@ -34,15 +34,15 @@ GatewayD is optimized for proxying SQL databases and clients.
 - **Caching results of queries**
 The [`gatewayd-plugin-cache`](https://github.com/gatewayd-io/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the query and caches its response with a TTL. Further queries will be served from the cached results. Upsert, delete, alter and drop statements invalidate cached results.
 - **Advanced caching**
-The [`gatewayd-plugin-cache-advacned`](..) is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. So, even if any client accesses the database directly and changes anything, the plugin checks the WAL and invalidates all the matching cached results immediately.
+The [`gatewayd-plugin-cache-advacned`](..) is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
 - **SQL injection detection and prevention** (WIP)
-The `gatewayd-plugin-idp` is an entperise plugin that uses a machine-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data.
+The `gatewayd-plugin-idp` is an enterprise plugin that uses a machine-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data.
 
-These are just a few examples and the list is by no means exhastive, as new plugins are constantly developed.
+These are just a few examples and the list is by no means exhaustive, as new plugins are constantly developed.
 
 ## What GatewayD does not do
 
-GatewayD is not a silver bullet and won't solve all your database problems over night. You still have to design and normalize your database schema, take and test backups, secure your database and do whatever you used to do before GatewayD. GatewayD came into exsitence to fix the black box mentality that surrounds databases to this very day.
+GatewayD is not a silver bullet and won't solve all your database problems over night. You still have to design and normalize your database schema, take and test backups, secure your database and do whatever you used to do before GatewayD. GatewayD came into existence to fix the black box mentality that surrounds databases to this very day.
 
 Over time many plugins will be developed either by us or the community that will try to solve different issues arose from utilizing databases.
 

@@ -9,7 +9,7 @@ GatewayD is a CLI application that runs on Linux-based distributions and macOS. 
 | `run`        | runs an instance of `gatewayd` with the specified configuration files | - `-c`, `--config`: global config file (default `"./gatewayd.yaml"`)<br/>- `-p`, `--plugin-config`: plugin config file (default `"./gatewayd_plugins.yaml"`) |
 | `version`    | shows version information                                             | `GatewayD v0.6.0 (2023-03-12T22:22:55+0000/ae469dc, go1.20.1, linux/amd64)`                                                                                  |
 
-There are also global flags that can enable or disable certain features:
+The following global flags let you enable or disable certain features:
 
 | Flag                     | Description                                                               |
 | ------------------------ | ------------------------------------------------------------------------- |

@@ -1,6 +1,6 @@
 # Clients
 
-Client object is a client that can connect to the databas servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](05-pools.md). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
+Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](05-pools.md). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
 
 ## Pools and proxies
 

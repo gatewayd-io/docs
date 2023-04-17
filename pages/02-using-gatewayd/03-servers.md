@@ -41,7 +41,7 @@ If the clients try to open more connections than the soft limit, the server will
 
 ## Connection limits
 
-There are no limits on the number of connections that the server can accept, and in fact, it can accept an unlimited number of connections. However, the [pool](05-pools.md) object limits the number of connections that can be opened to the database server.
+The server can accept an unlimited number of connections. However, the [pool](05-pools.md) object limits the number of connections that can be opened to the database server.
 
 ## Ticker
 

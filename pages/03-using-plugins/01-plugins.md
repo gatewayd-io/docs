@@ -86,9 +86,9 @@ Plugin hooks have a timeout, which is configurable in the [general configuration
 
 ## Metrics merger
 
-Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with GatewayD's metrics and exposed on the [`https://localhost:2112/metrics`](`https://localhost:2112/metrics`) endpoint. The metrics merger is configurable in the [general configuration](../02-using-gatewayd/01-configuration/02-plugins-configuration/01-general-configurations.md) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.
+Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with metrics of GatewayD and exposed on the [`https://localhost:2112/metrics`](`https://localhost:2112/metrics`) endpoint. The metrics merger is configurable in the [general configuration](../02-using-gatewayd/01-configuration/02-plugins-configuration/01-general-configurations.md) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.
 
-If a plugin developer chooses to expose metrics over HTTP, they can be scraped by Prometheus, but they won't be merged with GatewayD's metrics.
+If a plugin developer chooses to expose metrics over HTTP, they can be scraped by Prometheus, but they won't be merged with metrics of GatewayD.
 
 ## Command-line arguments
 
@@ -104,7 +104,7 @@ Plugins can be verified by their checksum, which is a SHA256 checksum of the plu
 
 > **🚧 Work in Progress**
 >
-> There are plans to automate the [checksum verification process](https://github.com/gatewayd-io/gatewayd/issues/78), so that the checksum is [automatically fetched](https://github.com/gatewayd-io/gatewayd/issues/122) from the plugin's repository and verified before the plugin is loaded.
+> We have plans to automate the [checksum verification process](https://github.com/gatewayd-io/gatewayd/issues/78), so that the checksum is [automatically fetched](https://github.com/gatewayd-io/gatewayd/issues/122) from the plugin's repository and verified before the plugin is loaded.
 
 ## Plugin naming convention
 

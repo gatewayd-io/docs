@@ -24,7 +24,7 @@ GatewayD supports multiple loggers, and each logger supports sending logs to mul
 | fileName   | string  | gatewayd.log  | Valid filenames   |                                                                                                     |
 | maxSize    | number  | 500           | Positive integers | Max size of each log file in megabytes before rotation                                              |
 | maxBackups | number  | 5             | Positive integers | Max number of old rotated log files to retain                                                       |
-| maxAage    | number  | 30            | Positive integers | Max amount of time to keep the backup files (in days) based on encoded time in the files            |
+| maxAge     | number  | 30            | Positive integers | Max amount of time to keep the backup files (in days) based on encoded time in the files            |
 | compress   | boolean | True          | True, False       | Whether to compress rotated backup files or not                                                     |
 | localTime  | boolean | False         | True, False       | Whether to use the local system time for formatting the timestamps in backup files. Default is UTC. |
 

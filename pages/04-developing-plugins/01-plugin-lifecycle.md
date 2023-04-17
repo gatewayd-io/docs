@@ -2,7 +2,7 @@
 
 The usage of plugin from the user perspective is described [here](../03-using-plugins/01-plugins.md), which will give you a good overview of how plugins work. The [lifecycle](../03-using-plugins/01-plugins.md#lifecycle) of a plugin is described on the same page. This page will describe the lifecycle of a plugin from the developer perspective.
 
-There are a few steps to follow to create a plugin:
+Follow these steps to create a plugin:
 
 1. Use the [GatewayD plugin template for Go](https://github.com/gatewayd-io/plugin-template-go) repository to create a new repository for your plugin.
 2. Clone the repository and start developing your plugin.
@@ -99,7 +99,7 @@ If you want to publish your plugin to GitHub, you can use the following workflow
 
 ## Step 8: Publish your plugin to the GatewayD plugin registry
 
-There are [plans](https://github.com/gatewayd-io/proposals/issues/8) to create a plugin registry for GatewayD. Until then, you can publish your plugin on GitHub.
+We have [plans](https://github.com/gatewayd-io/proposals/issues/8) to create a plugin registry for GatewayD. Until then, you can publish your plugin on GitHub.
 
 ## Next steps
 

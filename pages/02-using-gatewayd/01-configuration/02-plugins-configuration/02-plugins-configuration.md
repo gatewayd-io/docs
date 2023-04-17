@@ -12,7 +12,7 @@ interface](https://github.com/gatewayd-io/gatewayd-plugin-sdk/blob/main/plugin/v
 | Name      | Type           | Default value | Possible values  | Description                                                        |
 | --------- | -------------- | ------------- | ---------------- | ------------------------------------------------------------------ |
 | name      | string         | -             | -                | The name of the plugin.                                            |
-| enabled   | bool           | True          | True, False      | Enables/disables the plugin.                                       |
+| enabled   | boolean        | True          | True, False      | Enables/disables the plugin.                                       |
 | localPath | string         | -             | Valid file paths | The path to the plugin's executable.                               |
 | args      | list of string | -             | -                | The list of arguments to pass to the plugin's command, aka. flags. |
 | env       | list           | -             | -                | The list of environment variables to pass to the plugin.           |
