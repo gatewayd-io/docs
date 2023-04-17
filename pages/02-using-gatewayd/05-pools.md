@@ -14,5 +14,6 @@ The size of the pool, that is set in the [pool](01-configuration/01-global-confi
 
 An empty pool, or zero-sized pool, has no upper-bound limit and it is used in the plugin registry.
 
-**⚠️ Warning**
-It is *not* recommended to set the size of the pool to zero, as it might causes th pool to grow infinitely and cause unknown behaviors.
+> **⚠️ Warning**
+>
+> It is *not* recommended to set the size of the pool to zero, as it might causes th pool to grow infinitely and cause unknown behaviors.

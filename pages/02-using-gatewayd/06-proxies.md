@@ -20,8 +20,9 @@ sequenceDiagram
     server->>database client: ready
 ```
 
-**🗒️ Note**
-Both the available pool and the busy pool are created and managed by the proxy object.
+> **🗒️ Note**
+>
+> Both the available pool and the busy pool are created and managed by the proxy object.
 
 ## Traffic handling
 

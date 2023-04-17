@@ -19,5 +19,6 @@ There are also global flags that can enable or disable certain features:
 | `--dev`                  | Enable development mode for plugin development                            |
 | `--usage-report`         | Enable usage report (default `true`)                                      |
 
-**🗒️ Note**
-Please visit the [telemetry and usage report](../07-miscellaneous/telemetry-and-usage-report.md) page for more information on which pieces of data are collected by the service.
+> **🗒️ Note**
+>
+> Please visit the [telemetry and usage report](../07-miscellaneous/telemetry-and-usage-report.md) page for more information on which pieces of data are collected by the service.

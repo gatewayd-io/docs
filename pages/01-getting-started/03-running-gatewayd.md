@@ -9,8 +9,9 @@ These are the steps to make GatewayD work for you:
 5. Test your setup with [`psql`](https://www.postgresql.org/docs/current/app-psql.html) or any other PostgreSQL client or driver.
 6. Clean up.
 
-**🗒️ Note**
-For demo purposes, we'll use Docker to start the databases. Also, you can skip step one if you already have a database up and running.
+> **🗒️ Note**
+>
+> For demo purposes, we'll use Docker to start the databases. Also, you can skip step one if you already have a database up and running.
 
 ## 1. Start your PostgreSQL database
 
@@ -58,8 +59,9 @@ Open the `gatewayd_plugins.yaml` file with your favorite editor and change the `
 sha256sum gatewayd-plugin-cache -c checksum.txt
 ```
 
-**🗒️ Note**
-If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` and set the log level of the default logger to `debug` or `trace`.
+> **🗒️ Note**
+>
+> If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` in your favorite editor and set the log level of the default logger to `debug` or `trace`.
 
 Run the following command to start GatewayD:
 
@@ -75,7 +77,7 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 4. exposing aggregated Prometheus metrics on `http://localhost:2112/`.
 5. exposing an HTTP and a gRPC API on ports `18080` and `19090`.
 
-```
+```log
 2023-04-08T02:01:04+02:00 INF configuring client automatic mTLS plugin=gatewayd-plugin-cache
 2023-04-08T02:01:04+02:00 INF Starting metrics server via HTTP over Unix domain socket endpoint=/metrics plugin=gatewayd-plugin-cache timestamp=2023-04-08T02:01:04.242+0200 unixDomainSocket=/tmp/gatewayd-plugin-cache.sock
 2023-04-08T02:01:04+02:00 INF configuring server automatic mTLS plugin=gatewayd-plugin-cache timestamp=2023-04-08T02:01:04.243+0200
