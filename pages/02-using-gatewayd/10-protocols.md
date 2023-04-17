@@ -16,6 +16,6 @@ GatewayD supports the following application layer protocols:
 
 - **PostgreSQL** (default)
 
-> **🚧 WIP**
+> **🚧 Work in Progress**
 >
 > Other database protocols will be added in the future.

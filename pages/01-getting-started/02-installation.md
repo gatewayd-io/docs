@@ -2,7 +2,7 @@
 
 We release binaries for Linux and macOS.
 
-> **🚧 WIP**
+> **🚧 Work in Progress**
 >
 > Support for [packages for different distribution](https://github.com/gatewayd-io/gatewayd/issues/136) and the [Docker image](https://github.com/gatewayd-io/gatewayd/issues/137) is in the works.
 
@@ -14,6 +14,6 @@ The GatewayD [repository](https://github.com/gatewayd-io/gatewayd) on GitHub con
 
 If you want to use any GatewayD plugin, you need download, extract and place it in your desired location accessible to GatewayD.
 
-> **🚧 WIP**
+> **🚧 Work in Progress**
 >
 > A [`plugin` subcommand](https://github.com/gatewayd-io/gatewayd/issues/122) is in the works to simplify installation and management of plugins and their configurations.

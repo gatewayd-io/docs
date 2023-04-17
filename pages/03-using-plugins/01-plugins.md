@@ -102,7 +102,7 @@ GatewayD can pass environment variables to plugins. The environment variables ar
 
 Plugins can be verified by their checksum, which is a SHA256SUM of the plugin's executable file. The checksum is configurable in the [plugins configuration](../02-using-gatewayd/01-configuration/02-plugins-configuration/02-plugins-configuration.md). The checksum is verified before the plugin is loaded. If the checksum verification fails, GatewayD will not load the plugin. For now, the checksum should be manually copied from the plugin's archive that is downloaded from the plugin's repository into the [plugins configuration](../02-using-gatewayd/01-configuration/02-plugins-configuration/02-plugins-configuration.md).
 
-> **🚧 WIP**
+> **🚧 Work in Progress**
 >
 > There are plans to automate the [checksum verification process](https://github.com/gatewayd-io/gatewayd/issues/78), so that the checksum is [automatically fetched](https://github.com/gatewayd-io/gatewayd/issues/122) from the plugin's repository and verified before the plugin is loaded.
 
