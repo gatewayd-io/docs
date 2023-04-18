@@ -43,7 +43,8 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [SDK reference](pages/04-developing-plugins/02-sdk-reference.md)
   - [x] [gRPC API reference](pages/04-developing-plugins/03-grpc-api-reference.md)
   - [x] [Template projects](pages/04-developing-plugins/04-template-projects.md)
-- GatewayD versus
+- GatewayD versus (move to the blog?)
+  - [ ] Bouncers (PgBouncer, PgPool-II and pgcat)
   - [ ] MaxScale
   - [ ] ProxySQL
   - [ ] Acra
@@ -52,7 +53,6 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [ ] Bytebase
   - [ ] Airbyte
   - [ ] Arana
-  - [ ] Bouncers (PgBouncer, PgPool-II and pgcat)
 - Community
   - [ ] Learning
   - [ ] Contributing
