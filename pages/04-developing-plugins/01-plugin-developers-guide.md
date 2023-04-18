@@ -1,6 +1,8 @@
-# Plugin Lifecycle
+# Plugin Developers Guide
 
-The usage of plugin from the user perspective is described [here](../03-using-plugins/01-plugins.md), which will give you a good overview of how plugins work. The [lifecycle](../03-using-plugins/01-plugins.md#lifecycle) of a plugin is described on the same page. This page will describe the lifecycle of a plugin from the developer perspective.
+The usage of plugin from the user perspective is described [here](../03-using-plugins/01-plugins.md), which will give you a good overview of how plugins work. The [lifecycle](../03-using-plugins/01-plugins.md#lifecycle) of a plugin is described on the same page. This page is a guide for plugin developers.
+
+## Overview
 
 Follow these steps to create a plugin:
 
