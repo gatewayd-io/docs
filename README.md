@@ -40,7 +40,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Proposals](pages/03-using-plugins/06-proposals.md)
 - Developing plugins
   - [x] [Plugin lifecycle](pages/04-developing-plugins/01-plugin-lifecycle.md)
-  - [ ] SDK reference
+  - [x] [SDK reference](pages/04-developing-plugins/02-sdk-reference.md)
   - [ ] gRPC API reference
   - [ ] Template projects (Go and Python)
 - GatewayD versus
