@@ -42,7 +42,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Plugin developers guide](pages/04-developing-plugins/01-plugin-developers-guide.md)
   - [x] [SDK reference](pages/04-developing-plugins/02-sdk-reference.md)
   - [x] [gRPC API reference](pages/04-developing-plugins/03-grpc-api-reference.md)
-  - [ ] Template projects (Go and Python)
+  - [x] [Template projects](pages/04-developing-plugins/04-template-projects.md)
 - GatewayD versus
   - [ ] MaxScale
   - [ ] ProxySQL
