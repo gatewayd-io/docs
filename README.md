@@ -41,7 +41,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
 - Developing plugins
   - [x] [Plugin lifecycle](pages/04-developing-plugins/01-plugin-lifecycle.md)
   - [x] [SDK reference](pages/04-developing-plugins/02-sdk-reference.md)
-  - [ ] gRPC API reference
+  - [x] [gRPC API reference](pages/04-developing-plugins/03-grpc-api-reference.md)
   - [ ] Template projects (Go and Python)
 - GatewayD versus
   - [ ] MaxScale
