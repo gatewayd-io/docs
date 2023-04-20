@@ -4,8 +4,8 @@ This documentation will help you go from a beginner to an advanced user and deve
 
 ## Get Started
 
-- [Installation](/installation)
-- [Running GatewayD](/running-gatewayd)
+- [Installation](./02-installation.md)
+- [Running GatewayD](./03-running-gatewayd.md)
 
 ## What is GatewayD
 
