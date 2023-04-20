@@ -22,7 +22,9 @@ k6 is developed by [GatewayD Labs](https://gatewayd.io) and the community.
 GatewayD is packed with features, which you can learn all about in the documentation. Key features include:
 
 ✅ CLI tool with developer-friendly APIs
+
 ✅ Plugins in Go, Python and any language supporting gRPC and Protocol Buffers
+
 ✅ Work out of the box with zero to none changes to your code and database
 
 ## Use cases
