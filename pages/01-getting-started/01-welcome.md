@@ -1,6 +1,6 @@
 # Welcome to the GatewayD documentation
 
-This documentation will help you go from a beginner to an advanced user and developer of GatewayD!
+This documentation will help you go from a beginner to an advanced user and developer of GatewayD.
 
 ## Get Started
 
@@ -11,11 +11,11 @@ This documentation will help you go from a beginner to an advanced user and deve
 
 GatewayD is a free and open-source cloud-native database gateway and framework for building data-driven applications. It sits between your database servers and clients and proxies all their communication. It is like API gateways, but for databases.
 
-Using GatewayD, you can see through the queries and the data passing between your database server and clients, and take action when needed. For example, you can cache the result of SQL SELECT queries or detect and prevent SQL injection attacks.
+GatewayD is an [L4](https://en.wikipedia.org/wiki/Transport_layer) proxy for SQL databases and clients. You can either write your own plugins or make use of our built-in, community and enterprise plugins.
 
-GatewayD itself is an L4 transparent gateway for SQL databases and clients. You can either write your own plugins or make use of our built-in, community and enterprise plugins.
+Using GatewayD, you can see through the queries and the data passing between your database server and clients, and take action. For example, you can cache the result of SQL SELECT queries or detect and prevent SQL injection attacks.
 
-k6 is developed by [GatewayD Labs](https://gatewayd.io) and the community.
+GatewayD is developed by [GatewayD Labs](https://gatewayd.io) and the community.
 
 ## Key features
 
@@ -25,29 +25,29 @@ GatewayD is packed with features, which you can learn all about in the documenta
 
 ✅ Plugins in Go, Python and any language supporting gRPC and Protocol Buffers
 
-✅ Work out of the box with zero to none changes to your code and database
+✅ Works out of the box with no changes to your code and database
 
 ## Use cases
 
-GatewayD users are typically Developers, DBAs, DBREs, Security Engineers, Compliance Auditors, SREs and Cloud Engineers and basically anyone working with databases. These engineers use GatewayD for proxying SQL queries and their responses and taking action when those queries and responses meet certain criteria. Common GatewayD use cases are:
+GatewayD users are typically developers, DBAs, DBREs, security engineers, compliance auditors, SREs, cloud engineers and basically everyone working with databases. These engineers use GatewayD for proxying SQL queries and their responses and taking action when those queries and responses meet certain criteria. Common GatewayD use cases are:
 
-- **Transport L4 database gateway**
+- **L4 database gateway**
 
     GatewayD is optimized for proxying SQL databases and clients.
 
 - **Caching results of queries**
 
-    The [`gatewayd-plugin-cache`](https://github.com/gatewayd-io/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the query and caches its response with a TTL. Further queries will be served from the cached results. Upsert, delete, alter and drop statements invalidate cached results.
+    The [`gatewayd-plugin-cache`](https://github.com/gatewayd-io/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
 
-- **Advanced caching**
+- **Advanced caching** (WIP)
 
-    The [`gatewayd-plugin-cache-advacned`](..) is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
+    The [`gatewayd-plugin-cache-advanced`](https://github.com/gatewayd-io/gatewayd-plugin-cache-advanced) is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
 
 - **SQL injection detection and prevention** (WIP)
 
     The `gatewayd-plugin-idp` is an enterprise plugin that uses a machine-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data.
 
-These are just a few examples and the list is by no means exhaustive, as new plugins are constantly developed.
+These are just a few examples and the list is not exhaustive, as new plugins are constantly developed.
 
 ## What GatewayD does not do
 
