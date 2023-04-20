@@ -104,7 +104,7 @@ docker exec -it postgres-test psql postgresql://postgres:postgres@172.17.0.1:154
 
 Now you can create a table and insert data into it. Querying the data will trigger the cache plugin to store the results in Redis and subsequent SELECT queries will be served from the cache. The moment you insert a new value into the table or update a row, all the cached values from that table will be invalidated.
 
-```
+```sql
 postgres=# create table test (id int);
 CREATE TABLE
 postgres=# insert into test values (1);
@@ -138,7 +138,7 @@ docker exec -it redis-test redis-cli dbsize
 
 Now, insert a new row into the `test` table:
 
-```
+```sql
 postgres=# insert into test values (1); -- The cache is invalidated.
 INSERT 0 1
 ```
