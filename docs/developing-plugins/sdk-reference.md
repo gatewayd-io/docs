@@ -9,14 +9,11 @@ parent: Developing Plugins
 
 The GatewayD plugin [SDK](https://github.com/gatewayd-io/gatewayd-plugin-sdk) provides a number of interfaces, structs and methods to help you build your plugin. This section provides a reference to all of them. The SDK is built for Go, but the protocol buffers definitions can be used to build plugins in other languages.
 
-> **⚠️ Warning**
->
+{: .warning }
 > This documentation is not complete. Please refer to the [SDK source code](https://github.com/gatewayd-io/gatewayd-plugin-sdk) for more information. Also, it might be removed in the future in favor of [GoDoc](https://pkg.go.dev/github.com/gatewayd-io/gatewayd-plugin-sdk).
 
-> **🚧 Work in Progress**
->
+{: .wip }
 > The SDK is still in development and [subject to change](https://github.com/gatewayd-io/gatewayd-plugin-sdk/issues).
-
 
 ## Packages
 

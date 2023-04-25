@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Template Projects
-nav_order: 3
+nav_order: 4
 parent: Developing Plugins
 ---
 
