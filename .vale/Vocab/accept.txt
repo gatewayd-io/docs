@@ -83,3 +83,5 @@ postgres
 pid
 maxBackups
 Postgres
+GatewayD
+gatewayd
