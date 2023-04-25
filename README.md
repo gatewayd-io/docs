@@ -69,3 +69,29 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [ ] Error reporting
   - [ ] Release notes
   - [ ] [Glossary](docs/miscellaneous/glossary.md)
+
+## Running the docs locally
+
+The docs are built using [Jekyll](https://jekyllrb.com/) and the [just-the-docs](https://just-the-docs.github.io/just-the-docs/) theme. To run the docs locally, you need to have Git and Ruby installed. Then, install Jekyll and Bundler:
+
+```bash
+gem install jekyll bundler
+```
+
+Then, install the dependencies:
+
+```bash
+bundle install
+```
+
+Finally, run the docs:
+
+```bash
+bundle exec jekyll serve
+```
+
+If you want to clean the build directory, run:
+
+```bash
+bundle exec jekyll clean
+```
