@@ -40,19 +40,19 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [Proposals](docs/using-plugins/proposals.md)
 - Developing plugins
   - [x] [Plugin developers guide](docs/developing-plugins/plugin-developers-guide.md)
-  - [x] [SDKFix redirects and other settings reference](docs/developing-plugins/sdk-reference.md)
+  - [x] [SDK](docs/developing-plugins/sdk-reference.md)
   - [x] [gRPC API reference](docs/developing-plugins/grpc-api-reference.md)
   - [x] [Template projects](docs/developing-plugins/template-projects.md)
 - GatewayD versus (move to the blog?)
-  - [ ] Bouncers (PgBouncer, PgPool-II and pgcat)
-  - [ ] MaxScale
-  - [ ] ProxySQL
-  - [ ] Acra
-  - [ ] Stargate
-  - [ ] Heimdall Data
-  - [ ] Bytebase
-  - [ ] Airbyte
-  - [ ] Arana
+  - [ ] Bouncers (`PgBouncer`, `PgPool-II` and `pgcat`)
+  - [ ] `MaxScale`
+  - [ ] `ProxySQL`
+  - [ ] `Acra`
+  - [ ] `Stargate`
+  - [ ] `Heimdall Data`
+  - [ ] `Bytebase`
+  - [ ] `Airbyte`
+  - [ ] `Arana`
 - Community
   - [ ] Learning
   - [ ] Contributing
@@ -72,7 +72,7 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
 
 ## Running the docs locally
 
-The docs are built using [Jekyll](https://jekyllrb.com/) and the [just-the-docs](https://just-the-docs.github.io/just-the-docs/) theme. To run the docs locally, you need to have Git and Ruby installed. Then, install Jekyll and Bundler:
+The docs are built using [Jekyll](https://jekyllrb.com/) and the [just-the-docs](https://just-the-docs.github.io/just-the-docs/) theme. To run the docs locally, you need to have Git and Ruby installed. Then, install Jekyll and `bundler`:
 
 ```bash
 gem install jekyll bundler
