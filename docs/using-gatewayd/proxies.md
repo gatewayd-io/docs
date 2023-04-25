@@ -7,7 +7,7 @@ parent: Using GatewayD
 
 # Proxies
 
-Proxy object is used to create a binding between incoming connections from the database clients to the database servers. Each incoming connection will connect to the [server](03-servers.md). Upon connection, the server object instructs the [proxy](06-proxies.md) object to assign an available [client](04-clients.md) object from the [pool](05-pools.md). If no client object is available, the proxy object will reject the incoming connection with an error.
+Proxy object is used to create a binding between incoming connections from the database clients to the database servers. Each incoming connection will connect to the [server](servers). Upon connection, the server object instructs the [proxy](proxies) object to assign an available [client](clients) object from the [pool](pools). If no client object is available, the proxy object will reject the incoming connection with an error.
 
 If any traffic comes from the incoming connection, it will be forwarded to the server. It will wait for the server to respond and forward the response back to the incoming connection. The proxy object will also handle the connection health check and the connection timeout.
 
@@ -27,8 +27,7 @@ sequenceDiagram
     server->>database client: ready
 ```
 
-> **🗒️ Note**
->
+{: .note }
 > Both the available pool and the busy pool are created and managed by the proxy object.
 
 ## Traffic handling

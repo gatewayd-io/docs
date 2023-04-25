@@ -8,7 +8,7 @@ grand_parent: Using GatewayD
 
 # Clients
 
-GatewayD supports multiple client configurations. Each client in each configuration group will connect to the same database server specified in the configuration parameters and will be added to its corresponding [pool](04-pools.md) based on their configuration group, i.e. `default`.
+GatewayD supports multiple client configurations. Each client in each configuration group will connect to the same database server specified in the configuration parameters and will be added to its corresponding [pool](pools) based on their configuration group, i.e. `default`.
 
 ## Configuration parameters
 

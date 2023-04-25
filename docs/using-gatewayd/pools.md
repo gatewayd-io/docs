@@ -17,10 +17,9 @@ GatewayD has a generic internal pool object that is used to manage plugins and c
 
 ## Size, length and capacity
 
-The size of the pool, that is set in the [pool](01-configuration/01-global-configuration/04-pools.md) configuration, refers to the maximum capacity of the pool object, that is, how many objects it can possibly hold. The length of the pool is the current size of the object, that is, how many object it currently has.
+The size of the pool, that is set in the [pool](global-configuration/pools) configuration, refers to the maximum capacity of the pool object, that is, how many objects it can possibly hold. The length of the pool is the current size of the object, that is, how many object it currently has.
 
 An empty pool, or zero-sized pool, has no upper-bound limit and it is used in the plugin registry.
 
-> **⚠️ Warning**
->
+{: .warning }
 > It is *not* recommended to set the size of the pool to zero, as it might causes the pool to grow infinitely and cause unknown behaviors.

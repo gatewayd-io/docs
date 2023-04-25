@@ -7,11 +7,11 @@ parent: Using GatewayD
 
 # Clients
 
-Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](05-pools.md). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
+Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](pools). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
 
 ## Pools and proxies
 
-The clients work directly with the [pool](05-pools.md) and the [proxy](06-proxies.md) objects. When a new client connection is established, it is put into the pool it belong to. In turn, the pool itself belongs to a proxy object.
+The clients work directly with the [pool](pools) and the [proxy](proxies) objects. When a new client connection is established, it is put into the pool it belong to. In turn, the pool itself belongs to a proxy object.
 
 ## Receive chunk size
 
@@ -19,11 +19,10 @@ Usually the incoming queries are small and can easily be sent to the database se
 
 The chunk size is adjustable, however, there is a trade-off. The smaller the number, the more it might take to read the entire message into the internal buffer. You can try to adjust the chunk size based on the response size from your database server.
 
-> **🗒️ Note**
+{: .note }
+> The response size can be observed by setting the (log) level of the [logger](global-configuration/loggers) to `debug` and watching messages with the following format. The `length` key shows the response size in bytes.
 >
-> The response size can be observed by setting the (log) level of the [logger](01-configuration/01-global-configuration/01-loggers.md) to `debug` and watching messages with the following format. The `length` key shows the response size in bytes.
->
-> ```log
+> ```bash
 > 2023-04-15T14:08:28+02:00 DBG Received data from database function=proxy.passthrough length=468 local=... remote=...
 > ```
 
@@ -33,6 +32,5 @@ You can also use tools such as [fluentbit](https://fluentbit.io/) to stream and 
 
 You have the option to set deadlines on send and receive calls to the database server. The client, in turn, sets the deadlines on the underlying connection object.
 
-> **⚠️ Warning**
->
+{: .warning }
 > Setting send and receive deadlines are tricky, as the database server might kill the connection abruptly if it ceases to receive the data in whole. This also makes the connection unstable.

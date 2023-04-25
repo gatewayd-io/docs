@@ -7,11 +7,10 @@ parent: Using GatewayD
 
 # API
 
-> **⚠️ Warning**
->
+{: .warning }
 > Currently the API is WIP and [subject to change](https://github.com/gatewayd-io/gatewayd/issues/181).
 
-GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `gatewayd` process and its plugins. The API is currently used by plugins to query the `gatewayd` process for runtime configuration. The API can be configured via the [global configuration file](01-configuration/01-global-configuration/07-api.md).
+GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `gatewayd` process and its plugins. The API is currently used by plugins to query the `gatewayd` process for runtime configuration. The API can be configured via the [global configuration file](global-configuration/api).
 
 ## gRPC API
 

@@ -8,8 +8,7 @@ grand_parent: Using GatewayD
 
 # API
 
-> **⚠️ Warning**
->
+{: .warning }
 > Currently the API is WIP and [subject to change](https://github.com/gatewayd-io/gatewayd/issues/181).
 
 GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `gatewayd` process and its plugins. The API is currently used by plugins to query the `gatewayd` process for runtime configuration.
@@ -23,9 +22,8 @@ GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `
 | grpcNetwork | string  | tcp             | tcp, unix       | The network to listen on for gRPC requests.                                    |
 | grpcAddress | string  | localhost:19090 | Valid host:port | The address to listen on for gRPC requests.                                    |
 
-> **🗒️ Note**
->
-> If you change the default values for `httpAddress` or `grpcAddress`, you must also update the [plugin configuration](../02-plugins-configuration/02-plugins-configuration.md) to reflect the new values.
+{: .note }
+> If you change the default values for `httpAddress` or `grpcAddress`, you must also update the [plugin configuration](../plugins-configuration/plugins-configuration) to reflect the new values.
 
 ## Example configuration
 
