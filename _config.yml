@@ -71,3 +71,13 @@ callouts:
   warning:
     title: ⚠️ Warning
     color: yellow
+
+aux_links:
+  GitHub:
+    - "https://github.com/gatewayd-io/gatewayd"
+  Twitter:
+    - "https://twitter.com/gatewaydio"
+  Linkedin:
+    - "https://www.linkedin.com/company/gatewayd/"
+  # Email:
+  #   - "mailto:docs@gatewayd.io"
