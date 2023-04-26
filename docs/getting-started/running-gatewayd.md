@@ -51,8 +51,8 @@ Download and extract GatewayD and the cache plugin using the following commands:
 
 ```bash
 mkdir gatewayd && cd gatewayd
-wget https://github.com/gatewayd-io/gatewayd/releases/download/v0.6.0/gatewayd-linux-amd64-v0.6.0.tar.gz
-tar xf gatewayd-linux-amd64-v0.6.0.tar.gz
+wget https://github.com/gatewayd-io/gatewayd/releases/download/v0.6.1/gatewayd-linux-amd64-v0.6.1.tar.gz
+tar xf gatewayd-linux-amd64-v0.6.1.tar.gz
 wget https://github.com/gatewayd-io/gatewayd-plugin-cache/releases/download/v0.1.7/gatewayd-plugin-cache-linux-amd64-v0.1.7.tar.gz
 tar xf gatewayd-plugin-cache-linux-amd64-v0.1.7.tar.gz
 ```
