@@ -10,7 +10,7 @@ parent: Getting Started
 GatewayD binaries are currently available for Linux and macOS.
 
 {: .wip }
-> Support for [packages for different distribution](https://github.com/gatewayd-io/gatewayd/issues/136) and the [Docker image](https://github.com/gatewayd-io/gatewayd/issues/137) is in the works.
+> Support for [packages for different distributions](https://github.com/gatewayd-io/gatewayd/issues/136) and the [Docker image](https://github.com/gatewayd-io/gatewayd/issues/137) are in the works.
 
 ## Downloading the GatewayD binary
 
