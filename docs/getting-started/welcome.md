@@ -48,11 +48,11 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
 - **Advanced caching** (WIP)
 
-    The [`gatewayd-plugin-cache-advanced`](https://github.com/gatewayd-io/gatewayd-plugin-cache-advanced) is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
+    The `gatewayd-plugin-cache-advanced` is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
 
 - **SQL injection detection and prevention** (WIP)
 
-    The `gatewayd-plugin-idp` is an enterprise plugin that uses a machine-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data.
+    The `gatewayd-plugin-sql-idp` is an enterprise plugin that uses a machine-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data.
 
 These are just a few examples and the list is not exhaustive, as new plugins are constantly developed.
 
