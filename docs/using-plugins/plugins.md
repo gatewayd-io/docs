@@ -20,7 +20,7 @@ They are responsible for the following:
 - Parsing SQL queries from the client
 - Parsing responses from the server
 
-For example, the [gatewayd-plugin-cache](https://github.com/gatewayd-io/gatewayd-plugin-cache) decodes the [PostgreSQL wire protocol](../miscellaneous/glossary#postgresql-wire-protocol), extracts the SQL select query from the client, and then caches the result of the query in Redis. The next time the same select query is sent, the plugin will return the cached result instead of sending the query to the server. It also checks if the query is an upsert, delete, alter or drop query, and it will invalidate the cache based on the table in the query. This is a very simple example of what a plugin can do.
+For example, the [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache) decodes the [PostgreSQL wire protocol](../miscellaneous/glossary#postgresql-wire-protocol), extracts the SQL select query from the client, and then caches the result of the query in Redis. The next time the same select query is sent, the plugin will return the cached result instead of sending the query to the server. It also checks if the query is an upsert, delete, alter or drop query, and it will invalidate the cache based on the table in the query. This is a very simple example of what a plugin can do.
 
 Plugins are generally written in Go, but can be written in any other language, and are compiled into a stand-alone executable file to be run by GatewayD. The executable is then loaded by GatewayD at startup.
 
@@ -114,6 +114,6 @@ Plugins can be verified by their checksum, which is a SHA256 checksum of the plu
 
 ## Plugin naming convention
 
-Plugin names usually follow the format `gatewayd-plugin-<plugin-name>`. For example, the [gatewayd-plugin-cache](https://github.com/gatewayd-io/gatewayd-plugin-cache), but the community can choose to use any name they want. The plugin name is used to identify the plugin, and it is also used to identify the plugin's version. The plugin name is configurable in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration).
+Plugin names usually follow the format `gatewayd-plugin-<plugin-name>`. For example, the [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache), but the community can choose to use any name they want. The plugin name is used to identify the plugin, and it is also used to identify the plugin's version. The plugin name is configurable in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration).
 
 We recommend that plugin developers use unique names with the `gatewayd-plugin-` prefix to avoid naming conflicts with other plugins.

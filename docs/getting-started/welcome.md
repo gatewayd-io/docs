@@ -44,7 +44,7 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
 - **Caching results of queries**
 
-    The [`gatewayd-plugin-cache`](https://github.com/gatewayd-io/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
+    The [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
 
 - **Advanced caching** (WIP)
 

@@ -114,7 +114,7 @@ GatewayD supports plugins. Plugins configuration is called `gatewayd_plugins.yam
 - [General configuration](plugins-configuration/general-configurations)
 - [Plugins configuration](plugins-configuration/plugins-configuration)
 
-This is the complete plugins config file with the default values and an example plugin:
+This is the complete plugins config file with the default values and an example plugin: [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache):
 
 ```yaml
 verificationPolicy: "passdown"
