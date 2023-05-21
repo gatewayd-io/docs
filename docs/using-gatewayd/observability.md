@@ -11,7 +11,7 @@ Observability is a first-class citizen of GatewayD. It generates logs, metrics a
 
 ## Configuration
 
-The configuration parameters for [logging](global-configuration/loggers) and [metrics](global-configuration/metrics) are available in the [global configuration](configuration) file: `gatewayd.yaml`. Tracing can be enabled via the `--tracing` flag of the [CLI](CLI).
+The configuration parameters for [logging](global-configuration/loggers) and [metrics](global-configuration/metrics) are available in the [global configuration](configuration) file: `gatewayd.yaml`. Tracing can be enabled via the `--tracing` flag of the `run` subcommand of the [CLI](CLI).
 
 ## Logs
 

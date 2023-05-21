@@ -11,7 +11,7 @@ GatewayD application collects and send some pieces of information to the followi
 
 ## GatewayD usage report service
 
-The application sends the following information to the GatewayD usage report service. The service is enabled by default and can be disabled with the `--usage-report=false` flag. The service is used to collect information about the usage of the application and plugins and is not used for any other purpose. We will do our best to keep the information collected by the service anonymous (no PII) and not to share it with any third parties. Also, the service is not used to track users or their activity. The information is reported every time the application is started and includes the following:
+The application sends the following information to the GatewayD usage report service. The service is enabled by default and can be disabled with the `--usage-report=false` flag of the `run` subcommand. The service is used to collect information about the usage of the application and plugins and is not used for any other purpose. We will do our best to keep the information collected by the service anonymous (no PII) and not to share it with any third parties. Also, the service is not used to track users or their activity. The information is reported every time the application is started and includes the following:
 
 1. Version of the application (string)
 2. Runtime version of Go (string)
@@ -27,7 +27,7 @@ The protocol buffer and gRPC definitions of the service can be found in the [usa
 
 ## Sentry error reporting service
 
-The application sends the following information to the Sentry error reporting service. The service is enabled by default and can be disabled with the `--sentry=false` flag. The service is used to report errors and crashes of the application and plugins and is not used for any other purpose.
+The application sends the following information to the Sentry error reporting service. The service is enabled by default and can be disabled with the `--sentry=false` flag of the `run` subcommand. The service is used to report errors and crashes of the application and plugins and is not used for any other purpose.
 
 ### Implementation details of Sentry error reporting service
 
