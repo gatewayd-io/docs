@@ -79,6 +79,13 @@ The acceptance policy controls how new dynamic hooks are handled. If a plugin re
 - `accept` (default): the new hook is accepted and registered.
 - `reject`: the new hook is rejected and not registered.
 
+### Termination policy
+
+The termination policy controls how to handle the termination of requests. If a plugin terminates a request, the termination policy controls whether to stop executing the remaining plugins or not. If the termination policy is set to "stop", the remaining plugins are not executed. If the termination policy is set to "continue", the remaining plugins are executed. Warning: if the termination policy is set to "continue", the output of the remaining plugins might be passed down to the next plugin, and the result depends on the what the remaining plugins do.
+
+- `stop` (default): the remaining plugins are not executed.
+- `continue`: the remaining plugins are executed.
+
 ## Health check
 
 Plugins are monitored by GatewayD, and if they crash, GatewayD will reload them. The health check is done by sending a ping to the plugin, and if the plugin does not respond within the timeout, GatewayD will reload the plugin. The `healthCheckPeriod` is configurable in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.

@@ -120,6 +120,7 @@ This is the complete plugins config file with the default values and an example 
 verificationPolicy: "passdown"
 compatibilityPolicy: "strict"
 acceptancePolicy: "accept"
+terminationPolicy: "stop"
 enableMetricsMerger: True
 metricsMergerPeriod: 5s
 healthCheckPeriod: 5s
