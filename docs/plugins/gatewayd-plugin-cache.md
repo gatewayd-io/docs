@@ -67,6 +67,7 @@ plugins:
       - PERIODIC_INVALIDATOR_INTERVAL=1m
       - PERIODIC_INVALIDATOR_START_DELAY=1m
       - API_ADDRESS=localhost:18080
+      - EXIT_ON_STARTUP_ERROR=False
     checksum: 3988e10aefce2cd9b30888eddd2ec93a431c9018a695aea1cea0dac46ba91cae
 ```
 
@@ -86,6 +87,7 @@ plugins:
 | `PERIODIC_INVALIDATOR_INTERVAL`    | The interval for periodic cache invalidation.                                                                                                    | `1m`                                                               |
 | `PERIODIC_INVALIDATOR_START_DELAY` | The delay before starting periodic cache invalidation.                                                                                           | `1m`                                                               |
 | `API_ADDRESS`                      | The address for the GatewayD REST API server.                                                                                                    | `localhost:18080`                                                  |
+| `EXIT_ON_STARTUP_ERROR`            | Whether to exit the plugin if there is an error during startup.                                                                                  | `False`                                                            |
 
 ### Command-line arguments
 
