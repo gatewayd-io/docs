@@ -179,16 +179,9 @@ func (p *Plugin) OnConfigLoaded(
   if req.Fields == nil {
     req.Fields = make(map[string]*structpb.Value)
   }
-  req.Fields["loggers.default.level"] = &structpb.Value{
-    Kind: &structpb.Value_StringValue{
-      StringValue: "debug",
-    },
-  }
-  req.Fields["loggers.default.noColor"] = &structpb.Value{
-    Kind: &structpb.Value_BoolValue{
-      BoolValue: false,
-    },
-  }
+
+  req.Fields["loggers.default.level"] = structpb.NewStringValue("debug")
+  req.Fields["loggers.default.noColor"] = structpb.NewBoolValue(false)
 
   return req, nil
 }
