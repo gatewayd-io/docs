@@ -14,7 +14,7 @@ GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `
 
 ## gRPC API
 
-The gRPC API uses protocol buffers, which is defined in the [`gatewayd.proto`](https://github.com/gatewayd-io/gatewayd/blob/main/api/v1/api.proto) file.
+The gRPC API uses protocol buffers, which is defined in the [`api.proto`](https://github.com/gatewayd-io/gatewayd/blob/main/api/v1/api.proto) file.
 
 ## HTTP Gateway
 
