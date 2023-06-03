@@ -79,7 +79,7 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 1. listening on port `15432` with 10 connections to postgres in the pool.
 2. running the `gatewayd-plugin-cache`.
 3. having the pid `41568`.
-4. exposing aggregated Prometheus metrics on `http://localhost:2112/`.
+4. exposing aggregated Prometheus metrics on `http://localhost:9090/`.
 5. exposing an HTTP and a gRPC API on ports `18080` and `19090`.
 
 ```bash
@@ -90,7 +90,7 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 2023-04-08T02:01:04+02:00 INF Plugin is ready name=gatewayd-plugin-cache
 2023-04-08T02:01:04+02:00 INF Started the metrics merger scheduler metricsMergerPeriod=5s startDelay=1680912069
 2023-04-08T02:01:04+02:00 INF Starting plugin health check scheduler healthCheckPeriod=5s
-2023-04-08T02:01:04+02:00 INF Metrics are exposed address=http://localhost:2112/metrics
+2023-04-08T02:01:04+02:00 INF Metrics are exposed address=http://localhost:9090/metrics
 2023-04-08T02:01:04+02:00 INF There are clients available in the pool count=10 name=default
 2023-04-08T02:01:04+02:00 INF Started the client health check scheduler healthCheckPeriod=1m0s startDelay=2023-04-08T02:02:04+02:00
 2023-04-08T02:01:04+02:00 INF GatewayD is listening address=0.0.0.0:15432

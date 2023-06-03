@@ -57,7 +57,7 @@ loggers: # ⬅️ Configuration object
 metrics:
   default:
     enabled: True
-    address: localhost:2112
+    address: localhost:9090
     path: /metrics
 
 clients:

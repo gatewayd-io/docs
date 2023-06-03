@@ -27,7 +27,7 @@ The log level of GatewayD affects the aggregation of logs from the plugins. For 
 
 ## Metrics
 
-Metrics are exposed from GatewayD and the plugins in Prometheus format. GatewayD collects, relabels and merges Prometheus metrics from all the plugins and exposes them over `http://localhost:2112/metrics` by default, which is [configurable](global-configuration/metrics#configuration-parameters). List of built-in metrics are available [here](global-configuration/metrics#built-in-metrics).
+Metrics are exposed from GatewayD and the plugins in Prometheus format. GatewayD collects, relabels and merges Prometheus metrics from all the plugins and exposes them over `http://localhost:9090/metrics` by default, which is [configurable](global-configuration/metrics#configuration-parameters). List of built-in metrics are available [here](global-configuration/metrics#built-in-metrics).
 
 ![Metrics](assets/prometheus.png)
 

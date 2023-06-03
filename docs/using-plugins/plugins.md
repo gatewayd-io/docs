@@ -30,7 +30,7 @@ For more information on how to configure plugins, see [general configuration](..
 
 ## Lifecycle
 
-Plugins are loaded on startup. They are present during the entire lifetime of GatewayD, and will be reloaded if they crash. Crash detection is done by the health check, which is described in more detail below. Metrics are merged from all plugins, and are exposed on the [`https://localhost:2112/metrics`](https://localhost:2112/metrics) endpoint by GatewayD. The rest of the functionality is described in more detail below.
+Plugins are loaded on startup. They are present during the entire lifetime of GatewayD, and will be reloaded if they crash. Crash detection is done by the health check, which is described in more detail below. Metrics are merged from all plugins, and are exposed on the [`https://localhost:9090/metrics`](https://localhost:9090/metrics) endpoint by GatewayD. The rest of the functionality is described in more detail below.
 
 ```mermaid
 sequenceDiagram
@@ -100,7 +100,7 @@ Plugin hooks have a timeout, which is configurable in the [general configuration
 
 ## Metrics merger
 
-Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with metrics of GatewayD and exposed on the [`https://localhost:2112/metrics`](https://localhost:2112/metrics) endpoint. The metrics merger is configurable in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.
+Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with metrics of GatewayD and exposed on the [`https://localhost:9090/metrics`](https://localhost:9090/metrics) endpoint. The metrics merger is configurable in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.
 
 If a plugin developer chooses to expose metrics over HTTP, they can be scraped by Prometheus, but they won't be merged with metrics of GatewayD.
 

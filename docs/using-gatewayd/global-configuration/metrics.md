@@ -8,7 +8,7 @@ grand_parent: Using GatewayD
 
 # Metrics
 
-GatewayD currently supports a single Prometheus metrics output. It collects, relabels and merges metrics from plugins over Unix Domain Socket and exposes them over HTTP. The aggregated metrics are accessible via [http://localhost:2112/metrics](http://localhost:2112/metrics) by default.
+GatewayD currently supports a single Prometheus metrics output. It collects, relabels and merges metrics from plugins over Unix Domain Socket and exposes them over HTTP. The aggregated metrics are accessible via [http://localhost:9090/metrics](http://localhost:9090/metrics) by default.
 
 You can add a new [`scrape_config`](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config) to your Prometheus config file to scrape the metrics from GatewayD:
 
@@ -16,7 +16,7 @@ You can add a new [`scrape_config`](https://prometheus.io/docs/prometheus/latest
 scrape_configs:
   - job_name: "gatewayd"
     static_configs:
-      - targets: ["localhost:2112"]
+      - targets: ["localhost:9090"]
 ```
 
 ## Configuration parameters
@@ -24,7 +24,7 @@ scrape_configs:
 | Name    | Type    | Default value  | Possible values   | Description                                    |
 | ------- | ------- | -------------- | ----------------- | ---------------------------------------------- |
 | enabled | boolean | True           | True, False       | The network protocol to use                    |
-| address | string  | localhost:2112 | Valid host:port   | The HTTP address and port to expose metrics on |
+| address | string  | localhost:9090 | Valid host:port   | The HTTP address and port to expose metrics on |
 | path    | string  | /metrics       | Valid path values | The endpoint to expose metrics on              |
 
 ## Built-in Metrics
@@ -55,6 +55,6 @@ The following are built-in metrics emitted by GatewayD. The namespace of all the
 metrics:
   default:
     enabled: True
-    address: localhost:2112
+    address: localhost:9090
     path: /metrics
 ```
