@@ -17,6 +17,12 @@ GatewayD is fully configurable via various sources, including default values, YA
 6. Environment variables for global config.
 7. Global config updated by plugins via the `OnConfigLoaded` hooks. ⬆️
 
+## Generating and validating config files
+
+You can generate the default global and plugins config files using the `gatewayd config init` and `gatewayd plugin init` commands. The generated files will be placed in the current working directory, unless you specify a different location using the `--config` or `--plugin-config` flags.
+
+To validate the global and plugins config files, you can use the `gatewayd config lint` and `gatewayd plugin lint` commands. The `--config` and `--plugin-config` flags can be used to specify the location of the config files.
+
 ## Global configuration
 
 Global configuration contains all the config parameters for managing a running GatewayD instance. It includes parameters for configuring:
