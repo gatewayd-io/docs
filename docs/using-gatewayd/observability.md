@@ -44,7 +44,7 @@ Tracing can be enabled from the CLI. Once enabled, GatewayD will send traces in 
 Currently the traces are generated for the following events and they are all grouped under the `GatewayD` service:
 
 * Creation and initialization of GatewayD objects
-* Sentry initialization
+* Sentry initialization (on `run` only)
 * Plugin health check and its events
 * Metrics server
 * Server start and shutdown
