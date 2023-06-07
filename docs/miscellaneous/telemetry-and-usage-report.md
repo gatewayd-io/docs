@@ -27,7 +27,7 @@ The protocol buffer and gRPC definitions of the service can be found in the [usa
 
 ## Sentry error reporting service
 
-The application sends the following information to the Sentry error reporting service. The service is enabled by default and can be disabled with the `--sentry=false` flag of the `run` subcommand. The service is used to report errors and crashes of the application and plugins and is not used for any other purpose.
+The application sends the following information to the Sentry error reporting service. The service is enabled by default and can be disabled with the `--sentry=false` flag of all the subcommands. The service is used to report errors and crashes of the application and plugins and is not used for any other purpose.
 
 ### Implementation details of Sentry error reporting service
 

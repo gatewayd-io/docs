@@ -103,7 +103,19 @@ If you want to publish your plugin to GitHub, you can use the following workflow
 {: .note }
 > You must modify the example `Makefile`, `release.yaml` and `test.yaml` files to match your plugin.
 
-## Step 8: Publish your plugin to the GatewayD plugin registry
+## Step 8: Publish your plugin
+
+If you want GatewayD to install your plugin from GitHub, you must adhere to the following rules:
+
+1. The plugin binary must be named as the repository name, aka. the plugin name.
+2. The plugin binary must be placed in the root directory of the release asset.
+3. The checksums should be generated using sha256sum, published as release assets and named `checksums.txt`.
+4. The release assets must be published as `tar.gz` archives.
+5. The release assets must follow the naming convention: `plugin-name-$GOOS-$GOARCH-version.tar.gz`.
+6. The releases must follow semantic versioning and prefixed with `v`.
+7. The `latest` release must point to the latest release, otherwise the plugin will not be installed if the version is not specified.
+
+## Step 9: Publish your plugin to the GatewayD plugin registry
 
 We have [plans](https://github.com/gatewayd-io/proposals/issues/8) to create a plugin registry for GatewayD. Until then, you can publish your plugin on GitHub.
 
