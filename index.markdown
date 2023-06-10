@@ -1,7 +1,5 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
+# TODO: Remove this redirect once we have a proper landing page
 redirect_to: /docs/getting-started/welcome
 ---
