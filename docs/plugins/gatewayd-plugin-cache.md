@@ -68,26 +68,28 @@ plugins:
       - PERIODIC_INVALIDATOR_START_DELAY=1m
       - API_ADDRESS=localhost:18080
       - EXIT_ON_STARTUP_ERROR=False
+      - SENTRY_DSN=https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328
     checksum: 3988e10aefce2cd9b30888eddd2ec93a431c9018a695aea1cea0dac46ba91cae
 ```
 
 ### Environment variables
 
-| Name                               | Description                                                                                                                                      | Default                                                            |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `MAGIC_COOKIE_KEY`                 | The key for the magic cookie.                                                                                                                    | `GATEWAYD_PLUGIN`                                                  |
-| `MAGIC_COOKIE_VALUE`               | The value for the magic cookie.                                                                                                                  | `5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872` |
-| `REDIS_URL`                        | The URL of the Redis server.                                                                                                                     | `redis://localhost:6379/0`                                         |
-| `EXPIRY`                           | The expiry time for cached data.                                                                                                                 | `1h`                                                               |
-| `DEFAULT_DB_NAME`                  | The default database name, in case you have a single database on your database server.                                                           | `postgres`                                                         |
-| `METRICS_ENABLED`                  | Whether to enable metrics.                                                                                                                       | `True`                                                             |
-| `METRICS_UNIX_DOMAIN_SOCKET`       | The path to the Unix domain socket for exposing metrics. This must be accessible to GatewayD.                                                    | `/tmp/gatewayd-plugin-cache.sock`                                  |
-| `METRICS_PATH`                     | The path for exposing metrics.                                                                                                                   | `/metrics`                                                         |
-| `PERIODIC_INVALIDATOR_ENABLED`     | Whether to enable periodic cache invalidation. This runs every `PERIODIC_INVALIDATOR_INTERVAL` and removes stale client keys, not cached values. | `True`                                                             |
-| `PERIODIC_INVALIDATOR_INTERVAL`    | The interval for periodic cache invalidation.                                                                                                    | `1m`                                                               |
-| `PERIODIC_INVALIDATOR_START_DELAY` | The delay before starting periodic cache invalidation.                                                                                           | `1m`                                                               |
-| `API_ADDRESS`                      | The address for the GatewayD REST API server.                                                                                                    | `localhost:18080`                                                  |
-| `EXIT_ON_STARTUP_ERROR`            | Whether to exit the plugin if there is an error during startup.                                                                                  | `False`                                                            |
+| Name                               | Description                                                                                                                                      | Default                                                                                        |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `MAGIC_COOKIE_KEY`                 | The key for the magic cookie.                                                                                                                    | `GATEWAYD_PLUGIN`                                                                              |
+| `MAGIC_COOKIE_VALUE`               | The value for the magic cookie.                                                                                                                  | `5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872`                             |
+| `REDIS_URL`                        | The URL of the Redis server.                                                                                                                     | `redis://localhost:6379/0`                                                                     |
+| `EXPIRY`                           | The expiry time for cached data.                                                                                                                 | `1h`                                                                                           |
+| `DEFAULT_DB_NAME`                  | The default database name, in case you have a single database on your database server.                                                           | `postgres`                                                                                     |
+| `METRICS_ENABLED`                  | Whether to enable metrics.                                                                                                                       | `True`                                                                                         |
+| `METRICS_UNIX_DOMAIN_SOCKET`       | The path to the Unix domain socket for exposing metrics. This must be accessible to GatewayD.                                                    | `/tmp/gatewayd-plugin-cache.sock`                                                              |
+| `METRICS_PATH`                     | The path for exposing metrics.                                                                                                                   | `/metrics`                                                                                     |
+| `PERIODIC_INVALIDATOR_ENABLED`     | Whether to enable periodic cache invalidation. This runs every `PERIODIC_INVALIDATOR_INTERVAL` and removes stale client keys, not cached values. | `True`                                                                                         |
+| `PERIODIC_INVALIDATOR_INTERVAL`    | The interval for periodic cache invalidation.                                                                                                    | `1m`                                                                                           |
+| `PERIODIC_INVALIDATOR_START_DELAY` | The delay before starting periodic cache invalidation.                                                                                           | `1m`                                                                                           |
+| `API_ADDRESS`                      | The address for the GatewayD REST API server.                                                                                                    | `localhost:18080`                                                                              |
+| `EXIT_ON_STARTUP_ERROR`            | Whether to exit the plugin if there is an error during startup.                                                                                  | `False`                                                                                        |
+| `SENTRY_DSN`                       | Sentry DSN. Set to empty string to disable Sentry.                                                                                               | `https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328` |
 
 ### Command-line arguments
 

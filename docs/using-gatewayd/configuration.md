@@ -151,6 +151,7 @@ plugins:
       - PERIODIC_INVALIDATOR_START_DELAY=1m
       - API_ADDRESS=localhost:18080
       - EXIT_ON_STARTUP_ERROR=False
+      - SENTRY_DSN=https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328
     checksum: 28456728dd3427b91d2e22f38b909526355d1b2becc9379581e1b70bb9495aa9
 ```
 
