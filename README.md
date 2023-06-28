@@ -43,6 +43,8 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [x] [SDK](docs/developing-plugins/sdk-reference.md)
   - [x] [gRPC API reference](docs/developing-plugins/grpc-api-reference.md)
   - [x] [Template projects](docs/developing-plugins/template-projects.md)
+- Plugins
+  - [x] [gatewayd-plugin-cache](docs/plugins/gatewayd-plugin-cache.md)
 - GatewayD versus (move to the blog?)
   - [ ] Bouncers (`PgBouncer`, `PgPool-II` and `pgcat`)
   - [ ] `MaxScale`
