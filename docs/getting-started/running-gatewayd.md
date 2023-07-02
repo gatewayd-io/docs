@@ -51,10 +51,10 @@ Download and extract GatewayD and the [gatewayd-cache-plugin](../plugins/gateway
 
 ```bash
 mkdir gatewayd && cd gatewayd
-wget https://github.com/gatewayd-io/gatewayd/releases/download/v0.6.1/gatewayd-linux-amd64-v0.6.1.tar.gz
-tar xf gatewayd-linux-amd64-v0.6.1.tar.gz
-wget https://github.com/gatewayd-io/gatewayd-plugin-cache/releases/download/v0.1.7/gatewayd-plugin-cache-linux-amd64-v0.1.7.tar.gz
-tar xf gatewayd-plugin-cache-linux-amd64-v0.1.7.tar.gz
+wget https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz
+tar xf gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz
+wget https://github.com/gatewayd-io/gatewayd-plugin-cache/releases/download/{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}/gatewayd-plugin-cache-linux-amd64-{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}.tar.gz
+tar xf gatewayd-plugin-cache-linux-amd64-{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}.tar.gz
 ```
 
 ## 4. Configure and start GatewayD

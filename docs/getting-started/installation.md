@@ -25,14 +25,14 @@ Download and extract the archive for your platform, then place the `gatewayd(.ex
 For Unix-like systems, you can use the following commands to download and extract the archive:
 
 ```bash
-curl -L https://github.com/gatewayd-io/gatewayd/releases/download/v0.7.0/gatewayd-linux-amd64-v0.7.0.tar.gz | tar xvf -
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar xvf -
 ```
 
 For Windows, you can use the following commands to download and extract the archive:
 
 ```bash
-curl -L https://github.com/gatewayd-io/gatewayd/releases/download/v0.7.0/gatewayd-windows-amd64-v0.7.0.zip -o gatewayd-windows-amd64-v0.7.0.zip
-unzip gatewayd-windows-amd64-v0.7.0.zip -d gatewayd
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip -o gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip
+unzip gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip -d gatewayd
 ```
 
 ### APT and RPM packages
@@ -44,8 +44,8 @@ Alternatively, GatewayD is available as APT and RPM packages for Linux distribut
 Download the `.deb` package and install it using `dpkg`:
 
 ```bash
-curl -L https://github.com/gatewayd-io/gatewayd/releases/download/v0.7.0/gatewayd_0.7.0_amd64.deb -o gatewayd_0.7.0_amd64.deb
-sudo dpkg -i gatewayd_0.7.0_amd64.deb
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd_{% github_latest_release gatewayd-io/gatewayd v %}_amd64.deb -o gatewayd_{% github_latest_release gatewayd-io/gatewayd v %}_amd64.deb
+sudo dpkg -i gatewayd_{% github_latest_release gatewayd-io/gatewayd v %}_amd64.deb
 ```
 
 ### Install RPM package
@@ -53,8 +53,8 @@ sudo dpkg -i gatewayd_0.7.0_amd64.deb
 Download the `.rpm` package and install it using `rpm`:
 
 ```bash
-curl -L https://github.com/gatewayd-io/gatewayd/releases/download/v0.7.0/gatewayd-0.7.0.x86_64.rpm -o gatewayd-0.7.0.x86_64.rpm
-sudo rpm -i gatewayd-0.7.0.x86_64.rpm
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm -o gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm
+sudo rpm -i gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm
 ```
 
 ## Installing plugins
