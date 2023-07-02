@@ -59,12 +59,25 @@ sudo rpm -i gatewayd-0.7.0.x86_64.rpm
 
 ## Installing plugins
 
-To use GatewayD plugins, you need to download and extract them, and place them in your desired location that is accessible to GatewayD via the plugins configuration file, aka. `gatewayd_plugins.yaml`.
+Plugins are available as standalone binaries for different platforms. These binaries are available in their GitHub repositories.
+
+The plugins can be installed by using the `plugin` subcommand of `gatewayd`:
+
+```bash
+gatewayd plugin install github.com/<organization>/<plugin-name>@<version>
+```
+
+For example, to install the `gatewayd-plugin-cache` plugin:
+
+```bash
+gatewayd plugin install github.com/gatewayd-io/gatewayd-plugin-cache@latest
+```
+
+The plugin binary will be installed in the `plugins` directory in the current working directory. For more flags, please refer to the [CLI](../using-gatewayd/CLI) page or just run `gatewayd plugin install --help`.
+
+Alternatively you can manually download, extract and place the plugins' binaries in your desired location that is accessible to GatewayD via the plugins configuration file, aka. `gatewayd_plugins.yaml`.
 
 For more information about plugins, please refer to the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration) and the [plugins](../using-plugins/plugins) page.
-
-{: .wip }
-> A [`plugin` subcommand](https://github.com/gatewayd-io/gatewayd/issues/122) is in the works to simplify installation and management of plugins and their configurations.
 
 ## Building GatewayD from source
 
