@@ -34,3 +34,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 gem "just-the-docs"
 gem 'jekyll-redirect-from'
+gem 'octokit'
+gem 'github_releases'
