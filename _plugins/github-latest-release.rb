@@ -1,6 +1,8 @@
 require 'logger'
 require 'json'
 require 'octokit'
+require 'faraday'
+require 'faraday/http_cache'
 
 module Jekyll
     # Usage: {% github_releases <repository> %}
@@ -17,6 +19,14 @@ module Jekyll
             logger = Logger.new(STDOUT)
 
             begin
+                # Configure Faraday to use HTTP caching
+                stack = Faraday::RackBuilder.new do |builder|
+                    builder.use Faraday::HttpCache, serializer: Marshal, shared_cache: false
+                    builder.use Octokit::Response::RaiseError
+                    builder.adapter Faraday.default_adapter
+                end
+                Octokit.middleware = stack
+
                 # Create a new Octokit client
                 if ENV['GITHUB_TOKEN'] == nil
                     client = Octokit::Client.new
