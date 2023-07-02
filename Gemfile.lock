@@ -81,6 +81,8 @@ GEM
     faraday (2.7.9)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
+    faraday-http-cache (2.5.0)
+      faraday (>= 0.8)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
@@ -233,6 +235,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  faraday-http-cache
   github_releases
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3.2)

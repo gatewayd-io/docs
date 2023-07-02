@@ -36,3 +36,4 @@ gem "just-the-docs"
 gem 'jekyll-redirect-from'
 gem 'octokit'
 gem 'github_releases'
+gem 'faraday-http-cache'
