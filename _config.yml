@@ -82,3 +82,11 @@ aux_links:
     - "https://www.linkedin.com/company/gatewayd/"
   # Email:
   #   - "mailto:docs@gatewayd.io"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vale.ini
+  - Makefile
