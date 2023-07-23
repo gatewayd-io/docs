@@ -109,3 +109,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# generate_last_modified_data.sh auto-generated files
+we
+work.md
