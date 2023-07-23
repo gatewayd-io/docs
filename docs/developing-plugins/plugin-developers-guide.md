@@ -1,4 +1,5 @@
 ---
+last_modified_date: 2023-06-08 00:54:51 +0200
 layout: default
 title: Plugin Developers Guide
 nav_order: 1

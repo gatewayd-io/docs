@@ -1,4 +1,5 @@
 ---
+last_modified_date: 2023-06-10 00:56:10 +0200
 layout: default
 title: CLI
 nav_order: 4

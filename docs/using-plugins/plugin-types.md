@@ -1,4 +1,5 @@
 ---
+last_modified_date: 2023-04-25 12:00:47 +0200
 layout: default
 title: Plugin types
 nav_order: 5
