@@ -2,13 +2,13 @@ const toggleDarkMode = document.querySelector(".js-toggle-dark-mode")
 
 setLightMode = function () {
   localStorage.setItem("dark-mode", "false")
-  jtd.setTheme("light")
+  jtd.setTheme("gd-light")
   toggleDarkMode.textContent = "🌑 Dark"
 }
 
 setDarkMode = function () {
   localStorage.setItem("dark-mode", "true")
-  jtd.setTheme("dark")
+  jtd.setTheme("gd-dark")
   toggleDarkMode.textContent = "☀️ Light"
 }
 
