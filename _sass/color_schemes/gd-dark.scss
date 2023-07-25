@@ -6,3 +6,7 @@ $light-red: #faa;
 $primary: $light-red;
 
 $link-color: $light-red;
+
+code.language-mermaid > svg {
+	background-color: #aaa !important;
+}
