@@ -2,6 +2,7 @@
 last_modified_date: 2023-07-17 21:18:54 +0200
 layout: default
 title: Running GatewayD
+description: How to run GatewayD and test it with psql
 nav_order: 4
 parent: Getting Started
 ---

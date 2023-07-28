@@ -2,6 +2,7 @@
 last_modified_date: 2023-06-08 00:54:51 +0200
 layout: default
 title: Plugin Developers Guide
+description: Plugin developers' guide of GatewayD
 nav_order: 1
 parent: Developing Plugins
 ---

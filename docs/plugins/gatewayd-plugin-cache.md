@@ -2,6 +2,7 @@
 last_modified_date: 2023-06-11 23:48:42 +0200
 layout: default
 title: gatewayd-plugin-cache
+description: GatewayD plugin for caching query results in Redis.
 nav_order: 1
 parent: Plugins
 ---

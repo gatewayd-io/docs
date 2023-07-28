@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Clients
+description: Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket.
 nav_order: 5
 parent: Using GatewayD
 ---

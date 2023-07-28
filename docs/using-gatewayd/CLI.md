@@ -2,13 +2,14 @@
 last_modified_date: 2023-06-10 00:56:10 +0200
 layout: default
 title: CLI
+description: GatewayD is a CLI application that runs on Windows, Linux-based distributions and macOS.
 nav_order: 4
 parent: Using GatewayD
 ---
 
 # CLI
 
-GatewayD is a CLI application that runs on Linux-based distributions and macOS. The application has four subcommands that are explained below:
+GatewayD is a CLI application that runs on Windows, Linux-based distributions and macOS. The application has many subcommands that are explained below:
 
 | Subcommand       | Description                                                           | Flags/Example                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ---------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

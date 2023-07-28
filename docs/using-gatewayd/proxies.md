@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Proxies
+description: Proxy object is used to create a binding between incoming connections from the database clients to the database servers.
 nav_order: 7
 parent: Using GatewayD
 ---

@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Glossary
+description: Glossary of GatewayD terms
 nav_order: 2
 parent: Miscellaneous
 ---

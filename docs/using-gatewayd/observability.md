@@ -2,6 +2,7 @@
 last_modified_date: 2023-06-08 00:21:57 +0200
 layout: default
 title: Observability
+description: Observability is a first-class citizen of GatewayD. It generates logs, metrics and traces to make it easier to see what is going on inside.
 nav_order: 8
 parent: Using GatewayD
 ---

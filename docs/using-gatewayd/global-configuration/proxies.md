@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Proxies
+description: GatewayD proxy configuration
 nav_order: 5
 parent: Global Configuration
 grand_parent: Using GatewayD

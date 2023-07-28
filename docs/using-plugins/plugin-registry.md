@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 12:00:47 +0200
 layout: default
 title: Plugin registry
+description: The plugin registry is a central place where all plugins are loaded, configured and executed, and also the main entry point for all plugins.
 nav_order: 3
 parent: Using Plugins
 ---

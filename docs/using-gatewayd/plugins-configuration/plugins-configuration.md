@@ -2,6 +2,7 @@
 last_modified_date: 2023-06-11 23:48:42 +0200
 layout: default
 title: Plugins configuration
+description: GatewayD plugins configuration
 nav_order: 2
 parent: Plugins Configuration
 grand_parent: Using GatewayD

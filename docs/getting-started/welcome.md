@@ -2,6 +2,7 @@
 last_modified_date: 2023-07-11 23:34:02 +0200
 layout: default
 title: Welcome
+description: Introduction to GatewayD and its key features
 nav_order: 2
 parent: Getting Started
 ---

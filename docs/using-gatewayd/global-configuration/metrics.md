@@ -2,6 +2,7 @@
 last_modified_date: 2023-06-03 14:16:00 +0200
 layout: default
 title: Metrics
+description: GatewayD metrics configuration
 nav_order: 2
 parent: Global Configuration
 grand_parent: Using GatewayD

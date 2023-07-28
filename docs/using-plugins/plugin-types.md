@@ -2,6 +2,8 @@
 last_modified_date: 2023-04-25 12:00:47 +0200
 layout: default
 title: Plugin types
+description: >
+    GatewayD supports a variety of plugins, which can be used to extend its functionality. Plugins are in three types: built-in, community and enterprise.
 nav_order: 5
 parent: Using Plugins
 ---

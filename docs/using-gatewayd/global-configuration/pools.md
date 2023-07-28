@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Pools
+description: GatewayD pool configuration
 nav_order: 4
 parent: Global Configuration
 grand_parent: Using GatewayD

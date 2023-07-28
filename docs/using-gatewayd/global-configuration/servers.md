@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Servers
+description: GatewayD server configuration
 nav_order: 6
 parent: Global Configuration
 grand_parent: Using GatewayD

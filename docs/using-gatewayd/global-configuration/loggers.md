@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Loggers
+description: GatewayD logger configuration
 nav_order: 1
 parent: Global Configuration
 grand_parent: Using GatewayD

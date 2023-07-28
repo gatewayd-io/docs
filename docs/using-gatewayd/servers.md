@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Servers
+description: Server is an object that listens on an address:port pair and accepts connections from database clients.
 nav_order: 4
 parent: Using GatewayD
 ---

@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 11:42:35 +0200
 layout: default
 title: Connection Lifecycle
+description: Connection Lifecycle of GatewayD
 nav_order: 10
 parent: Using GatewayD
 ---

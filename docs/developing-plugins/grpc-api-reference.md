@@ -2,6 +2,7 @@
 last_modified_date: 2023-04-25 12:36:12 +0200
 layout: default
 title: gRPC API Reference
+description: GatewayD exposes a gRPC API that can be used to interact with the GatewayD plugin system. This API can be used by the GatewayD plugins and is available in the GatewayD SDK.
 nav_order: 3
 parent: Developing Plugins
 ---
