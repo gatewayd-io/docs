@@ -9,10 +9,7 @@ parent: Getting Started
 
 # Installation
 
-GatewayD binaries are currently available for Linux and macOS.
-
-{: .wip }
-> Support for the [Docker image](https://github.com/gatewayd-io/gatewayd/issues/137) are in the works.
+GatewayD binaries are currently available for Windows, Linux-based distributions and macOS. It is also available as a Docker image.
 
 ## Installing GatewayD
 
@@ -57,6 +54,25 @@ Download the `.rpm` package and install it using `rpm`:
 ```bash
 curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm -o gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm
 sudo rpm -i gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm
+```
+
+### Docker image
+
+GatewayD is also available as a Docker image. The image is available on [GitHub Container Registry](https://ghcr.io/gatewayd-io/gatewayd:latest).
+
+To run GatewayD using Docker, you can use the following command, considering that the `gatewayd.yaml` and `gatewayd_plugins.yaml` configuration files and plugins are located in the current working directory on the host machine. The server will be available on port `15432` on the host machine and the container will be removed after it exits.
+
+```bash
+docker run -v ./:/opt -p 15432:15432 --rm ghcr.io/gatewayd-io/gatewayd:latest run --config /opt/gatewayd.yaml --plugins-config /opt/gatewayd_plugins.yaml
+```
+
+### Docker Compose
+
+For ease of use, a [docker-compose](https://github.com/gatewayd-io/gatewayd/blob/main/docker-compose.yaml) file is available. It starts two services: a PostgreSQL database and GatewayD. The server will be available on port `15432` on the host machine.
+
+```bash
+curl -L https://raw.githubusercontent.com/gatewayd-io/gatewayd/main/docker-compose.yaml -o docker-compose.yaml
+docker-compose up -d
 ```
 
 ## Installing plugins
