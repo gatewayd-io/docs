@@ -54,6 +54,8 @@ callouts:
     color: yellow
 
 aux_links:
+  Home:
+    - "https://gatewayd.io"
   GitHub:
     - "https://github.com/gatewayd-io/docs"
   Twitter:
