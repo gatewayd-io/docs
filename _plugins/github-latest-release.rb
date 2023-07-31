@@ -5,9 +5,11 @@ require 'faraday'
 require 'faraday/http_cache'
 
 module Jekyll
-    # Usage: {% github_releases <repository> %}
+    # Usage: {% github_releases <repository> <strip-prefix> %}
     # Example: {% github_releases jekyll/jekyll %}
     # Output: v3.8.5
+    # Example: {% github_releases jekyll/jekyll v %}
+    # Output: 3.8.5
     # Description: Fetches the latest release tag name from GitHub
     # Source:
     class GitHubLatestRelease < Liquid::Tag
