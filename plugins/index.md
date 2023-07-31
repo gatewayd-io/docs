@@ -1,9 +1,9 @@
 ---
 last_modified_date: 2023-05-21 14:43:21 +0200
 layout: default
-title: Miscellaneous
-nav_order: 6
+title: Plugins
+nav_order: 5
 has_children: true
 has_toc: false
-redirect_to: /docs/miscellaneous/telemetry-and-usage-report
+redirect_to: /plugins/gatewayd-plugin-cache
 ---

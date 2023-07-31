@@ -1,5 +1,3 @@
 ---
-layout: home
-# TODO: Remove this redirect once we have a proper landing page
-redirect_to: /docs/getting-started/welcome
+redirect_to: /getting-started/welcome
 ---
