@@ -40,7 +40,7 @@ mermaid:
   version: "10.2.4"
 
 heading_anchors: true
-permalink: /:slugified_categories/:title
+permalink: pretty
 
 callouts:
   wip:
