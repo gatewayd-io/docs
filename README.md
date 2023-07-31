@@ -2,49 +2,53 @@
 
 The initial docs structure is detailed in [this comment](https://github.com/gatewayd-io/docs/issues/1#issuecomment-1442331491) and is as follows. This will be updated over time as the docs is written and shaped.
 
+<details>
+
+<summary>TOC</summary>
+
 - Getting started
-  - [x] [Welcome](docs/getting-started/welcome.md)
-  - [x] [Installation](docs/getting-started/installation.md)
-  - [x] [Running GatewayD](docs/getting-started/running-gatewayd.md)
-  - [ ] [Resources](docs/getting-started/resources.md)
+  - [x] [Welcome](/getting-started/welcome.md)
+  - [x] [Installation](/getting-started/installation.md)
+  - [x] [Running GatewayD](/getting-started/running-gatewayd.md)
+  - [ ] [Resources](/getting-started/resources.md)
 - Using GatewayD
-  - [x] [Configuration](docs/using-gatewayd/configuration.md)
-    - [x] [Global configuration](docs/using-gatewayd/configuration.md#global-configuration)
-      - [x] [Loggers](docs/using-gatewayd/global-configuration/loggers.md)
-      - [x] [Metrics](docs/using-gatewayd/global-configuration/metrics.md)
-      - [x] [Clients](docs/using-gatewayd/global-configuration/clients.md)
-      - [x] [Pools](docs/using-gatewayd/global-configuration/pools.md)
-      - [x] [Proxies](docs/using-gatewayd/global-configuration/proxies.md)
-      - [x] [Servers](docs/using-gatewayd/global-configuration/servers.md)
-      - [x] [API](docs/using-gatewayd/global-configuration/api.md)
-    - [x] [Plugins configuration](docs/using-gatewayd/configuration.md#plugins-configuration)
-      - [x] [General configuration](docs/using-gatewayd/plugins-configuration/general-configurations.md)
-      - [x] [Plugins configuration](docs/using-gatewayd/plugins-configuration/plugins-configuration.md)
-    - [x] [Environment variables](docs/using-gatewayd/configuration.md#environment-variables)
-    - [x] [Runtime configuration](docs/using-gatewayd/configuration.md#runtime-configuration)
-  - [x] [CLI](docs/using-gatewayd/CLI.md)
-  - [x] [Servers](docs/using-gatewayd/servers.md)
-  - [x] [Clients](docs/using-gatewayd/clients.md)
-  - [x] [Pools](docs/using-gatewayd/pools.md)
-  - [x] [Proxies](docs/using-gatewayd/proxies.md)
-  - [x] [Observability](docs/using-gatewayd/observability.md)
-  - [x] [API](docs/using-gatewayd/API.md)
-  - [x] [Connection lifecycle](docs/using-gatewayd/connection-lifecycle.md)
-  - [x] [Protocols](docs/using-gatewayd/protocols.md)
+  - [x] [Configuration](/using-gatewayd/configuration.md)
+    - [x] [Global configuration](/using-gatewayd/configuration.md#global-configuration)
+      - [x] [Loggers](/using-gatewayd/global-configuration/loggers.md)
+      - [x] [Metrics](/using-gatewayd/global-configuration/metrics.md)
+      - [x] [Clients](/using-gatewayd/global-configuration/clients.md)
+      - [x] [Pools](/using-gatewayd/global-configuration/pools.md)
+      - [x] [Proxies](/using-gatewayd/global-configuration/proxies.md)
+      - [x] [Servers](/using-gatewayd/global-configuration/servers.md)
+      - [x] [API](/using-gatewayd/global-configuration/api.md)
+    - [x] [Plugins configuration](/using-gatewayd/configuration.md#plugins-configuration)
+      - [x] [General configuration](/using-gatewayd/plugins-configuration/general-configurations.md)
+      - [x] [Plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration.md)
+    - [x] [Environment variables](/using-gatewayd/configuration.md#environment-variables)
+    - [x] [Runtime configuration](/using-gatewayd/configuration.md#runtime-configuration)
+  - [x] [CLI](/using-gatewayd/CLI.md)
+  - [x] [Servers](/using-gatewayd/servers.md)
+  - [x] [Clients](/using-gatewayd/clients.md)
+  - [x] [Pools](/using-gatewayd/pools.md)
+  - [x] [Proxies](/using-gatewayd/proxies.md)
+  - [x] [Observability](/using-gatewayd/observability.md)
+  - [x] [API](/using-gatewayd/API.md)
+  - [x] [Connection lifecycle](/using-gatewayd/connection-lifecycle.md)
+  - [x] [Protocols](/using-gatewayd/protocols.md)
 - Using plugins
-  - [x] [Plugins](docs/using-plugins/plugins.md)
-  - [x] [Hooks](docs/using-plugins/hooks.md)
-  - [x] [Plugin registry](docs/using-plugins/plugin-registry.md)
-  - [x] [Hook registry](docs/using-plugins/hook-registry.md)
-  - [x] [Plugin types](docs/using-plugins/plugin-types.md)
-  - [x] [Proposals](docs/using-plugins/proposals.md)
+  - [x] [Plugins](/using-plugins/plugins.md)
+  - [x] [Hooks](/using-plugins/hooks.md)
+  - [x] [Plugin registry](/using-plugins/plugin-registry.md)
+  - [x] [Hook registry](/using-plugins/hook-registry.md)
+  - [x] [Plugin types](/using-plugins/plugin-types.md)
+  - [x] [Proposals](/using-plugins/proposals.md)
 - Developing plugins
-  - [x] [Plugin developers guide](docs/developing-plugins/plugin-developers-guide.md)
-  - [x] [SDK](docs/developing-plugins/sdk-reference.md)
-  - [x] [gRPC API reference](docs/developing-plugins/grpc-api-reference.md)
-  - [x] [Template projects](docs/developing-plugins/template-projects.md)
+  - [x] [Plugin developers guide](/developing-plugins/plugin-developers-guide.md)
+  - [x] [SDK](/developing-plugins/sdk-reference.md)
+  - [x] [gRPC API reference](/developing-plugins/grpc-api-reference.md)
+  - [x] [Template projects](/developing-plugins/template-projects.md)
 - Plugins
-  - [x] [gatewayd-plugin-cache](docs/plugins/gatewayd-plugin-cache.md)
+  - [x] [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache.md)
 - GatewayD versus (move to the blog?)
   - [ ] Bouncers (`PgBouncer`, `PgPool-II` and `pgcat`)
   - [ ] `MaxScale`
@@ -67,10 +71,12 @@ The initial docs structure is detailed in [this comment](https://github.com/gate
   - [ ] Code of conduct
   - [ ] Test server
 - Misc
-  - [x] [Telemetry and usage report](docs/miscellaneous/telemetry-and-usage-report.md)
+  - [x] [Telemetry and usage report](/miscellaneous/telemetry-and-usage-report.md)
   - [ ] Error reporting
   - [ ] Release notes
-  - [ ] [Glossary](docs/miscellaneous/glossary.md)
+  - [ ] [Glossary](/miscellaneous/glossary.md)
+
+</details>
 
 ## Running the docs locally
 
