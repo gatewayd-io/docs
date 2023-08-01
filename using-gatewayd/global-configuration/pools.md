@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-04-25 11:42:35 +0200
+last_modified_date: 2023-07-31 19:28:44 +0200
 layout: default
 title: Pools
 description: GatewayD pool configuration

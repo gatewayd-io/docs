@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-04-25 12:36:12 +0200
+last_modified_date: 2023-07-31 19:28:44 +0200
 layout: default
 title: SDK Reference
 description: The GatewayD plugin SDK provides a number of interfaces, structs and methods to help you build your plugin.

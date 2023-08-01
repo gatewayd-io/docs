@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-05-25 21:34:00 +0200
+last_modified_date: 2023-07-31 19:28:44 +0200
 layout: default
 title: API
 description: GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `gatewayd` process and its plugins.

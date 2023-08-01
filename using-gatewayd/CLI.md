@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-06-10 00:56:10 +0200
+last_modified_date: 2023-07-31 19:28:44 +0200
 layout: default
 title: CLI
 description: GatewayD is a CLI application that runs on Windows, Linux-based distributions and macOS.
