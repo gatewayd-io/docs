@@ -119,3 +119,11 @@ The first parameter is the repository name in the format `owner/repo`. The secon
 For private repositories, you can set the `GITHUB_TOKEN` environment variable with a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to authenticate with GitHub. If the token is not provided, the tag will be displayed as `unknown`.
 
 The tag can be used multiple times in the same page. A single request will be made to the GitHub API to retrieve the latest tag name for each repository.
+
+## Latest modified date
+
+The `generate_last_modified_data.sh` script is used to generate the `last_modified_date` data in the frontmatter for each page. It should be run manually before pushing the changes to the `main` branch.
+
+```bash
+bash generate_last_modified_data.sh
+```
