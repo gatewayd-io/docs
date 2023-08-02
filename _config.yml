@@ -23,7 +23,7 @@ email: docs@gatewayd.io
 description: >- # this means to ignore newlines until "baseurl:"
   GatewayD is a cloud-native database gateway for building data-driven applications. This documentation will help you get started with GatewayD.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://docs.gatewayd.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gatewaydio
 github_username: gatewayd-io
 logo: /assets/gatewayd-logotype-light.png
@@ -33,6 +33,7 @@ theme: just-the-docs
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 mermaid:
   # Version of mermaid library
