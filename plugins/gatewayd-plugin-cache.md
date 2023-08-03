@@ -40,11 +40,21 @@ GatewayD plugin for caching query results in Redis. This is how it works:
 
 It is assumed that you have already installed PostgreSQL, Redis and GatewayD.
 
+### Automatic installation
+
+The latest version of the plugin can be installed automatically by running the following command:
+
+```bash
+gatewayd plugin install github.com/gatewayd-io/gatewayd-plugin-cache@latest
+```
+
+### Manual installation
+
 1. Download and install the latest version of [gatewayd-plugin-cache](https://github.com/gatewayd-io/gatewayd-plugin-cache/releases/latest) by copying the binary to a directory that is in your `PATH` or accessible to GatewayD.
 2. Copy the [configuration](#configuration) to `gatewayd_plugins.yaml`:
 3. Make sure that the configuration parameters and environment variable are correct, particularly the `localPath`, `checksum` and the `REDIS_URL`.
-4. Start GatewayD.
-5. Test the plugin by querying the database via GatewayD.
+
+After installation using either of the above methods, you can start GatewayD and test the plugin by querying the database via GatewayD.
 
 ## Configuration
 
