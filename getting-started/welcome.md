@@ -13,8 +13,8 @@ This documentation will help you go from a beginner to an advanced user and deve
 
 ## Get Started
 
-- [Installation](./installation)
-- [Running GatewayD](./running-gatewayd)
+- [Installation](/getting-started/installation)
+- [Running GatewayD](/getting-started/running-gatewayd)
 
 ## What is GatewayD
 
@@ -46,7 +46,7 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
 - **Caching results of queries**
 
-    The [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
+    The [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
 
 - **Advanced caching** (WIP)
 

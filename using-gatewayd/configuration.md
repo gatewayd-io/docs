@@ -29,13 +29,13 @@ To validate the global and plugins config files, you can use the `gatewayd confi
 
 Global configuration contains all the config parameters for managing a running GatewayD instance. It includes parameters for configuring:
 
-- [Loggers](global-configuration/loggers)
-- [Metrics](global-configuration/metrics)
-- [Clients](global-configuration/clients)
-- [Pools](global-configuration/pools)
-- [Proxies](global-configuration/proxies)
-- [Servers](global-configuration/servers)
-- [API](global-configuration/api)
+- [Loggers](/using-gatewayd/global-configuration/loggers)
+- [Metrics](/using-gatewayd/global-configuration/metrics)
+- [Clients](/using-gatewayd/global-configuration/clients)
+- [Pools](/using-gatewayd/global-configuration/pools)
+- [Proxies](/using-gatewayd/global-configuration/proxies)
+- [Servers](/using-gatewayd/global-configuration/servers)
+- [API](/using-gatewayd/global-configuration/api)
 
 This is the complete global config file with the default values:
 
@@ -119,10 +119,10 @@ api:
 
 GatewayD supports plugins. Plugins configuration is called `gatewayd_plugins.yaml`, which contains both the general configurations that manage plugins and the configuration of plugins themselves, which are explained in the following pages:
 
-- [General configuration](plugins-configuration/general-configurations)
-- [Plugins configuration](plugins-configuration/plugins-configuration)
+- [General configuration](/using-gatewayd/plugins-configuration/general-configurations)
+- [Plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration)
 
-This is the complete plugins config file with the default values and an example plugin: [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache):
+This is the complete plugins config file with the default values and an example plugin: [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache):
 
 ```yaml
 verificationPolicy: "passdown"
@@ -181,10 +181,7 @@ GatewayD allows plugins to update the global configuration at runtime. This is d
 An example of this update can be found in the [Go plugin template](https://github.com/gatewayd-io/plugin-template-go/blob/981b36aa62b4ba059656c6dde08f67a9206c0948/plugin/plugin.go#L54-L129). The following snippet shows how to update the global configuration at runtime:
 
 ```go
-func (p *Plugin) OnConfigLoaded(
-  ctx context.Context,
-  req *structpb.Struct
-) (*structpb.Struct, error) {
+func (p *Plugin) OnConfigLoaded(ctx context.Context, req *structpb.Struct) (*structpb.Struct, error) {
   if req.Fields == nil {
     req.Fields = make(map[string]*structpb.Value)
   }

@@ -9,7 +9,7 @@ parent: Developing Plugins
 
 # Plugin Developers Guide
 
-The usage of plugin from the user perspective is described [here](../using-plugins/plugins), which will give you a good overview of how plugins work. The [lifecycle](../using-plugins/plugins#lifecycle) of a plugin is described on the same page. This page is a guide for plugin developers.
+The usage of plugin from the user perspective is described [here](/using-plugins/plugins), which will give you a good overview of how plugins work. The [lifecycle](/using-plugins/plugins#lifecycle) of a plugin is described on the same page. This page is a guide for plugin developers.
 
 ## Overview
 
@@ -22,12 +22,12 @@ Follow these steps to create a plugin:
 5. Test your plugin in the CI pipeline.
 6. Test your plugin using this [`test.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/test.yaml) workflow.
 7. Publish your plugin to GitHub using this [`release.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/release.yaml) workflow and this [`Makefile`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/Makefile).
-8. Publish your plugin to the GatewayD plugin registry.
+8. Publish your plugin.
 
 {: .note }
-> You can also use the [GatewayD plugin template for Python](https://github.com/gatewayd-io/plugin-template-python) repository to create a new repository for your plugin.
+> You can also use the [GatewayD plugin template for Python](https://github.com/gatewayd-io/plugin-template-python) repository to create a new repository for your plugin. The project is not as mature as the Go template and might have some rough edges.
 
-In the following sections, we will describe each step in more detail.
+In the following sections, each step is described in more detail.
 
 ## Step 1: Use the GatewayD plugin template
 
@@ -55,7 +55,7 @@ This is the structure of the template:
 
 ## Step 2: Clone the repository and start developing your plugin
 
-After you have created a new repository for your plugin, you can clone it and start developing your plugin. The template contains a `Makefile` with targets to build the plugin, create checksum and update dependencies. You can use these targets to build your plugin.
+After you have created a new repository for your plugin, clone it and start developing your plugin. The template contains a `Makefile` with targets to build the plugin, create checksum and update dependencies. You can use these targets to build your plugin.
 
 ## Step 3: Update the `gatewayd_plugins.yml` file with the correct information
 
@@ -78,9 +78,9 @@ These two environment variables with their exact values are required. They must 
 
 ## Step 4: Test your plugin locally using the `make run` target of GatewayD
 
-You can test your plugin locally by running GatewayD CLI in development mode. The development mode lets your test your plugin without checksum verification. For more information, see GatewayD [CLI](../using-gatewayd/CLI).
+You can test your plugin locally by running GatewayD CLI in development mode. The development mode lets your test your plugin without checksum verification. For more information, see GatewayD [CLI](/using-gatewayd/CLI).
 
-- Install GatewayD according to the [installation](../getting-started/installation) instructions.
+- Install GatewayD according to the [installation](/getting-started/installation) instructions.
 - Run the following command to start GatewayD CLI in development mode:
 
 ```bash
@@ -88,15 +88,15 @@ You can test your plugin locally by running GatewayD CLI in development mode. Th
 ```
 
 {: .note }
-> It is recommended to use the `trace` log level to see the logs of your plugin. For more information, see [loggers](../using-gatewayd/global-configuration/loggers).
+> It is recommended to use the `trace` log level to see the logs of your plugin. For more information, see [loggers](/using-gatewayd/global-configuration/loggers).
 
 ## Step 5: Test your plugin in the CI pipeline
 
-Copy the [`test-plugin`](https://github.com/gatewayd-io/gatewayd/blob/213ba09fbf20f0b3923d246d4320dab46fdf8be3/.github/workflows/test.yaml#L61-L144) job of the GatewayD CI pipeline into the `.github/workflows/test.yaml` file. This job will test your plugin using the [GatewayD CLI](../using-gatewayd/CLI) in development mode.
+Copy the [`test-plugin`](https://github.com/gatewayd-io/gatewayd/blob/213ba09fbf20f0b3923d246d4320dab46fdf8be3/.github/workflows/test.yaml#L61-L144) job of the GatewayD CI pipeline into the `.github/workflows/test.yaml` file. This job will test your plugin using the [GatewayD CLI](/using-gatewayd/CLI) in development mode.
 
 ## Step 6: Test your plugin using this `test.yaml` workflow
 
-If you have written tests for your plugin, you can use the following workflow to test your plugin. Copy the [`test.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/test.yaml) workflow into the `.github/workflows/` directory of your plugin. This workflow will test your plugin using the [GatewayD CLI](../using-gatewayd/CLI) in development mode.
+If you have written tests for your plugin, you can use the following workflow to test your plugin. Copy the [`test.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/test.yaml) workflow into the `.github/workflows/` directory of your plugin. This workflow will test your plugin using the [GatewayD CLI](/using-gatewayd/CLI) in development mode.
 
 ## Step 7: Publish your plugin to GitHub using this `release.yaml` workflow and this `Makefile`
 
@@ -117,10 +117,10 @@ If you want GatewayD to install your plugin from GitHub, you must adhere to the 
 6. The releases must follow semantic versioning and prefixed with `v`.
 7. The `latest` release must point to the latest release, otherwise the plugin will not be installed if the version is not specified.
 
-## Step 9: Publish your plugin to the GatewayD plugin registry
+<!-- ## Step 9: Publish your plugin to the GatewayD plugin registry
 
-We have [plans](https://github.com/gatewayd-io/proposals/issues/8) to create a plugin registry for GatewayD. Until then, you can publish your plugin on GitHub.
+We have plans to create a plugin registry for GatewayD. Until then, you can publish your plugin on GitHub. -->
 
 ## Next steps
 
-Check out the [using plugins](../using-plugins/plugins) page to know more about the details of the plugin system including hooks, plugin registry, hook registry and different plugin types.
+Check out the [using plugins](/using-plugins/plugins) page to know more about the details of the plugin system including hooks, plugin registry, hook registry and different plugin types.

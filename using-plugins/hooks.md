@@ -48,4 +48,4 @@ Currently three types of hooks exist:
 
 ## Timeout
 
-For more information about the timeout, see [timeout](plugins#timeout).
+For more information about the timeout, see [timeout](/using-plugins/plugins#timeout).

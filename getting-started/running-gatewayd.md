@@ -49,7 +49,7 @@ You can verify if both of the above worked correctly by running `docker ps`.
 
 ## 3. Install GatewayD and the cache plugin
 
-Download and extract GatewayD and the [gatewayd-cache-plugin](../plugins/gatewayd-plugin-cache) using the following commands:
+Download and extract GatewayD and the [gatewayd-cache-plugin](/plugins/gatewayd-plugin-cache) using the following commands:
 
 ```bash
 mkdir gatewayd && cd gatewayd

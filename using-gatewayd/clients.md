@@ -9,11 +9,11 @@ parent: Using GatewayD
 
 # Clients
 
-Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](pools). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
+Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](/using-gatewayd/pools). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
 
 ## Pools and proxies
 
-The clients work directly with the [pool](pools) and the [proxy](proxies) objects. When a new client connection is established, it is put into the pool it belong to. In turn, the pool itself belongs to a proxy object.
+The clients work directly with the [pool](/using-gatewayd/pools) and the [proxy](/using-gatewayd/proxies) objects. When a new client connection is established, it is put into the pool it belong to. In turn, the pool itself belongs to a proxy object.
 
 ## Receive chunk size
 
@@ -22,7 +22,7 @@ Usually the incoming queries are small and can easily be sent to the database se
 The chunk size is adjustable, however, there is a trade-off. The smaller the number, the more it might take to read the entire message into the internal buffer. You can try to adjust the chunk size based on the response size from your database server.
 
 {: .note }
-> The response size can be observed by setting the (log) level of the [logger](global-configuration/loggers) to `debug` and watching messages with the following format. The `length` key shows the response size in bytes.
+> The response size can be observed by setting the (log) level of the [logger](/using-gatewayd/global-configuration/loggers) to `debug` and watching messages with the following format. The `length` key shows the response size in bytes.
 >
 > ```bash
 > 2023-04-15T14:08:28+02:00 DBG Received data from database function=proxy.passthrough length=468 local=... remote=...

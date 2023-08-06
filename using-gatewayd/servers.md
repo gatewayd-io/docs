@@ -13,7 +13,7 @@ Server is an object that listens on an address:port pair and accepts connections
 
 ## Listening on multiple addresses
 
-A running instance of GatewayD can practically host multiple instances of the server object. The server object is configurable from the [`servers`](../using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`. To have multiple servers listening on different ports, multiple [configuration groups](../miscellaneous/glossary#configuration-group) should be defined. The name of the group should be the same for other objects as well, so that `gatewayd` can connect them together.
+A running instance of GatewayD can practically host multiple instances of the server object. The server object is configurable from the [`servers`](/using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`. To have multiple servers listening on different ports, multiple [configuration groups](/miscellaneous/glossary#configuration-group) should be defined. The name of the group should be the same for other objects as well, so that `gatewayd` can connect them together.
 
 ## Events
 
@@ -30,11 +30,11 @@ The server works in an event-based manner and many events will fire during the l
 
 ## Connection handling
 
-The server object is responsible for accepting new connections from the database clients and creating a new [connection](../miscellaneous/glossary#connection) object for each connection. The connection object is responsible for handling the connection opened by the database client.
+The server object is responsible for accepting new connections from the database clients and creating a new [connection](/miscellaneous/glossary#connection) object for each connection. The connection object is responsible for handling the connection opened by the database client.
 
 ## Traffic handling
 
-The server object is also responsible for handling the traffic between the database client and the database server. To do so, the server passes the traffic to the [proxy](../miscellaneous/glossary#proxy) object. The proxy object is responsible for handling the traffic between the database client and the database server, which is configurable from the [`proxies`](../using-gatewayd/global-configuration/proxies) configuration object in the global configuration file: `gatewayd.yaml`.
+The server object is also responsible for handling the traffic between the database client and the database server. To do so, the server passes the traffic to the [proxy](/miscellaneous/glossary#proxy) object. The proxy object is responsible for handling the traffic between the database client and the database server, which is configurable from the [`proxies`](/using-gatewayd/global-configuration/proxies) configuration object in the global configuration file: `gatewayd.yaml`.
 
 ## Protocol support
 
@@ -42,7 +42,7 @@ The server object works in the [transport layer](https://en.wikipedia.org/wiki/T
 
 ## Hard and soft limits
 
-The server object has two types of limits: hard and soft limits. These limits are configurable from the [`servers`](../using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`.
+The server object has two types of limits: hard and soft limits. These limits are configurable from the [`servers`](/using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`.
 
 The limits are OS level limits for open files and open connections. If they are set, the server will try to set them on the OS level for the running instance of GatewayD. If the server fails to set the limits, it will exit with an error. If the limits are not set (or set to `0`), the server will not try to set them on the OS level.
 
@@ -54,4 +54,4 @@ The server can accept an unlimited number of connections. However, the [pool](po
 
 ## Ticker
 
-The server object has a ticker that fires every `tickInterval` seconds. The `tickInterval` value is configurable from the [`servers`](../using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`. The ticker is used to perform periodic tasks, but it is disabled by default. Plugins can use the ticker to perform periodic tasks.
+The server object has a ticker that fires every `tickInterval` seconds. The `tickInterval` value is configurable from the [`servers`](/using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`. The ticker is used to perform periodic tasks, but it is disabled by default. Plugins can use the ticker to perform periodic tasks.

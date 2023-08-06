@@ -22,13 +22,13 @@ They are responsible for the following:
 - Parsing SQL queries from the client
 - Parsing responses from the server
 
-For example, the [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache) decodes the [PostgreSQL wire protocol](../miscellaneous/glossary#postgresql-wire-protocol), extracts the SQL select query from the client, and then caches the result of the query in Redis. The next time the same select query is sent, the plugin will return the cached result instead of sending the query to the server. It also checks if the query is an upsert, delete, alter or drop query, and it will invalidate the cache based on the table in the query. This is a very simple example of what a plugin can do.
+For example, the [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache) decodes the [PostgreSQL wire protocol](/miscellaneous/glossary#postgresql-wire-protocol), extracts the SQL select query from the client, and then caches the result of the query in Redis. The next time the same select query is sent, the plugin will return the cached result instead of sending the query to the server. It also checks if the query is an upsert, delete, alter or drop query, and it will invalidate the cache based on the table in the query. This is a very simple example of what a plugin can do.
 
 Plugins are generally written in Go, but can be written in any other language, and are compiled into a stand-alone executable file to be run by GatewayD. The executable is then loaded by GatewayD at startup.
 
 ## Configuration
 
-For more information on how to configure plugins, see [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins and the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration).
+For more information on how to configure plugins, see [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins and the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration).
 
 ## Lifecycle
 
@@ -52,11 +52,11 @@ sequenceDiagram
 
 ## Priority
 
-Plugins are loaded in the order in which they appear in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration). The first plugin in the list will be called first, and the last plugin in the list will be called last. The result of the plugin hooks are merged together. If any of the plugins return an error, the error is returned to GatewayD and further to the client.
+Plugins are loaded in the order in which they appear in the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration). The first plugin in the list will be called first, and the last plugin in the list will be called last. The result of the plugin hooks are merged together. If any of the plugins return an error, the error is returned to GatewayD and further to the client.
 
 ## Policies
 
-Certain policies can be applied to plugins. These policies are applied to all plugins, and can be configured in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
+Certain policies can be applied to plugins. These policies are applied to all plugins, and can be configured in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
 
 ### Verification policy
 
@@ -90,39 +90,39 @@ The termination policy controls how to handle the termination of requests. If a 
 
 ## Health check
 
-Plugins are monitored by GatewayD, and if they crash, GatewayD will reload them. The health check is done by sending a ping to the plugin, and if the plugin does not respond within the timeout, GatewayD will reload the plugin. The `healthCheckPeriod` is configurable in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
+Plugins are monitored by GatewayD, and if they crash, GatewayD will reload them. The health check is done by sending a ping to the plugin, and if the plugin does not respond within the timeout, GatewayD will reload the plugin. The `healthCheckPeriod` is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
 
 ### Reload on crash
 
-If a plugin crashes, GatewayD will reload it by the next health check if `reloadOnCrash` is enabled (default) in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
+If a plugin crashes, GatewayD will reload it by the next health check if `reloadOnCrash` is enabled (default) in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
 
 ## Timeout
 
-Plugin hooks have a timeout, which is configurable in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the plugin does not respond within the timeout, GatewayD will log the error and continue with the next plugin or continue processing if it is the last plugin.
+Plugin hooks have a timeout, which is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the plugin does not respond within the timeout, GatewayD will log the error and continue with the next plugin or continue processing if it is the last plugin.
 
 ## Metrics merger
 
-Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with metrics of GatewayD and exposed on the [`https://localhost:9090/metrics`](https://localhost:9090/metrics) endpoint. The metrics merger is configurable in the [general configuration](../using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.
+Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with metrics of GatewayD and exposed on the [`https://localhost:9090/metrics`](https://localhost:9090/metrics) endpoint. The metrics merger is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.
 
 If a plugin developer chooses to expose metrics over HTTP, they can be scraped by Prometheus, but they won't be merged with metrics of GatewayD.
 
 ## Command-line arguments
 
-Sine plugins are stand-alone executables, GatewayD can pass command line arguments to them. The command-line arguments are configurable in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration). The command-line arguments are passed to as an array of strings, and are passed to the plugin as is.<!-- Plugin developers can choose to parse the command-line arguments or not using the [flag package](https://golang.org/pkg/flag/).-->
+Sine plugins are stand-alone executables, GatewayD can pass command line arguments to them. The command-line arguments are configurable in the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration). The command-line arguments are passed to as an array of strings, and are passed to the plugin as is.<!-- Plugin developers can choose to parse the command-line arguments or not using the [flag package](https://golang.org/pkg/flag/).-->
 
 ## Environment variables
 
-GatewayD can pass environment variables to plugins. The environment variables are configurable in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration). The environment variables are passed to as an array of strings, and are passed to the plugin as is.<!-- Plugin developers can choose to parse the environment variables or not using the [os package](https://golang.org/pkg/os/).-->
+GatewayD can pass environment variables to plugins. The environment variables are configurable in the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration). The environment variables are passed to as an array of strings, and are passed to the plugin as is.<!-- Plugin developers can choose to parse the environment variables or not using the [os package](https://golang.org/pkg/os/).-->
 
 ## Checksum verification
 
-Plugins can be verified by their checksum, which is a SHA256 checksum of the plugin's executable file. The checksum is configurable in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration). The checksum is verified before the plugin is loaded. If the checksum verification fails, GatewayD will not load the plugin. For now, the checksum should be manually copied from the plugin's archive that is downloaded from the plugin's repository into the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration).
+Plugins can be verified by their checksum, which is a SHA256 checksum of the plugin's executable file. The checksum is configurable in the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration). The checksum is verified before the plugin is loaded. If the checksum verification fails, GatewayD will not load the plugin. For now, the checksum should be manually copied from the plugin's archive that is downloaded from the plugin's repository into the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration).
 
 {: .wip }
 > We have plans to automate the [checksum verification process](https://github.com/gatewayd-io/gatewayd/issues/78), so that the checksum is [automatically fetched](https://github.com/gatewayd-io/gatewayd/issues/122) from the plugin's repository and verified before the plugin is loaded.
 
 ## Plugin naming convention
 
-Plugin names usually follow the format `gatewayd-plugin-<plugin-name>`. For example, the [gatewayd-plugin-cache](../plugins/gatewayd-plugin-cache), but the community can choose to use any name they want. The plugin name is used to identify the plugin, and it is also used to identify the plugin's version. The plugin name is configurable in the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration).
+Plugin names usually follow the format `gatewayd-plugin-<plugin-name>`. For example, the [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache), but the community can choose to use any name they want. The plugin name is used to identify the plugin, and it is also used to identify the plugin's version. The plugin name is configurable in the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration).
 
 We recommend that plugin developers use unique names with the `gatewayd-plugin-` prefix to avoid naming conflicts with other plugins.

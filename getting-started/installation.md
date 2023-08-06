@@ -19,7 +19,7 @@ All GatewayD [releases](https://github.com/gatewayd-io/gatewayd/releases) are av
 
 GatewayD releases are available as standalone binaries for Linux, Windows and macOS platforms.
 
-Download and extract the archive for your platform, then place the `gatewayd(.exe)` binary in your `PATH` to run it from any location. The [`gatewayd.yaml`](../using-gatewayd/configuration#global-configuration) and [`gatewayd_plugins.yaml`](../using-gatewayd/configuration#plugins-configuration) configuration files are located next to the gatewayd binary in the downloaded archive. These are the default global and plugins configuration files for GatewayD. Extract them to your desired location and use them as a starting point for your configuration.
+Download and extract the archive for your platform, then place the `gatewayd(.exe)` binary in your `PATH` to run it from any location. The [`gatewayd.yaml`](/using-gatewayd/configuration#global-configuration) and [`gatewayd_plugins.yaml`](/using-gatewayd/configuration#plugins-configuration) configuration files are located next to the gatewayd binary in the downloaded archive. These are the default global and plugins configuration files for GatewayD. Extract them to your desired location and use them as a starting point for your configuration.
 
 For Unix-like systems, you can use the following commands to download and extract the archive:
 
@@ -91,11 +91,11 @@ For example, to install the `gatewayd-plugin-cache` plugin:
 gatewayd plugin install github.com/gatewayd-io/gatewayd-plugin-cache@latest
 ```
 
-The plugin binary will be installed in the `plugins` directory in the current working directory. For more flags, please refer to the [CLI](../using-gatewayd/CLI) page or just run `gatewayd plugin install --help`.
+The plugin binary will be installed in the `plugins` directory in the current working directory. For more flags, please refer to the [CLI](/using-gatewayd/CLI) page or just run `gatewayd plugin install --help`.
 
 Alternatively you can manually download, extract and place the plugins' binaries in your desired location that is accessible to GatewayD via the plugins configuration file, aka. `gatewayd_plugins.yaml`.
 
-For more information about plugins, please refer to the [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration) and the [plugins](../using-plugins/plugins) page.
+For more information about plugins, please refer to the [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration) and the [plugins](/using-plugins/plugins) page.
 
 ## Building GatewayD from source
 

@@ -25,7 +25,7 @@ The connection lifecycle is composed of the following steps:
 10. The new client connection is added to the pool of client connections.
 11. The process repeats from step 2.
 
-The above steps are partially illustrated in [traffic handling diagram](proxies#traffic-handling) of the proxies page.
+The above steps are partially illustrated in [traffic handling diagram](/using-gatewayd/proxies#traffic-handling) of the proxies page.
 
 ## Connection lifecycle diagram
 

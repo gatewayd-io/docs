@@ -58,7 +58,7 @@ After installation using either of the above methods, you can start GatewayD and
 
 ## Configuration
 
-The plugin can be configured via environment variables or command-line arguments. Fore more information about other configuration parameters, see [plugins configuration](../using-gatewayd/plugins-configuration/plugins-configuration.md).
+The plugin can be configured via environment variables or command-line arguments. Fore more information about other configuration parameters, see [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration.md).
 
 ```yaml
 plugins:

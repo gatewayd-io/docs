@@ -26,4 +26,4 @@ GatewayD is a CLI application that runs on Windows, Linux-based distributions an
 | `version`        | shows version information                                             | `GatewayD v0.6.0 (2023-03-12T22:22:55+0000/ae469dc, go1.20.1, linux/amd64)`                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 {: .note }
-> Please visit the [telemetry and usage report](../miscellaneous/telemetry-and-usage-report) page for more information on which pieces of data are collected by the service.
+> Please visit the [telemetry and usage report](/miscellaneous/telemetry-and-usage-report) page for more information on which pieces of data are collected by the service.

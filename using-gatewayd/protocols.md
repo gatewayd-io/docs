@@ -13,7 +13,7 @@ GatewayD is application layer protocol-agnostic. This means that GatewayD *can* 
 
 ## Supported L4 protocols
 
-Both the [server](servers) and the [client](clients) objects supports the following transport layer protocols, which can be configured via the [global configuration](configuration) file for the [server](global-configuration/servers) and the [client](global-configuration/clients) objects:
+Both the [server](/using-gatewayd/servers) and the [client](/using-gatewayd/clients) objects supports the following transport layer protocols, which can be configured via the [global configuration](/using-gatewayd/configuration) file for the [server](/using-gatewayd/global-configuration/servers) and the [client](/using-gatewayd/global-configuration/clients) objects:
 
 - **TCP** (default)
 - **UDP**
