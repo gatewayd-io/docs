@@ -38,7 +38,7 @@ plugins:
 mermaid:
   # Version of mermaid library
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "10.2.4"
+  version: "10.3.0"
 
 heading_anchors: true
 permalink: pretty
