@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-08-01 12:29:40 +0200
+last_modified_date: 2023-08-16 23:46:09 +0200
 layout: default
 title: Developing Plugins
 nav_order: 4
