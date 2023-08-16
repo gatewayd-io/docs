@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-08-06 14:47:26 +0200
+last_modified_date: 2023-08-16 23:46:53 +0200
 layout: default
 title: Protocols
 description: GatewayD is application layer protocol-agnostic. This means that GatewayD *can* practically support any protocol in the application layer, or L7.

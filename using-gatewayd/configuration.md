@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-08-06 14:47:26 +0200
+last_modified_date: 2023-08-16 23:46:53 +0200
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.

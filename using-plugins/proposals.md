@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-08-06 14:47:26 +0200
+last_modified_date: 2023-08-16 23:46:53 +0200
 layout: default
 title: Proposals
 description: GatewayD proposals are used to propose new ideas and features for GatewayD.
