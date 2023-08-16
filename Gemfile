@@ -38,3 +38,4 @@ gem 'octokit'
 gem 'github_releases'
 gem 'faraday-http-cache'
 gem 'jekyll-sitemap'
+gem "jekyll-last-modified-at"

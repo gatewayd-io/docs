@@ -19,6 +19,7 @@ for b in $(find ./ -name '*.md'); do
 
     cat ${b} | sed "/---.*/,/---.*/s/^last_modified_date:.*$/last_modified_date: $(git log -1 --pretty="format:%ci" ${b})/" >tmp
     mv tmp ${b}
+    rm we work.md
 done
 
 # Skip files
