@@ -4,6 +4,9 @@ layout: default
 title: Miscellaneous
 nav_order: 6
 has_children: true
-has_toc: false
-redirect_to: /miscellaneous/telemetry-and-usage-report
+has_toc: true
 ---
+
+# Miscellaneous
+
+This section contains miscellaneous information about the project. The [glossary](/miscellaneous/glossary) contains a list of terms used in the project. The telemetry and usage report is available [here](/miscellaneous/telemetry-and-usage-report).
