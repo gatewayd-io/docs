@@ -32,6 +32,7 @@ logo: /assets/gatewayd-logotype-light.png
 theme: just-the-docs
 plugins:
   - jekyll-last-modified-at
+  - jekyll-seo-tag
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
