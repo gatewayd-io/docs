@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-08-16 23:51:12 +0200
+last_modified_date: 2023-09-01 14:29:52 +0200
 layout: default
 title: SDK Reference
 description: The GatewayD plugin SDK provides a number of interfaces, structs and methods to help you build your plugin.
@@ -43,22 +43,22 @@ The root of the SDK is the `github.com/gatewayd-io/gatewayd-plugin-sdk`. It cont
     func DecodeBytes(encoded string) ([]byte, error)
     ```
 
-- `HandleClientMessage` handles a client message. This function should be called from `onTrafficFromClient` hook. It returns a `structpb.Struct` with extra fields that are decoded from the message. It logs the error and returns `nil` if there is an error.
+- `HandleClientMessage` handles a client message. This function should be called from `onTrafficFromClient` hook. It returns a `v1.Struct` with extra fields that are decoded from the message. It logs the error and returns `nil` if there is an error.
 
     ```go
-    func HandleClientMessage(req *structpb.Struct, logger hclog.Logger) (*structpb.Struct, error)
+    func HandleClientMessage(req *v1.Struct, logger hclog.Logger) (*v1.Struct, error)
     ```
 
-- `HandleServerMessage` handles a server message. This function should be called from `onTrafficFromServer` hook. It returns a `structpb.Struct` with extra fields that are decoded from the message. It logs the error and returns `nil` if there is an error.
+- `HandleServerMessage` handles a server message. This function should be called from `onTrafficFromServer` hook. It returns a `v1.Struct` with extra fields that are decoded from the message. It logs the error and returns `nil` if there is an error.
 
     ```go
-    func HandleServerMessage(resp *structpb.Struct, logger hclog.Logger) (*structpb.Struct, error)
+    func HandleServerMessage(resp *v1.Struct, logger hclog.Logger) (*v1.Struct, error)
     ```
 
 - `GetQueryFromRequest` decodes the request and returns the query. It returns an error if the request cannot be decoded. It returns an empty string if the query is not found.
 
     ```go
-    func GetQueryFromRequest(req *structpb.Struct) (string, error)
+    func GetQueryFromRequest(req *v1.Struct) (string, error)
     ```
 
 - `GetTablesFromQuery` returns the tables used in a query. It returns an error if the query cannot be parsed.
@@ -97,10 +97,10 @@ The root of the SDK is the `github.com/gatewayd-io/gatewayd-plugin-sdk`. It cont
     func DefaultGRPCServer(opts []grpc.ServerOption) *grpc.Server
     ```
 
-- `GetAttr` returns the value of an attribute from the `structpb.Struct`. It returns the default value if the attribute is not found.
+- `GetAttr` returns the value of an attribute from the `v1.Struct`. It returns the default value if the attribute is not found.
 
     ```go
-    func GetAttr(req *structpb.Struct, key string, defaultValue interface{}) interface{}
+    func GetAttr(req *v1.Struct, key string, defaultValue interface{}) interface{}
     ```
 
 ### `plugin/v1`

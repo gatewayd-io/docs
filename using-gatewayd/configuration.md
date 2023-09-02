@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-08-16 23:51:12 +0200
+last_modified_date: 2023-09-01 14:29:52 +0200
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -181,13 +181,13 @@ GatewayD allows plugins to update the global configuration at runtime. This is d
 An example of this update can be found in the [Go plugin template](https://github.com/gatewayd-io/plugin-template-go/blob/981b36aa62b4ba059656c6dde08f67a9206c0948/plugin/plugin.go#L54-L129). The following snippet shows how to update the global configuration at runtime:
 
 ```go
-func (p *Plugin) OnConfigLoaded(ctx context.Context, req *structpb.Struct) (*structpb.Struct, error) {
+func (p *Plugin) OnConfigLoaded(ctx context.Context, req *v1.Struct) (*v1.Struct, error) {
   if req.Fields == nil {
-    req.Fields = make(map[string]*structpb.Value)
+    req.Fields = make(map[string]*v1.Value)
   }
 
-  req.Fields["loggers.default.level"] = structpb.NewStringValue("debug")
-  req.Fields["loggers.default.noColor"] = structpb.NewBoolValue(false)
+  req.Fields["loggers.default.level"] = v1.NewStringValue("debug")
+  req.Fields["loggers.default.noColor"] = v1.NewBoolValue(false)
 
   return req, nil
 }
