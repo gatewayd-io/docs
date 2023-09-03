@@ -9,14 +9,14 @@ parent: Plugins
 
 # gatewayd-plugin-cache
 
-GatewayD plugin for caching query results in Redis. This is how it works:
+The gatewayd-plugin-cahce is a GatewayD plugin for caching query results in Redis and this is how it works:
 
-1. The plugin listens for incoming queries from the client.
-2. When a new client connects to GatewayD, the plugin detects the client's chosen database from the client's startup message.
-3. If the query is a SELECT query, the plugin checks if the query results are cached in Redis. If the query results are cached in Redis, the plugin returns the cached results to the client. Otherwise, the plugin executes the query and caches the results in Redis.
-4. Any query that updates the cached data causes the plugin to invalidate the cached data.
-5. One can also set expiry time on cached data to prevent stale data from being returned to the client.
-6. Periodic cache invalidation is also supported for invalidating stale client keys if the clients are disconnected abruptly.
+1. The plugin listens for incoming queries from the client(s).
+2. When a new client connects to GatewayD, the plugin detects the client's selected database from the client's startup message. The client's database is cached in Redis.
+3. If the query is a SELECT query, the plugin checks whether the query results are cached in Redis or not. If they are, the plugin returns the cached results to the client. Otherwise, the plugin executes the query and caches the results in Redis.
+4. Any query that updates the cached data triggers the plugin to invalidate the cached data in Redis.
+5. Expiry time can be set on cached data to prevent stale data from being returned to the client.
+6. If a client is abruptly disconnected, stale keys might be left behind in Redis. A periodic cache invalidator runs every minute (configurable) to invalidate those stale keys.
 
 ## Features
 
@@ -38,11 +38,11 @@ GatewayD plugin for caching query results in Redis. This is how it works:
 
 ## Installation
 
-It is assumed that you have already installed PostgreSQL, Redis and GatewayD.
+It is assumed that you have already installed PostgreSQL, Redis and [GatewayD](/getting-started/installation).
 
 ### Automatic installation
 
-The latest version of the plugin can be installed automatically by running the following command:
+The latest version of the plugin can be installed automatically by running the following command. This command downloads and installs the latest version of the plugin from [GitHub releases](https://github.com/gatewayd-io/gatewayd-plugin-cache/releases) to the `plugins` directory in the current directory. The command will then enable the plugin automatically by copying the default [configuration](#configuration) to `gatewayd_plugins.yaml` from the project's GitHub repository.
 
 ```bash
 gatewayd plugin install github.com/gatewayd-io/gatewayd-plugin-cache@latest
@@ -51,14 +51,14 @@ gatewayd plugin install github.com/gatewayd-io/gatewayd-plugin-cache@latest
 ### Manual installation
 
 1. Download and install the latest version of [gatewayd-plugin-cache](https://github.com/gatewayd-io/gatewayd-plugin-cache/releases/latest) by copying the binary to a directory that is in your `PATH` or accessible to GatewayD.
-2. Copy the [configuration](#configuration) to `gatewayd_plugins.yaml`:
-3. Make sure that the configuration parameters and environment variable are correct, particularly the `localPath`, `checksum` and the `REDIS_URL`.
+2. Copy the [configuration](#configuration) to [`gatewayd_plugins.yaml`](/using-gatewayd/plugins-configuration/plugins-configuration).
+3. Make sure that the configuration parameters and environment variables are correct, particularly the `localPath`, `checksum` and the `REDIS_URL`.
 
-After installation using either of the above methods, you can start GatewayD and test the plugin by querying the database via GatewayD.
+After installing the plugin using any of the above methods, you can start GatewayD and test the plugin by querying the database via GatewayD.
 
 ## Configuration
 
-The plugin can be configured via environment variables or command-line arguments. Fore more information about other configuration parameters, see [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration.md).
+The plugin can be configured via environment variables or command-line arguments. For more information about other configuration parameters, see [plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration.md).
 
 ```yaml
 plugins:
@@ -111,10 +111,12 @@ plugins:
 
 ## Build for testing
 
-To build the plugin for development and testing, run the following command:
+To build the plugin for development and testing, run the following command in the project's root directory after cloning the repository.
 
 ```bash
+git clone git@github.com:gatewayd-io/gatewayd-plugin-cache.git
+cd gatewayd-plugin-cache
 make build-dev
 ```
 
-Running the above command causes the `go mod tidy` and `go build` to run for compiling and generating the plugin binary in the current directory, named `gatewayd-plugin-cache`.
+Running the above commands clones the repository, changes the current directory and runs the `go mod tidy` and `go build` commands to compile and generate the plugin binary.
