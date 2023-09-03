@@ -1,82 +1,16 @@
-# Documentation
+<p align="center">
+  <a href="https://docs.gatewayd.io/">
+    <picture>
+      <img alt="gatewayd-docs" src="https://github.com/gatewayd-io/docs/blob/main/assets/gatewayd-docs.png" width="96" />
+    </picture>
+  </a>
+  <h3 align="center">GatewayD Documentation</h3>
+  <p align="center">The source code and markdown files for the GatewayD documentation</p>
+</p>
 
-The initial docs structure is detailed in [this comment](https://github.com/gatewayd-io/docs/issues/1#issuecomment-1442331491) and is as follows. This will be updated over time as the docs is written and shaped.
-
-<details>
-
-<summary>TOC</summary>
-
-- Getting started
-  - [x] [Welcome](/getting-started/welcome.md)
-  - [x] [Installation](/getting-started/installation.md)
-  - [x] [Running GatewayD](/getting-started/running-gatewayd.md)
-  - [ ] [Resources](/getting-started/resources.md)
-- Using GatewayD
-  - [x] [Configuration](/using-gatewayd/configuration.md)
-    - [x] [Global configuration](/using-gatewayd/configuration.md#global-configuration)
-      - [x] [Loggers](/using-gatewayd/global-configuration/loggers.md)
-      - [x] [Metrics](/using-gatewayd/global-configuration/metrics.md)
-      - [x] [Clients](/using-gatewayd/global-configuration/clients.md)
-      - [x] [Pools](/using-gatewayd/global-configuration/pools.md)
-      - [x] [Proxies](/using-gatewayd/global-configuration/proxies.md)
-      - [x] [Servers](/using-gatewayd/global-configuration/servers.md)
-      - [x] [API](/using-gatewayd/global-configuration/api.md)
-    - [x] [Plugins configuration](/using-gatewayd/configuration.md#plugins-configuration)
-      - [x] [General configuration](/using-gatewayd/plugins-configuration/general-configurations.md)
-      - [x] [Plugins configuration](/using-gatewayd/plugins-configuration/plugins-configuration.md)
-    - [x] [Environment variables](/using-gatewayd/configuration.md#environment-variables)
-    - [x] [Runtime configuration](/using-gatewayd/configuration.md#runtime-configuration)
-  - [x] [CLI](/using-gatewayd/CLI.md)
-  - [x] [Servers](/using-gatewayd/servers.md)
-  - [x] [Clients](/using-gatewayd/clients.md)
-  - [x] [Pools](/using-gatewayd/pools.md)
-  - [x] [Proxies](/using-gatewayd/proxies.md)
-  - [x] [Observability](/using-gatewayd/observability.md)
-  - [x] [API](/using-gatewayd/API.md)
-  - [x] [Connection lifecycle](/using-gatewayd/connection-lifecycle.md)
-  - [x] [Protocols](/using-gatewayd/protocols.md)
-- Using plugins
-  - [x] [Plugins](/using-plugins/plugins.md)
-  - [x] [Hooks](/using-plugins/hooks.md)
-  - [x] [Plugin registry](/using-plugins/plugin-registry.md)
-  - [x] [Hook registry](/using-plugins/hook-registry.md)
-  - [x] [Plugin types](/using-plugins/plugin-types.md)
-  - [x] [Proposals](/using-plugins/proposals.md)
-- Developing plugins
-  - [x] [Plugin developers guide](/developing-plugins/plugin-developers-guide.md)
-  - [x] [SDK](/developing-plugins/sdk-reference.md)
-  - [x] [gRPC API reference](/developing-plugins/grpc-api-reference.md)
-  - [x] [Template projects](/developing-plugins/template-projects.md)
-- Plugins
-  - [x] [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache.md)
-- GatewayD versus (move to the blog?)
-  - [ ] Bouncers (`PgBouncer`, `PgPool-II` and `pgcat`)
-  - [ ] `MaxScale`
-  - [ ] `ProxySQL`
-  - [ ] `Acra`
-  - [ ] `Stargate`
-  - [ ] `Heimdall Data`
-  - [ ] `Bytebase`
-  - [ ] `Airbyte`
-  - [ ] `Arana`
-- Community
-  - [ ] Learning
-  - [ ] Contributing
-    - GatewayD public roadmap
-    - Plugins public roadmap
-    - Public proposals
-  - [ ] Forum
-  - [ ] Chat
-  - [ ] Social accounts
-  - [ ] Code of conduct
-  - [ ] Test server
-- Misc
-  - [x] [Telemetry and usage report](/miscellaneous/telemetry-and-usage-report.md)
-  - [ ] Error reporting
-  - [ ] Release notes
-  - [ ] [Glossary](/miscellaneous/glossary.md)
-
-</details>
+<p align="center">
+    <a href="https://docs.gatewayd.io/">Documentation</a>
+</p>
 
 ## Running the docs locally
 
@@ -125,5 +59,5 @@ The tag can be used multiple times in the same page. A single request will be ma
 The `generate_last_modified_data.sh` script is used to generate the `last_modified_date` data in the frontmatter for each page. It should be run manually before pushing the changes to the `main` branch.
 
 ```bash
-bash generate_last_modified_data.sh
+./generate_last_modified_data.sh
 ```
