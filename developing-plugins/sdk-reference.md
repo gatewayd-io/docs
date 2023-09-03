@@ -118,3 +118,4 @@ The root of the SDK is the `github.com/gatewayd-io/gatewayd-plugin-sdk`. It cont
     ```
 
 - [`plugin.proto`](https://github.com/gatewayd-io/gatewayd-plugin-sdk/blob/main/plugin/v1/plugin.proto) is the protocol buffers definition for the plugin and its generated Go code stubs are in `plugin.pb.go` and `plugin_grpc.pb.go`.
+- [`struct.proto`](https://github.com/gatewayd-io/gatewayd-plugin-sdk/blob/main/plugin/v1/struct.proto) is the protocol buffers definition for the `v1.Struct` and its generated Go code stubs are in `struct.pb.go` and `structpb.go`. This is a modified version of the `Struct` from the [Google Protobuf](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/struct.proto) library with an additional `bytes` field.
