@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-01 14:29:52 +0200
+last_modified_date: 2023-09-02 22:22:23 +0200
 layout: default
 title: Global Configuration
 nav_order: 2
