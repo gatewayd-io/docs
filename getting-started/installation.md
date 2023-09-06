@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-04 17:58:45 +0200
+last_modified_date: 2023-09-06 20:57:52 +0200
 layout: default
 title: Installation
 description: How to install GatewayD and its plugins on different platforms and how to build it from source.
@@ -58,13 +58,22 @@ sudo rpm -i gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.r
 
 ### Docker image
 
-GatewayD is also available as a Docker image. The image is available on [GitHub Container Registry](https://ghcr.io/gatewayd-io/gatewayd:latest).
+GatewayD is also available as a Docker image. The image is available on [GitHub Container Registry](https://ghcr.io/gatewayd-io/gatewayd:latest) and [Docker Hub](https://hub.docker.com/r/gatewaydio/gatewayd).
 
 To run GatewayD using Docker, you can use the following command, considering that the `gatewayd.yaml` and `gatewayd_plugins.yaml` configuration files and plugins are located in the current working directory on the host machine. The server will be available on port `15432` on the host machine and the container will be removed after it exits.
 
 ```bash
 docker run -v ./:/opt -p 15432:15432 --rm ghcr.io/gatewayd-io/gatewayd:latest run --config /opt/gatewayd.yaml --plugins-config /opt/gatewayd_plugins.yaml
 ```
+
+The same image can be used to install plugins. The plugins will be installed in the `plugins` directory in the current working directory on the host machine.
+
+```bash
+docker run -v ./:/opt --rm ghcr.io/gatewayd-io/gatewayd:latest plugin install github.com/<organization>/<plugin-name>@<version> --plugins-config /opt/gatewayd_plugins.yaml
+```
+
+{: .note }
+> In the above examples, the image from GitHub Container Registry is used. To use the image from Docker Hub, replace `ghcr.io/gatewayd-io/gatewayd:latest` with `gatewaydio/gatewayd:latest`.
 
 ### Docker Compose
 
