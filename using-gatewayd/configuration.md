@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-05 21:58:52 +0200
+last_modified_date: 2023-09-06 20:58:27 +0200
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -76,6 +76,7 @@ clients:
     tcpKeepAlivePeriod: 30s # duration
     receiveChunkSize: 8192
     receiveDeadline: 0s # duration, 0ms/0s means no deadline
+    receiveTimeout: 0s # duration, 0ms/0s means no timeout
     sendDeadline: 0s # duration, 0ms/0s means no deadline
 
 pools:

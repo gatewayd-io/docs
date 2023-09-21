@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-05 21:58:52 +0200
+last_modified_date: 2023-09-06 20:58:27 +0200
 layout: default
 title: Glossary
 description: Glossary of GatewayD terms

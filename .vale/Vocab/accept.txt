@@ -73,6 +73,7 @@ passdown
 compatibilityPolicy
 acceptancePolicy
 receiveDeadline
+receiveTimeout
 sendDeadline
 API
 DBA
