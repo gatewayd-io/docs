@@ -37,8 +37,6 @@ TCP
 UDP
 Subcommand
 grpcAddress
-softLimit
-hardLimit
 enableTicker
 tickInterval
 multiCore

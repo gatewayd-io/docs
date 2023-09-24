@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-21 11:17:53 +0200
+last_modified_date: 2023-09-24 12:39:44 +0200
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -93,8 +93,6 @@ servers:
   default:
     network: tcp
     address: 0.0.0.0:15432
-    softLimit: 0
-    hardLimit: 0
     enableTicker: False
     tickInterval: 5s # duration
     multiCore: True

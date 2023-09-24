@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-21 11:17:53 +0200
+last_modified_date: 2023-09-24 12:39:44 +0200
 layout: default
 title: Servers
 description: GatewayD server configuration
@@ -14,25 +14,23 @@ The server object runs to listen for incoming connections from database clients.
 
 ## Configuration parameters
 
-| Name             | Type    | Default value | Possible values    | Description                                                                          |
-| ---------------- | ------- | ------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| network          | string  | tcp           | tcp, unix          | The network protocol to use                                                          |
-| address          | string  | 0.0.0.0:15432 | Valid host:port    | The address to listen on                                                             |
-| softLimit        | number  | 0             | Positive integers  | The soft limit of the number of connections (open files). Zero means honor OS limit. |
-| hardLimit        | number  | 0             | Positive integers  | The hard limit of the number of connections (open files). Zero means honor OS limit. |
-| enableTicker     | boolean | False         | True, False        | Whether to enable the ticker or not                                                  |
-| tickInterval     | string  | 5s            | Valid duration     | The interval of the ticker                                                           |
-| multiCore        | boolean | True          | True, False        | Whether to enable multi-core or not                                                  |
-| lockOSThread     | boolean | False         | True, False        | Whether to lock the OS thread or not                                                 |
-| loadBalancer     | string  | roundrobin    | roundrobin, random | The load balancer to use                                                             |
-| readBufferCap    | number  | 134217728     | Positive integers  | The read buffer capacity (bytes)                                                     |
-| writeBufferCap   | number  | 134217728     | Positive integers  | The write buffer capacity (bytes)                                                    |
-| socketRecvBuffer | number  | 134217728     | Positive integers  | The socket receive buffer size (bytes)                                               |
-| socketSendBuffer | number  | 134217728     | Positive integers  | The socket send buffer size (bytes)                                                  |
-| reuseAddress     | boolean | True          | True, False        | Whether to reuse the address or not                                                  |
-| reusePort        | boolean | True          | True, False        | Whether to reuse the port or not                                                     |
-| tcpKeepAlive     | string  | 3s            | Valid duration     | The TCP keep alive duration                                                          |
-| tcpNoDelay       | boolean | True          | True, False        | Whether to enable TCP no delay or not                                                |
+| Name             | Type    | Default value | Possible values    | Description                            |
+| ---------------- | ------- | ------------- | ------------------ | -------------------------------------- |
+| network          | string  | tcp           | tcp, unix          | The network protocol to use            |
+| address          | string  | 0.0.0.0:15432 | Valid host:port    | The address to listen on               |
+| enableTicker     | boolean | False         | True, False        | Whether to enable the ticker or not    |
+| tickInterval     | string  | 5s            | Valid duration     | The interval of the ticker             |
+| multiCore        | boolean | True          | True, False        | Whether to enable multi-core or not    |
+| lockOSThread     | boolean | False         | True, False        | Whether to lock the OS thread or not   |
+| loadBalancer     | string  | roundrobin    | roundrobin, random | The load balancer to use               |
+| readBufferCap    | number  | 134217728     | Positive integers  | The read buffer capacity (bytes)       |
+| writeBufferCap   | number  | 134217728     | Positive integers  | The write buffer capacity (bytes)      |
+| socketRecvBuffer | number  | 134217728     | Positive integers  | The socket receive buffer size (bytes) |
+| socketSendBuffer | number  | 134217728     | Positive integers  | The socket send buffer size (bytes)    |
+| reuseAddress     | boolean | True          | True, False        | Whether to reuse the address or not    |
+| reusePort        | boolean | True          | True, False        | Whether to reuse the port or not       |
+| tcpKeepAlive     | string  | 3s            | Valid duration     | The TCP keep alive duration            |
+| tcpNoDelay       | boolean | True          | True, False        | Whether to enable TCP no delay or not  |
 
 ## Example configuration
 
@@ -41,8 +39,6 @@ servers:
   default:
     network: tcp
     address: 0.0.0.0:15432
-    softLimit: 0
-    hardLimit: 0
     enableTicker: False
     tickInterval: 5s # duration
     multiCore: True
