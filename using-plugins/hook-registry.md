@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-06 20:58:27 +0200
+last_modified_date: 2023-09-21 11:17:53 +0200
 layout: default
 title: Hook registry
 description: The hook registry is a central place where all hooks are registered and executed. It is used by the plugin registry to register and execute plugin hooks.
