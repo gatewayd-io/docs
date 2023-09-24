@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-24 12:39:44 +0200
+last_modified_date: 2023-09-24 13:05:04 +0200
 layout: default
 title: Metrics
 description: GatewayD metrics configuration
@@ -23,11 +23,12 @@ scrape_configs:
 
 ## Configuration parameters
 
-| Name    | Type    | Default value  | Possible values   | Description                                    |
-| ------- | ------- | -------------- | ----------------- | ---------------------------------------------- |
-| enabled | boolean | True           | True, False       | The network protocol to use                    |
-| address | string  | localhost:9090 | Valid host:port   | The HTTP address and port to expose metrics on |
-| path    | string  | /metrics       | Valid path values | The endpoint to expose metrics on              |
+| Name              | Type              | Default value  | Possible values       | Description                                                                                                          |
+| ----------------- | ----------------- | -------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| enabled           | boolean           | True           | True, False           | The network protocol to use                                                                                          |
+| address           | string            | localhost:9090 | Valid host:port       | The HTTP address and port to expose metrics on                                                                       |
+| path              | string            | /metrics       | Valid path values     | The endpoint to expose metrics on                                                                                    |
+| readHeaderTimeout | duration (string) | 10s            | Valid duration values | The maximum duration for reading the request headers. Setting this to a non-zero value will block Slowloris attacks. |
 
 ## Built-in Metrics
 
@@ -59,4 +60,5 @@ metrics:
     enabled: True
     address: localhost:9090
     path: /metrics
+    readHeaderTimeout: 10s
 ```

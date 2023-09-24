@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-24 12:39:44 +0200
+last_modified_date: 2023-09-24 13:05:04 +0200
 layout: default
 title: Plugins
 nav_order: 5
