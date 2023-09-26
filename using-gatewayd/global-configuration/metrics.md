@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-24 13:05:04 +0200
+last_modified_date: 2023-09-24 23:36:49 +0200
 layout: default
 title: Metrics
 description: GatewayD metrics configuration
@@ -61,4 +61,7 @@ metrics:
     address: localhost:9090
     path: /metrics
     readHeaderTimeout: 10s
+    timeout: 10s
+    certFile: ""
+    keyFile: ""
 ```
