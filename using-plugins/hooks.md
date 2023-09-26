@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-24 23:36:49 +0200
+last_modified_date: 2023-09-26 23:39:16 +0200
 layout: default
 title: Hooks
 description: Plugins can be used to modify the connection lifecycle. Each step in the connection lifecycle is represented by one or more plugin hook(s). Plugins can register themselves to be called when a specific hook is triggered.

@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-24 23:36:49 +0200
+last_modified_date: 2023-09-26 23:39:16 +0200
 layout: default
 title: Installation
 description: How to install GatewayD and its plugins on different platforms and how to build it from source.
@@ -52,8 +52,8 @@ sudo dpkg -i gatewayd_{% github_latest_release gatewayd-io/gatewayd v %}_amd64.d
 Download the `.rpm` package and install it using `rpm`:
 
 ```bash
-curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm -o gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm
-sudo rpm -i gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}.x86_64.rpm
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}-1.x86_64.rpm -o gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}-1.x86_64.rpm
+sudo rpm -i gatewayd-{% github_latest_release gatewayd-io/gatewayd v %}-1.x86_64.rpm
 ```
 
 ### Docker image
