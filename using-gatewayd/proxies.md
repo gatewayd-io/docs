@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:39:16 +0200
+last_modified_date: 2023-09-26 23:58:54 +0200
 layout: default
 title: Proxies
 description: Proxy object is used to create a binding between incoming connections from the database clients to the database servers.

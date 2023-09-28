@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:39:16 +0200
+last_modified_date: 2023-09-26 23:58:54 +0200
 layout: default
 title: Clients
 description: Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket.
@@ -36,3 +36,8 @@ You have the option to set deadlines on send and receive calls to the database s
 
 {: .warning }
 > Setting send and receive deadlines are tricky, as the database server might kill the connection abruptly if it ceases to receive the data in whole. This also makes the connection unstable.
+
+## Receive timeout
+
+Since setting receive deadline kills the connection, the `receiveTimeout` property is introduced to stop the receive function from blocking the connection and waiting forever. The current value is zero, which means that it behaves like before, but one can set it to a duration string value.
+

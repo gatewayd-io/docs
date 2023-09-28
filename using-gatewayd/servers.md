@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:39:16 +0200
+last_modified_date: 2023-09-26 23:58:54 +0200
 layout: default
 title: Servers
 description: Server is an object that listens on an address:port pair and accepts connections from database clients.
@@ -39,14 +39,6 @@ The server object is also responsible for handling the traffic between the datab
 ## Protocol support
 
 The server object works in the [transport layer](https://en.wikipedia.org/wiki/Transport_layer), which is Layer 4, or L4, of the [OSI model](https://en.wikipedia.org/wiki/OSI_model). Therefore it doesn't care about the protocol being used in the upper layers. This means that the server object, and GatewayD in general, *can* practically support any protocol in the upper layers. However, it is not *recommended* to use GatewayD for non-database protocols, as it is not optimized for those protocols. The focus of GatewayD is to be a database proxy, and not a general purpose proxy. PostgreSQL has been chosen as the first database protocol to be supported, and more protocols will be added in the future.
-
-## Hard and soft limits
-
-The server object has two types of limits: hard and soft limits. These limits are configurable from the [`servers`](/using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`.
-
-The limits are OS level limits for open files and open connections. If they are set, the server will try to set them on the OS level for the running instance of GatewayD. If the server fails to set the limits, it will exit with an error. If the limits are not set (or set to `0`), the server will not try to set them on the OS level.
-
-If the clients try to open more connections than the soft limit, the server will accept the connections, but will log a warning. If the clients try to open more connections than the hard limit, the server will send an error to the client and will log an error. Then it will close the connection.
 
 ## Connection limits
 

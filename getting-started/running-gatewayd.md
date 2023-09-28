@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:39:16 +0200
+last_modified_date: 2023-09-26 23:58:54 +0200
 layout: default
 title: Running GatewayD
 description: How to run GatewayD and test it with psql
@@ -67,7 +67,7 @@ sha256sum gatewayd-plugin-cache -c checksum.txt
 ```
 
 {: .note }
-> If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` in your favorite editor and set the log level of the default logger to `debug` or `trace`.
+> If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` in your favorite editor and set the log level of the default logger to `debug` or `trace`. Alternatively, you can set the `GATEWAYD_LOGGERS_DEFAULT_LEVEL=debug` environment variable.
 
 Run the following command to start GatewayD:
 
@@ -99,6 +99,9 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 2023-04-08T02:01:04+02:00 INF Started the gRPC API address=localhost:19090 network=tcp
 2023-04-08T02:01:04+02:00 INF GatewayD is running pid=41568
 ```
+
+{: .note }
+> The `run` command automatically lints the configuration files and exits if there is an error. You can skip the linting by using the `--lint false` flag.
 
 ## 5. Test your setup with `psql`
 

@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:39:16 +0200
+last_modified_date: 2023-09-26 23:58:54 +0200
 layout: default
 title: Observability
 description: Observability is a first-class citizen of GatewayD. It generates logs, metrics and traces to make it easier to see what is going on inside.
@@ -29,7 +29,7 @@ The log level of GatewayD affects the aggregation of logs from the plugins. For 
 
 ## Metrics
 
-Metrics are exposed from GatewayD and the plugins in Prometheus format. GatewayD collects, relabels and merges Prometheus metrics from all the plugins and exposes them over `http://localhost:9090/metrics` by default, which is [configurable](/using-gatewayd/global-configuration/metrics#configuration-parameters). List of built-in metrics are available [here](/using-gatewayd/global-configuration/metrics#built-in-metrics).
+Metrics are exposed from GatewayD and the plugins in Prometheus format. GatewayD has a metrics server and a metrics merger, that collects, relabels and merges Prometheus metrics from all the plugins. The metrics server exposes all the metrics over `http://localhost:9090/metrics` by default. Metrics server is [configurable](/using-gatewayd/global-configuration/metrics#configuration-parameters) and the configuration parameters of the metrics merger are available via the plugins' [general configuration](/using-gatewayd/plugins-configuration/general-configurations). List of built-in metrics are available [here](/using-gatewayd/global-configuration/metrics#built-in-metrics).
 
 ![Metrics](/assets/prometheus.png)
 
