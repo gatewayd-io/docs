@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:58:54 +0200
+last_modified_date: 2023-09-28 16:14:41 +0200
 layout: default
 title: Running GatewayD
 description: How to run GatewayD and test it with psql
@@ -101,7 +101,7 @@ Running GatewayD will produce this log output, which means that GatewayD is star
 ```
 
 {: .note }
-> The `run` command automatically lints the configuration files and exits if there is an error. You can skip the linting by using the `--lint false` flag.
+> The `run` command automatically lints the configuration files and exits if there is an error. You can skip the linting by using the `--lint=false` flag.
 
 ## 5. Test your setup with `psql`
 

@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-26 23:58:54 +0200
+last_modified_date: 2023-09-28 16:14:41 +0200
 layout: default
 title: Miscellaneous
 nav_order: 6
