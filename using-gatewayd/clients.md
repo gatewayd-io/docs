@@ -40,4 +40,3 @@ You have the option to set deadlines on send and receive calls to the database s
 ## Receive timeout
 
 Since setting receive deadline kills the connection, the `receiveTimeout` property is introduced to stop the receive function from blocking the connection and waiting forever. The current value is zero, which means that it behaves like before, but one can set it to a duration string value.
-
