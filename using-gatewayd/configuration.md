@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-09-29 00:46:05 +0200
+last_modified_date: 2023-10-17 22:48:41 +0200
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -99,17 +99,6 @@ servers:
     address: 0.0.0.0:15432
     enableTicker: False
     tickInterval: 5s # duration
-    multiCore: True
-    lockOSThread: False
-    loadBalancer: roundrobin
-    readBufferCap: 134217728
-    writeBufferCap: 134217728
-    socketRecvBuffer: 134217728
-    socketSendBuffer: 134217728
-    reuseAddress: True
-    reusePort: True
-    tcpKeepAlive: 3s # duration
-    tcpNoDelay: True
 
 api:
   enabled: True
