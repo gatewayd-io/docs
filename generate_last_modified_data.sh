@@ -2,7 +2,15 @@
 # Replace `last_modified_date` timestamp with current time
 # https://mademistakes.com/notes/adding-last-modified-timestamps-with-git/#mention-5
 
-for b in $(find ./ -name '*.md'); do
+for b in $(find ./ -type d \( -path ./vendor -o -path ./node_modules \) -prune -o -name '*.md'); do
+    if [ -d "${b}" ]; then
+        continue
+    fi
+
+    if [ "$b" = "./.vale/write-good/README.md" ] || [ "$b" = "./README.md" ]; then
+        continue
+    fi
+
     if [ $(cat ${b} | head -n 1 | grep -E '\-\-\-') ]; then
         echo "already have meta"
     else
@@ -21,7 +29,4 @@ for b in $(find ./ -name '*.md'); do
     mv tmp ${b}
 done
 
-# Skip files
-rm we work.md
-git restore .vale/write-good/README.md
-git restore README.md
+rm -rf we work.md
