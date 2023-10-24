@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-10-17 22:48:41 +0200
+last_modified_date: 2023-10-20 00:52:55 +0200
 layout: default
 title: Servers
 description: GatewayD server configuration
