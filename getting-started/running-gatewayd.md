@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-10-20 00:52:55 +0200
+last_modified_date: 2023-10-20 01:04:31 +0200
 layout: default
 title: Running GatewayD
 description: How to run GatewayD and test it with psql
@@ -14,7 +14,7 @@ These are the steps to make GatewayD work for you:
 1. Start the PostgreSQL database.
 2. Start the Redis database for caching query results.
 3. Install GatewayD and the cache plugin.
-4. Configure and start GatewayD.
+4. Start GatewayD.
 5. Test your setup with [`psql`](https://www.postgresql.org/docs/current/app-psql.html) or any other PostgreSQL client or driver.
 6. Clean up.
 
@@ -29,7 +29,7 @@ Use the following command to start a PostgreSQL database server inside a contain
 docker run --rm --name postgres-test -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ```
 
-Test you database by running the following command:
+Test your database by running the following command:
 
 ```bash
 docker exec -it postgres-test psql postgresql://postgres:postgres@localhost:5432/postgres -c "\d"
@@ -45,7 +45,13 @@ Use the following command to start a Redis server inside a container:
 docker run --rm --name redis-test -p 6379:6379 -d redis
 ```
 
-You can verify if both of the above worked correctly by running `docker ps`.
+Test your database by running the following command:
+
+```bash
+docker exec -it redis-test redis-cli keys '*'
+```
+
+Since the database is just created, no keys exist, so the output should be `(empty array)`. Also, you can verify if both of the above worked correctly by running `docker ps`.
 
 ## 3. Install GatewayD and the cache plugin
 
@@ -55,19 +61,21 @@ Download and extract GatewayD and the [gatewayd-cache-plugin](/plugins/gatewayd-
 mkdir gatewayd && cd gatewayd
 wget https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz
 tar xf gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz
-./gatewayd plugin install https://github.com/gatewayd-io/gatewayd-plugin-cache@{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}
+./gatewayd plugin install --update --backup https://github.com/gatewayd-io/gatewayd-plugin-cache@{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}
 ```
 
-## 4. Configure and start GatewayD
+The last command will do the following:
 
-Open the `gatewayd_plugins.yaml` file with your favorite editor and change the `localPath` to `./gatewayd-plugin-cache`. Also, replace the checksum to the one provided in the `checksum.txt` file. You can verify the checksum by running the following command:
-
-```bash
-sha256sum gatewayd-plugin-cache -c checksum.txt
-```
+1. downloads the plugin
+2. extracts the plugin files from the archive
+3. installs the plugin in the `./plugins/gatewayd-plugin-cache` directory
+4. creates a backup of the `gatewayd_plugins.yaml` file in the current working directory
+5. updates the existing configuration for the cache plugin in the `gatewayd_plugins.yaml` file
+6. cleans up the downloaded files
 
 {: .note }
-> If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` in your favorite editor and set the log level of the default logger to `debug` or `trace`. Alternatively, you can set the `GATEWAYD_LOGGERS_DEFAULT_LEVEL=debug` environment variable.
+
+## 4. Start GatewayD
 
 Run the following command to start GatewayD:
 
@@ -75,7 +83,10 @@ Run the following command to start GatewayD:
 ./gatewayd run
 ```
 
-Running GatewayD will produce this log output, which means that GatewayD is started and is:
+{: .note }
+> If you want to see the details of what is happening behind the scenes, open the `gatewayd.yaml` in your favorite editor and set the log level of the default logger to `debug` or `trace`. Alternatively, you can set the `GATEWAYD_LOGGERS_DEFAULT_LEVEL=debug` environment variable before running GatewayD.
+
+Running GatewayD will produce the following log output, which means that GatewayD is started and is:
 
 1. listening on port `15432` with 10 connections to postgres in the pool.
 2. running the `gatewayd-plugin-cache`.
@@ -161,3 +172,4 @@ You can clean up all of the above by following these steps:
 1. Exit `psql` by typing `Ctrl+D` or `\q` and hitting `Enter`.
 2. Stop `gatewayd` gracefully by typing `Ctrl+C`.
 3. Stop the container by running `docker stop postgres-test redis-test`. The containers will be removed automatically.
+4. Remove the `gatewayd` directory from where you installed it by running `rm -rf $(PWD)/gatewayd`.
