@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-10-20 01:04:31 +0200
+last_modified_date: 2023-10-31 20:00:22 +0100
 layout: default
 title: Servers
 description: Server is an object that listens on an address:port pair and accepts connections from database clients.
@@ -47,3 +47,7 @@ The server can accept an unlimited number of connections. However, the [pool](po
 ## Ticker
 
 The server object has a ticker that fires every `tickInterval` seconds. The `tickInterval` value is configurable from the [`servers`](/using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`. The ticker is used to perform periodic tasks, but it is disabled by default. Plugins can use the ticker to perform periodic tasks.
+
+## TLS termination
+
+The server object supports TLS termination, which means that the server object can accept TLS connections from the database clients and forward the traffic to the database server in plain text. The TLS parameters are configurable from the [`servers`](/using-gatewayd/global-configuration/servers) configuration object in the global configuration file: `gatewayd.yaml`.

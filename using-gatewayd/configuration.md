@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-10-20 01:04:31 +0200
+last_modified_date: 2023-10-31 20:00:22 +0100
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -99,6 +99,10 @@ servers:
     address: 0.0.0.0:15432
     enableTicker: False
     tickInterval: 5s # duration
+    enableTLS: False
+    certFile: ""
+    keyFile: ""
+    handshakeTimeout: 5s # duration
 
 api:
   enabled: True
