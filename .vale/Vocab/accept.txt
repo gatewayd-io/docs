@@ -39,12 +39,10 @@ Subcommand
 grpcAddress
 enableTicker
 tickInterval
-multiCore
-lockOSThread
-loadBalancer
-roundrobin
-reuseAddress
-reusePort
+enableTLS
+certFile
+keyFile
+handshakeTimeout
 syslog
 namespace
 client_connections
