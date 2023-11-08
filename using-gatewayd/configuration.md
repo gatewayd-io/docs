@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-10-31 20:00:22 +0100
+last_modified_date: 2023-11-05 18:05:24 +0100
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -158,16 +158,21 @@ plugins:
 All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_LOGGERS_DEFAULT_OUTPUT` environment variable can be set to the outputs required by the default logger and consists of four parts:
 
 1. Prefix: all environment variables are prefixed with `GATEWAYD`.
-2. Group: the configuration group, in this case `DEFAULT`.
-3. Object: the configuration object, in this case `LOGGERS`.
+2. Object: the configuration object, in this case `LOGGERS`.
+3. Group: the configuration group, in this case `DEFAULT`.
 4. Parameter: the configuration parameter, in this case `OUTPUT`.
 
 ```mermaid
 flowchart TD
-    A(GATEWAYD_LOGGERS_DEFAULT_OUTPUT) --> B(Prefix)
-    A --> C(Group)
-    A --> D(Object)
-    A --> E(Parameter)
+    A(GATEWAYD_LOGGERS_DEFAULT_OUTPUT)
+    A --> GATEWAYD
+    A --> LOGGERS
+    A --> DEFAULT
+    A --> OUTPUT
+    GATEWAYD --> Prefix
+    LOGGERS --> Object
+    DEFAULT --> Group
+    OUTPUT --> Parameter
 ```
 
 ## Runtime configuration

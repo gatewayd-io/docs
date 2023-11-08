@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-10-31 20:00:22 +0100
+last_modified_date: 2023-11-05 18:05:24 +0100
 layout: default
 title: Pools
 description: GatewayD has a generic internal pool object that is used to manage plugins and connections.
