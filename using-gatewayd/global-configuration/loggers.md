@@ -38,6 +38,9 @@ GatewayD supports multiple loggers, and each logger supports sending logs to mul
 | compress   | boolean | True          | True, False       | Whether to compress rotated backup files or not                                                     |
 | localTime  | boolean | False         | True, False       | Whether to use the local system time for formatting the timestamps in backup files. Default is UTC. |
 
+{: .note }
+> If maxBackups and maxAge are both 0, no old log files will be deleted.
+
 ### Rsyslog
 
 | Name           | Type   | Default value | Possible values                                       | Description                                                                                                                               |

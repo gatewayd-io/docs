@@ -100,6 +100,10 @@ If a plugin crashes, GatewayD will reload it by the next health check if `reload
 
 Plugin hooks have a timeout, which is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the plugin does not respond within the timeout, GatewayD will log the error and continue with the next plugin or continue processing if it is the last plugin.
 
+## Start timeout
+
+Plugins have a start timeout, which is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the plugin does not start within the timeout, GatewayD will log the error and continue with the next plugin or continue processing if it is the last plugin.
+
 ## Metrics merger
 
 Plugins can choose to expose Prometheus metrics, either separately or together with GatewayD. If a plugin exposes metrics over [Unix Domain Socket](https://en.wikipedia.org/wiki/Unix_domain_socket), they are collected, relabeled and merged with metrics of GatewayD and exposed on the [`https://localhost:9090/metrics`](https://localhost:9090/metrics) endpoint. The metrics merger is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the metrics merger is disabled, the metrics won't be merged.

@@ -130,6 +130,7 @@ metricsMergerPeriod: 5s
 healthCheckPeriod: 5s
 reloadOnCrash: True
 timeout: 30s
+startTimeout: 1m
 plugins:
   - name: gatewayd-plugin-cache
     enabled: True
