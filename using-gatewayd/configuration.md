@@ -82,6 +82,7 @@ clients:
     receiveDeadline: 0s # duration, 0ms/0s means no deadline
     receiveTimeout: 0s # duration, 0ms/0s means no timeout
     sendDeadline: 0s # duration, 0ms/0s means no deadline
+    dialTimeout: 60s # duration, 0ms/0s means no timeout
 
 pools:
   default:

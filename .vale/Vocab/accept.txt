@@ -71,6 +71,7 @@ acceptancePolicy
 receiveDeadline
 receiveTimeout
 sendDeadline
+dialTimeout
 API
 DBA
 DBRE

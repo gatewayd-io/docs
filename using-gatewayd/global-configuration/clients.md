@@ -24,6 +24,7 @@ GatewayD supports multiple client configurations. Each client in each configurat
 | receiveDeadline    | duration (string) | 0s             | Valid duration strings | The amount of time the client should wait before giving up on call to receive. `0s` disables receive deadline. This k |
 | receiveTimeout     | duration (string) | 0s             | Valid duration strings | The amount of time the client should wait before giving up on call to receive. `0s` disables receive timeout.         |
 | sendDeadline       | duration (string) | 0s             | Valid duration strings | The amount of time the client should wait before giving up on call to send. `0s` disables send deadline.              |
+| dialTimeout        | duration (string) | 60s            | Valid duration strings | The amount of time the client should wait before giving up on dialing the database. `0s` disables dial timeout.       |
 
 ```yaml
 clients:
@@ -36,4 +37,5 @@ clients:
     receiveDeadline: 0s # duration, 0ms/0s means no deadline
     receiveTimeout: 0s # duration, 0ms/0s means no timeout
     sendDeadline: 0s # duration, 0ms/0s means no deadline
+    dialTimeout: 60s # duration, 0ms/0s means no timeout
 ```
