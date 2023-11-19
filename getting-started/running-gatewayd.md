@@ -60,9 +60,8 @@ Download and extract GatewayD and the [gatewayd-cache-plugin](/plugins/gatewayd-
 
 ```bash
 mkdir gatewayd && cd gatewayd
-wget https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz
-tar xf gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz
-./gatewayd plugin install --update --backup https://github.com/gatewayd-io/gatewayd-plugin-cache@{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
+./gatewayd plugin install --update --backup github.com/gatewayd-io/gatewayd-plugin-cache@{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}
 ```
 
 The last command will do the following:
