@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-08 17:17:04 +0100
+last_modified_date: 2023-11-19 14:25:14 +0100
 layout: default
 title: Clients
 description: GatewayD client configuration
