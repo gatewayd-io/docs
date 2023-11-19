@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-05 18:05:24 +0100
+last_modified_date: 2023-11-19 14:25:14 +0100
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -82,6 +82,12 @@ clients:
     receiveDeadline: 0s # duration, 0ms/0s means no deadline
     receiveTimeout: 0s # duration, 0ms/0s means no timeout
     sendDeadline: 0s # duration, 0ms/0s means no deadline
+    dialTimeout: 60s # duration, 0ms/0s means no timeout
+    # Retry configuration
+    retries: 3 # 0 means no retry
+    backoff: 1s # duration
+    backoffMultiplier: 2.0 # 0 means no backoff
+    disableBackoffCaps: false
 
 pools:
   default:
@@ -130,6 +136,7 @@ metricsMergerPeriod: 5s
 healthCheckPeriod: 5s
 reloadOnCrash: True
 timeout: 30s
+startTimeout: 1m
 plugins:
   - name: gatewayd-plugin-cache
     enabled: True

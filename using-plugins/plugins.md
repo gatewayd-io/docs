@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-05 18:05:24 +0100
+last_modified_date: 2023-11-17 17:49:50 +0100
 layout: default
 title: Plugins
 description: Plugins play a very important role in GatewayD for adding support for different databases. They are the building blocks of GatewayD, and they are responsible for the majority of the functionality of GatewayD.
@@ -99,6 +99,10 @@ If a plugin crashes, GatewayD will reload it by the next health check if `reload
 ## Timeout
 
 Plugin hooks have a timeout, which is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the plugin does not respond within the timeout, GatewayD will log the error and continue with the next plugin or continue processing if it is the last plugin.
+
+## Start timeout
+
+Plugins have a start timeout, which is configurable in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file. If the plugin does not start within the timeout, GatewayD will log the error and continue with the next plugin or continue processing if it is the last plugin.
 
 ## Metrics merger
 

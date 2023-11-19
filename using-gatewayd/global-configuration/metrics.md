@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-05 18:05:24 +0100
+last_modified_date: 2023-11-17 17:49:50 +0100
 layout: default
 title: Metrics
 description: GatewayD metrics configuration
@@ -29,6 +29,9 @@ scrape_configs:
 | address           | string            | localhost:9090 | Valid host:port       | The HTTP address and port to expose metrics on                                                                       |
 | path              | string            | /metrics       | Valid path values     | The endpoint to expose metrics on                                                                                    |
 | readHeaderTimeout | duration (string) | 10s            | Valid duration values | The maximum duration for reading the request headers. Setting this to a non-zero value will block Slowloris attacks. |
+| timeout           | duration (string) | 10s            | Valid duration values | The maximum duration before timing out. This applies to writes, reads, idle and handler timeouts separately.         |
+| certFile          | string            | ""             | Valid path values     | The path to the TLS certificate file                                                                                 |
+| keyFile           | string            | ""             | Valid path values     | The path to the TLS key file                                                                                         |
 
 ## Built-in Metrics
 
@@ -38,6 +41,7 @@ The following are built-in metrics emitted by GatewayD. The namespace of all the
 | ------------------------------------ | ------- | ------------------------------------------------------------------ |
 | client_connections                   | Gauge   | Number of client connections                                       |
 | server_connections                   | Gauge   | Number of server connections                                       |
+| tls_connections                      | Gauge   | Number of TLS connections                                          |
 | server_ticks_fired_total             | Counter | Total number of server ticks fired                                 |
 | bytes_received_from_client           | Summary | Number of bytes received from client                               |
 | bytes_sent_to_server                 | Summary | Number of bytes sent to server                                     |

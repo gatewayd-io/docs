@@ -71,6 +71,10 @@ acceptancePolicy
 receiveDeadline
 receiveTimeout
 sendDeadline
+dialTimeout
+backoff
+backoffMultiplier
+disableBackoffCaps
 API
 DBA
 DBRE
@@ -82,3 +86,6 @@ maxBackups
 Postgres
 GatewayD
 gatewayd
+frontmatter
+startTimeout
+tls_connections

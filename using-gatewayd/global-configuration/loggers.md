@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-05 18:05:24 +0100
+last_modified_date: 2023-11-17 17:49:50 +0100
 layout: default
 title: Loggers
 description: GatewayD logger configuration
@@ -37,6 +37,9 @@ GatewayD supports multiple loggers, and each logger supports sending logs to mul
 | maxAge     | number  | 30            | Positive integers | Max amount of time to keep the backup files (in days) based on encoded time in the files            |
 | compress   | boolean | True          | True, False       | Whether to compress rotated backup files or not                                                     |
 | localTime  | boolean | False         | True, False       | Whether to use the local system time for formatting the timestamps in backup files. Default is UTC. |
+
+{: .note }
+> If maxBackups and maxAge are both 0, no old log files will be deleted.
 
 ### Rsyslog
 
