@@ -72,6 +72,8 @@ receiveDeadline
 receiveTimeout
 sendDeadline
 dialTimeout
+backoffMultiplier
+disableBackoffCaps
 API
 DBA
 DBRE

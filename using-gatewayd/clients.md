@@ -40,3 +40,53 @@ You have the option to set deadlines on send and receive calls to the database s
 ## Receive timeout
 
 Since setting receive deadline kills the connection, the `receiveTimeout` property is introduced to stop the receive function from blocking the connection and waiting forever. The current value is zero, which means that it behaves like before, but one can set it to a duration string value.
+
+## Dial timeout
+
+The dial timeout is the amount of time the client should wait before giving up on dialing the database. The default value is `60s`. Setting it to `0s` disables the dial timeout.
+
+## Retries and backoff
+
+The first attempt to connect to the database server is made when the client is created, which happens instantly when GatewayD starts. However, if the first attempt fails, the client will retry the connection. The default number of retries is `3`, which means that the client will retry the connection three times before giving up. Setting it to `0` disables the retry mechanism. The client can also backoff before retrying the connection. The backoff duration is set to `1s` by default and `0s` disables the backoff mechanism. The backoff multiplier is set to `2` by default and `0` disables the backoff. The backoff multiplier is applied to the backoff duration. The backoff duration is capped at `60s` by default and the max retry is capped at `10` by default. Setting `disableBackoffCaps` to `true` disables the backoff and retry caps.
+
+{: .note }
+> The first attempt to connect to the database server is counted as a retry, hence the three retries are actually four attempts (one instant attempt and three retry attempts), and the backoff duration is applied to the second attempt and so on.
+
+The backoff duration is calculated by multiplying the backoff duration by the backoff multiplier raised to the power of the number of retries. For example, if the backoff duration is 1 second and the backoff multiplier is 2, the backoff duration will be 1 second, 2 seconds, 4 seconds, 8 seconds, etc. The backoff duration is capped at 1 minute and the backoff multiplier is capped at 10, so the backoff duration will be 1 minute after 6 retries. The backoff multiplier is capped at 10 to prevent the backoff duration from growing too quickly, unless the backoff caps are disabled. The following is the formula for calculating the backoff duration:
+
+```text
+backoff duration = backoff * (backoff multiplier ^ current retry number)
+```
+
+Considering the default values, the backoff duration will be calculated as follows:
+
+```text
+1 * 2 ^ 1 = 2 seconds
+1 * 2 ^ 2 = 4 seconds
+1 * 2 ^ 3 = 8 seconds
+```
+
+If the retries are set to `11`, the backoff duration from the fourth attempt will be calculated as follows, which is capped at 1 minute and 10 retries are made:
+
+```text
+1 * 2 ^ 4 = 16 seconds
+1 * 2 ^ 5 = 32 seconds
+1 * 2 ^ 6 = 1 minute
+1 * 2 ^ 7 = 1 minute (capped)
+1 * 2 ^ 8 = 1 minute (capped)
+1 * 2 ^ 9 = 1 minute (capped)
+1 * 2 ^ 10 = 1 minute (capped)
+```
+
+And if the backoff caps are disabled, the uncapped backoff duration for the fourth attempt will be calculated as follows:
+
+```text
+1 * 2 ^ 4 = 16 seconds
+1 * 2 ^ 5 = 32 seconds
+1 * 2 ^ 6 = 1 minute 4 seconds (uncapped)
+1 * 2 ^ 7 = 2 minutes 8 seconds (uncapped)
+1 * 2 ^ 8 = 4 minutes 16 seconds (uncapped)
+1 * 2 ^ 9 = 8 minutes 32 seconds (uncapped)
+1 * 2 ^ 10 = 17 minutes 4 seconds (uncapped)
+1 * 2 ^ 11 = 34 minutes 8 seconds (uncapped)
+```

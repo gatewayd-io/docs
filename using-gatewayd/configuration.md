@@ -83,6 +83,11 @@ clients:
     receiveTimeout: 0s # duration, 0ms/0s means no timeout
     sendDeadline: 0s # duration, 0ms/0s means no deadline
     dialTimeout: 60s # duration, 0ms/0s means no timeout
+    # Retry configuration
+    retries: 3 # 0 means no retry
+    backoff: 1s # duration
+    backoffMultiplier: 2 # 0 means no backoff
+    disableBackoffCaps: false
 
 pools:
   default:
