@@ -32,7 +32,8 @@ docker run --rm --name postgres-test -p 5432:5432 -e POSTGRES_PASSWORD=postgres 
 Test your database by running the following command:
 
 ```bash
-docker exec -it postgres-test psql postgresql://postgres:postgres@localhost:5432/postgres -c "\d"
+DOCKER_HOST=$(ip addr show docker0 | grep inet | grep -v inet6 | awk -F' ' '{ print $2 }' | sed 's/\/16//g')
+docker exec -it postgres-test psql postgresql://postgres:postgres@${DOCKER_HOST}:5432/postgres -c "\d"
 ```
 
 Since the database is just created, no relations exist.
@@ -116,10 +117,11 @@ Running GatewayD will produce the following log output, which means that Gateway
 
 ## 5. Test your setup with `psql`
 
-GatewayD is running on the host, while PostgreSQL is running inside a container. You can run the following command to test it. Notice that `172.17.0.1` is the IP address of the host machine.
+GatewayD is running on the host, while PostgreSQL is running inside a container. You can run the following command to test it. Notice that `${DOCKER_HOST}` holds the IP address of the host machine, that is accessible from inside the container.
 
 ```bash
-docker exec -it postgres-test psql postgresql://postgres:postgres@172.17.0.1:15432/postgres
+DOCKER_HOST=$(ip addr show docker0 | grep inet | grep -v inet6 | awk -F' ' '{ print $2 }' | sed 's/\/16//g')
+docker exec -it postgres-test psql postgresql://postgres:postgres@${DOCKER_HOST}:15432/postgres
 ```
 
 Now you can create a table and insert data into it. Querying the data will trigger the cache plugin to store the results in Redis and subsequent SELECT queries will be served from the cache. The moment you insert a new value into the table or update a row, all the cached values from that table will be invalidated.
