@@ -24,7 +24,7 @@ Download and extract the archive for your platform, then place the `gatewayd(.ex
 For Unix-like systems, you can use the following commands to download and extract the archive:
 
 ```bash
-curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar xvf -
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
 ```
 
 For Windows, you can use the following commands to download and extract the archive:
