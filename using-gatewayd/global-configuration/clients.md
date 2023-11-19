@@ -27,7 +27,7 @@ GatewayD supports multiple client configurations. Each client in each configurat
 | dialTimeout        | duration (string) | 60s            | Valid duration strings | The amount of time the client should wait before giving up on dialing the database. `0s` disables dial timeout.       |
 | retries            | number            | 3              | Positive integers      | The amount of times to retry a failed connection. `0` means no retry.                                                 |
 | backoff            | duration (string) | 1s             | Valid duration strings | The amount of time to wait before retrying a failed connection. `0s` means no backoff.                                |
-| backoffMultiplier  | number            | 2              | Positive integers      | The multiplier to apply to the backoff duration. `0` means no backoff.                                                |
+| backoffMultiplier  | number            | 2.0            | Positive integers      | The multiplier to apply to the backoff duration. `0` means no backoff.                                                |
 | disableBackoffCaps | boolean           | False          | True, False            | Whether to disable the backoff caps for backoff multiplier and backoff duration.                                      |
 
 ```yaml
@@ -45,6 +45,6 @@ clients:
     # Retry configuration
     retries: 3 # 0 means no retry
     backoff: 1s # duration
-    backoffMultiplier: 2 # 0 means no backoff
+    backoffMultiplier: 2.0 # 0 means no backoff
     disableBackoffCaps: false
 ```

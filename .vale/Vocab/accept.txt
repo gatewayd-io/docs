@@ -72,6 +72,7 @@ receiveDeadline
 receiveTimeout
 sendDeadline
 dialTimeout
+backoff
 backoffMultiplier
 disableBackoffCaps
 API
