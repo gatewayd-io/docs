@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-17 17:49:50 +0100
+last_modified_date: 2023-11-19 14:31:13 +0100
 layout: default
 title: gatewayd-plugin-cache
 description: GatewayD plugin for caching query results in Redis.
@@ -41,7 +41,7 @@ The gatewayd-plugin-cahce is a GatewayD plugin for caching query results in Redi
 It is assumed that you have already installed PostgreSQL, Redis and [GatewayD](/getting-started/installation).
 
 {: .note }
-> The plugin is currently compatible with Linux and macOS.
+> The plugin is compatible with Linux, Windows and macOS.
 
 ### Automatic installation
 
