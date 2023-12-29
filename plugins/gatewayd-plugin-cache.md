@@ -9,7 +9,7 @@ parent: Plugins
 
 # gatewayd-plugin-cache
 
-The gatewayd-plugin-cahce is a GatewayD plugin for caching query results in Redis and this is how it works:
+The gatewayd-plugin-cache is a GatewayD plugin for caching query results in Redis and this is how it works:
 
 1. The plugin listens for incoming queries from the client(s).
 2. When a new client connects to GatewayD, the plugin detects the client's selected database from the client's startup message. The client's database is cached in Redis.
