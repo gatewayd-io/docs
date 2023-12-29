@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-19 14:31:13 +0100
+last_modified_date: 2023-12-29 10:51:25 +0100
 layout: default
 title: gatewayd-plugin-cache
 description: GatewayD plugin for caching query results in Redis.

@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-19 14:31:13 +0100
+last_modified_date: 2023-12-04 12:41:05 +0100
 layout: default
 title: Observability
 description: Observability is a first-class citizen of GatewayD. It generates logs, metrics and traces to make it easier to see what is going on inside.
