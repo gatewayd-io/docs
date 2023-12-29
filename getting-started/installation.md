@@ -40,6 +40,9 @@ curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_late
 unzip gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip -d gatewayd
 ```
 
+{: .note }
+> Note that the above commands download the latest release of GatewayD for `amd64` architecture. To download the latest (or a specific) release of GatewayD for `arm64` architecture, replace `amd64` with `arm64` in the above commands and replace the version number in the URL with the desired version number. It is always recommended to use the latest release of GatewayD and its plugins.
+
 ### APT and RPM packages
 
 Alternatively, GatewayD is available as APT and RPM packages for Linux distributions. These packages include the `gatewayd` binary and the default global and plugins configuration files. The `gatewayd` binary will be installed in `/usr/bin/gatewayd` and the configuration files will be installed in `/etc` as `/etc/gatewayd.yaml` and `/etc/gatewayd_plugins.yaml`.
