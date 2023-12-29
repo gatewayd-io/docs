@@ -21,10 +21,16 @@ GatewayD releases are available as standalone binaries for Linux, Windows and ma
 
 Download and extract the archive for your platform, then place the `gatewayd(.exe)` binary in your `PATH` to run it from any location. The [`gatewayd.yaml`](/using-gatewayd/configuration#global-configuration) and [`gatewayd_plugins.yaml`](/using-gatewayd/configuration#plugins-configuration) configuration files are located next to the gatewayd binary in the downloaded archive. These are the default global and plugins configuration files for GatewayD. Extract them to your desired location and use them as a starting point for your configuration.
 
-For Unix-like systems, you can use the following commands to download and extract the archive:
+For Linux-based distributions, you can use the following commands to download and extract the archive:
 
 ```bash
 curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
+```
+
+For macOS, you can use the following commands to download and extract the archive:
+
+```bash
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-darwin-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
 ```
 
 For Windows, you can use the following commands to download and extract the archive:
