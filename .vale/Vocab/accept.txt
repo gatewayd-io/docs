@@ -89,3 +89,5 @@ gatewayd
 frontmatter
 startTimeout
 tls_connections
+Goja
+stringified
