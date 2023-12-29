@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-11-19 20:02:20 +0100
+last_modified_date: 2023-12-04 12:41:05 +0100
 layout: default
 title: Installation
 description: How to install GatewayD and its plugins on different platforms and how to build it from source.
@@ -21,10 +21,16 @@ GatewayD releases are available as standalone binaries for Linux, Windows and ma
 
 Download and extract the archive for your platform, then place the `gatewayd(.exe)` binary in your `PATH` to run it from any location. The [`gatewayd.yaml`](/using-gatewayd/configuration#global-configuration) and [`gatewayd_plugins.yaml`](/using-gatewayd/configuration#plugins-configuration) configuration files are located next to the gatewayd binary in the downloaded archive. These are the default global and plugins configuration files for GatewayD. Extract them to your desired location and use them as a starting point for your configuration.
 
-For Unix-like systems, you can use the following commands to download and extract the archive:
+For Linux-based distributions, you can use the following commands to download and extract the archive:
 
 ```bash
 curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
+```
+
+For macOS, you can use the following commands to download and extract the archive:
+
+```bash
+curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-darwin-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
 ```
 
 For Windows, you can use the following commands to download and extract the archive:
@@ -33,6 +39,9 @@ For Windows, you can use the following commands to download and extract the arch
 curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip -o gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip
 unzip gatewayd-windows-amd64-{% github_latest_release gatewayd-io/gatewayd %}.zip -d gatewayd
 ```
+
+{: .note }
+> Note that the above commands download the latest release of GatewayD for `amd64` architecture. To download the latest (or a specific) release of GatewayD for `arm64` architecture, replace `amd64` with `arm64` in the above commands and replace the version number in the URL with the desired version number. It is always recommended to use the latest release of GatewayD and its plugins.
 
 ### APT and RPM packages
 
