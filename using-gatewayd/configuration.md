@@ -95,8 +95,6 @@ pools:
 
 proxies:
   default:
-    elastic: False
-    reuseElasticClients: False
     healthCheckPeriod: 60s # duration
 
 servers:
