@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-12-04 12:41:05 +0100
+last_modified_date: 2024-01-01 07:15:41 +0100
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -95,8 +95,6 @@ pools:
 
 proxies:
   default:
-    elastic: False
-    reuseElasticClients: False
     healthCheckPeriod: 60s # duration
 
 servers:
