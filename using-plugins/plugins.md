@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-12-29 10:51:57 +0100
+last_modified_date: 2024-01-01 13:14:21 +0100
 layout: default
 title: Plugins
 description: Plugins play a very important role in GatewayD for adding support for different databases. They are the building blocks of GatewayD, and they are responsible for the majority of the functionality of GatewayD.

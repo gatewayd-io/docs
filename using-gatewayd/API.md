@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2023-12-29 10:51:57 +0100
+last_modified_date: 2024-01-01 13:14:21 +0100
 layout: default
 title: API
 description: GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `gatewayd` process and its plugins.
@@ -35,3 +35,18 @@ The API exposes the following endpoints on the gRPC server and HTTP gateway:
 | `/api.v1.GatewayDAdminAPIService/GetPools`        | `/v1/GatewayDPluginService/GetPools`        | Returns the list of active pools            |
 | `/api.v1.GatewayDAdminAPIService/GetProxies`      | `/v1/GatewayDPluginService/GetProxies`      | Returns the list of active proxies          |
 | `/api.v1.GatewayDAdminAPIService/GetServers`      | `/v1/GatewayDPluginService/GetServers`      | Returns the list of active servers          |
+
+## Liveness and Readiness
+
+The gRPC server and the HTTP gateway exposes the health endpoints for liveness and readiness probes in containerized environments and kubernetes. All the probes return whether all the servers are running or not. The health check works both on the gRPC server and the HTTP server and can be tested using the following commands:
+
+```bash
+# gRPC server
+$ grpc-client-cli health localhost:19090
+{
+ "status":  "SERVING"
+}
+# HTTP gateway
+$ curl http://localhost:18080/healthz
+{"status":"SERVING"}
+```

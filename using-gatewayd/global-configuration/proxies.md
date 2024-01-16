@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-01 07:15:41 +0100
+last_modified_date: 2024-01-01 13:14:21 +0100
 layout: default
 title: Proxies
 description: GatewayD proxy configuration
