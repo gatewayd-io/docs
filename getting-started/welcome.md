@@ -60,7 +60,7 @@ These are just a few examples and the list is not exhaustive, as new plugins are
 
 ## What GatewayD does not do
 
-GatewayD is not a silver bullet and won't solve all your database problems over night. You still have to design and normalize your database schema, take and test backups, secure your database and do whatever you used to do before GatewayD. GatewayD came into existence to fix the black box mentality that surrounds databases to this very day.
+GatewayD is not a silver bullet and won't solve all your database problems overnight. You still have to design and normalize your database schema, take and test backups, secure your database and do whatever you used to do before GatewayD. GatewayD came into existence to fix the black box mentality that surrounds databases to this very day.
 
 Over time many plugins will be developed either by us or the community that will try to solve different issues arose from utilizing databases.
 
