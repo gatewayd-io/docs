@@ -68,6 +68,7 @@ plugins:
   - name: gatewayd-plugin-cache
     enabled: True
     localPath: ../gatewayd-plugin-cache/gatewayd-plugin-cache
+    url: github.com/gatewayd-io/gatewayd-plugin-cache@latest
     args: ["--log-level", "info"]
     env:
       - MAGIC_COOKIE_KEY=GATEWAYD_PLUGIN

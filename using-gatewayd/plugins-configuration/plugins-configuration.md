@@ -24,6 +24,7 @@ interface](https://github.com/gatewayd-io/gatewayd-plugin-sdk/blob/main/plugin/v
 | name      | string         | -             | -                | The name of the plugin.                                            |
 | enabled   | boolean        | True          | True, False      | Enables/disables the plugin.                                       |
 | localPath | string         | -             | Valid file paths | The path to the plugin's executable.                               |
+| url       | string         | -             | -                | The GitHub URL of the plugin plus the version tag (or latest).     |
 | args      | list of string | -             | -                | The list of arguments to pass to the plugin's command, aka. flags. |
 | env       | list           | -             | -                | The list of environment variables to pass to the plugin.           |
 | checksum  | string         | -             | -                | The SHA256 checksum of the plugin's executable.                    |
@@ -37,6 +38,7 @@ plugins:
   - name: gatewayd-plugin-cache
     enabled: True
     localPath: ../gatewayd-plugin-cache/gatewayd-plugin-cache
+    url: github.com/gatewayd-io/gatewayd-plugin-cache@latest
     args: ["--log-level", "debug"]
     env:
       - MAGIC_COOKIE_KEY=GATEWAYD_PLUGIN
