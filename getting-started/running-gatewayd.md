@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-16 20:49:17 +0100
+last_modified_date: 2024-01-29 21:30:54 +0100
 layout: default
 title: Running GatewayD
 description: How to run GatewayD and test it with psql
@@ -61,7 +61,7 @@ Download and extract GatewayD and the [gatewayd-cache-plugin](/plugins/gatewayd-
 ```bash
 mkdir gatewayd && cd gatewayd
 curl -L https://github.com/gatewayd-io/gatewayd/releases/download/{% github_latest_release gatewayd-io/gatewayd %}/gatewayd-linux-amd64-{% github_latest_release gatewayd-io/gatewayd %}.tar.gz | tar zxvf -
-./gatewayd plugin install --update --backup github.com/gatewayd-io/gatewayd-plugin-cache@{% github_latest_release gatewayd-io/gatewayd-plugin-cache %}
+./gatewayd plugin install --update --backup github.com/gatewayd-io/gatewayd-plugin-cache@latest
 ```
 
 The last command will do the following:
