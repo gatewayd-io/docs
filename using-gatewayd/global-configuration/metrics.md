@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-01 13:14:21 +0100
+last_modified_date: 2024-01-16 20:49:17 +0100
 layout: default
 title: Metrics
 description: GatewayD metrics configuration
@@ -37,24 +37,27 @@ scrape_configs:
 
 The following are built-in metrics emitted by GatewayD. The namespace of all the metrics is always set to `gatewayd` and all the metrics are prefixed with `gatewayd_`. Emitted metrics from plugins are listed on their own page.
 
-| Name                                 | Type    | Description                                                        |
-| ------------------------------------ | ------- | ------------------------------------------------------------------ |
-| client_connections                   | Gauge   | Number of client connections                                       |
-| server_connections                   | Gauge   | Number of server connections                                       |
-| tls_connections                      | Gauge   | Number of TLS connections                                          |
-| server_ticks_fired_total             | Counter | Total number of server ticks fired                                 |
-| bytes_received_from_client           | Summary | Number of bytes received from client                               |
-| bytes_sent_to_server                 | Summary | Number of bytes sent to server                                     |
-| bytes_received_from_server           | Summary | Number of bytes received from server                               |
-| bytes_sent_to_client                 | Summary | Number of bytes sent to client                                     |
-| traffic_bytes                        | Summary | Number of total bytes passed through GatewayD via client or server |
-| plugins_loaded_total                 | Counter | Number of plugins loaded                                           |
-| plugin_hooks_registered_total        | Counter | Number of plugin hooks registered                                  |
-| plugin_hooks_executed_total          | Counter | Number of plugin hooks executed                                    |
-| proxy_health_checks_total            | Counter | Number of proxy health checks                                      |
-| proxied_connections                  | Gauge   | Number of proxy connects                                           |
-| proxy_passthroughs_total             | Counter | Number of successful proxy passthroughs                            |
-| proxy_passthrough_terminations_total | Counter | Number of proxy passthrough terminations by plugins                |
+| Name                                 | Type                  | Description                                                        |
+| ------------------------------------ | --------------------- | ------------------------------------------------------------------ |
+| client_connections                   | Gauge                 | Number of client connections                                       |
+| server_connections                   | Gauge                 | Number of server connections                                       |
+| tls_connections                      | Gauge                 | Number of TLS connections                                          |
+| server_ticks_fired_total             | Counter               | Total number of server ticks fired                                 |
+| bytes_received_from_client           | Summary               | Number of bytes received from client                               |
+| bytes_sent_to_server                 | Summary               | Number of bytes sent to server                                     |
+| bytes_received_from_server           | Summary               | Number of bytes received from server                               |
+| bytes_sent_to_client                 | Summary               | Number of bytes sent to client                                     |
+| traffic_bytes                        | Summary               | Number of total bytes passed through GatewayD via client or server |
+| plugins_loaded_total                 | Counter               | Number of plugins loaded                                           |
+| plugin_hooks_registered_total        | Counter               | Number of plugin hooks registered                                  |
+| plugin_hooks_executed_total          | Counter               | Number of plugin hooks executed                                    |
+| proxy_health_checks_total            | Counter               | Number of proxy health checks                                      |
+| proxied_connections                  | Gauge                 | Number of proxy connects                                           |
+| proxy_passthroughs_to_client_total   | Counter               | Number of successful proxy passthroughs from server to client      |
+| proxy_passthroughs_to_server_total   | Counter               | Number of successful proxy passthroughs from client to server      |
+| proxy_passthrough_terminations_total | Counter               | Number of proxy passthrough terminations by plugins                |
+| api_requests_total                   | Counter (with labels) | Number of API requests                                             |
+| api_requests_errors_total            | Counter (with labels) | Number of API request errors                                       |
 
 ## Example configuration
 
