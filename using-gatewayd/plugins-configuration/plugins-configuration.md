@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-01 13:14:21 +0100
+last_modified_date: 2024-01-29 21:04:09 +0100
 layout: default
 title: Plugins configuration
 description: GatewayD plugins configuration
