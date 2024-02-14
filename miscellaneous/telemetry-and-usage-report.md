@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-16 20:49:17 +0100
+last_modified_date: 2024-01-29 21:53:19 +0100
 layout: default
 title: Telemetry and Usage Report
 description: Telemetry and usage report of GatewayD
