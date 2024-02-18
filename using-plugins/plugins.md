@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-29 21:53:19 +0100
+last_modified_date: 2024-02-18 12:58:36 +0100
 layout: default
 title: Plugins
 description: Plugins play a very important role in GatewayD for adding support for different databases. They are the building blocks of GatewayD, and they are responsible for the majority of the functionality of GatewayD.
@@ -57,15 +57,6 @@ Plugins are loaded in the order in which they appear in the [plugins configurati
 ## Policies
 
 Certain policies can be applied to plugins. These policies are applied to all plugins, and can be configured in the [general configuration](/using-gatewayd/plugins-configuration/general-configurations) of the plugins configuration file.
-
-### Verification policy
-
-The verification policy controls how the output of the plugin's hook, that is, its result, should be handled and whether to verify the output or not.
-
-- `passdown` (default): the output of the plugin is passed down to the next plugin, regardless of the result. The result is not verified.
-- `ignore`: the output of the current plugin is ignored if the verification fails, and the next plugin is called with the same input.
-- `abort`: the output of the current plugin is ignored if the verification fails, and the next plugin is not called.
-- `remove`: the output of the current plugin is ignored if the verification fails, and the next plugin is called with the same input. The current registered hook from the current plugin is removed from the list of registered hooks and it will not be called again.
 
 ### Compatibility policy
 
