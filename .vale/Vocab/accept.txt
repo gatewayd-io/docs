@@ -64,8 +64,6 @@ args
 env
 localPath
 hardcoded
-verificationPolicy
-passdown
 compatibilityPolicy
 acceptancePolicy
 receiveDeadline
