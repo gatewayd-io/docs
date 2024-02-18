@@ -65,7 +65,6 @@ env
 localPath
 hardcoded
 compatibilityPolicy
-acceptancePolicy
 receiveDeadline
 receiveTimeout
 sendDeadline

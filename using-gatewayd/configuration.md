@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-02-18 12:50:24 +0100
+last_modified_date: 2024-02-18 13:13:53 +0100
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -126,7 +126,6 @@ This is the complete plugins config file with the default values and an example 
 
 ```yaml
 compatibilityPolicy: "strict"
-acceptancePolicy: "accept"
 terminationPolicy: "stop"
 enableMetricsMerger: True
 metricsMergerPeriod: 5s
