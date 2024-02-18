@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-01-29 21:53:19 +0100
+last_modified_date: 2024-02-14 19:54:47 +0100
 layout: default
 title: Template Projects
 description: Template projects can be used to quickly get started with developing plugins.
