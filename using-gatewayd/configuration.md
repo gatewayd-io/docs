@@ -126,7 +126,6 @@ This is the complete plugins config file with the default values and an example 
 
 ```yaml
 compatibilityPolicy: "strict"
-acceptancePolicy: "accept"
 terminationPolicy: "stop"
 enableMetricsMerger: True
 metricsMergerPeriod: 5s
