@@ -182,10 +182,12 @@ flowchart TD
 
 GatewayD allows plugins to update the global configuration at runtime. This is done by calling the `OnConfigLoaded` hook, which is called after the global configuration is loaded. The `OnConfigLoaded` hook is called on startup with the global configuration as a parameter. The plugin can then modify the global configuration and return it. The modified global configuration will be used by GatewayD.
 
-An example of this update can be found in the [Go plugin template](https://github.com/gatewayd-io/plugin-template-go/blob/981b36aa62b4ba059656c6dde08f67a9206c0948/plugin/plugin.go#L54-L129). The following snippet shows how to update the global configuration at runtime:
+An example of this update can be found in the [Go plugin template](https://github.com/gatewayd-io/plugin-template-go/blob/8fa91ee1105ff56900bca0d90b01466e63ce2fd1/plugin/plugin.go#L52-L119). The following snippet shows how to update the global configuration at runtime:
 
 ```go
 func (p *Plugin) OnConfigLoaded(ctx context.Context, req *v1.Struct) (*v1.Struct, error) {
+  // ...
+  // Update the global configuration
   req.Fields["loggers.default.level"] = v1.NewStringValue("debug")
   req.Fields["loggers.default.noColor"] = v1.NewBoolValue(false)
   return req, nil
