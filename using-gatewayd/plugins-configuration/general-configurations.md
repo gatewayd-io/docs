@@ -21,6 +21,8 @@ grand_parent: Using GatewayD
 | reloadOnCrash       | boolean | True          | True, False            | If enabled, GatewayD will reload the plugin if it crashes. The crash is detected by the health check.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | timeout             | string  | 30s           | Valid duration strings | The timeout controls how long to wait for a plugin to respond to a request before timing out.                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | startTimeout        | string  | 1m            | Valid duration strings | The start timeout controls how long to wait for a plugin to start before timing out.                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| policyTimeout       | string  | 30s           | Valid duration strings | The policy timeout controls how long to wait for a policy to evaluate before timing out.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| policies            | array   |               |                        | The policies are a set of rules that are evaluated against the signals to determine whether the actions should be executed.                                                                                                                                                                                                                                                                                                                                                                                                |
 
 ## Example configuration
 
@@ -32,4 +34,10 @@ healthCheckPeriod: 5s
 reloadOnCrash: True
 timeout: 30s
 startTimeout: 1m
+policyTimeout: 30s
+policies:
+  name: terminate
+  policy: "Signal.terminate == true && Policy.terminate == 'stop'"
+  metadata:
+    terminate: "stop" # Change this to "continue" to continue the execution
 ```
