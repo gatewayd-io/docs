@@ -95,20 +95,21 @@ Running GatewayD will produce the following log output, which means that Gateway
 5. exposing an HTTP and a gRPC API on ports `18080` and `19090`.
 
 ```bash
-2023-12-26T16:22:02+03:30 INF configuring client automatic mTLS group=default plugin=gatewayd-plugin-cache
-2023-12-26T16:22:03+03:30 INF Starting metrics server via HTTP over Unix domain socket endpoint=/metrics group=default plugin=gatewayd-plugin-cache timestamp=2023-12-26T16:22:03.083+0330 unixDomainSocket=/tmp/gatewayd-plugin-cache.sock
-2023-12-26T16:22:03+03:30 INF configuring server automatic mTLS group=default plugin=gatewayd-plugin-cache timestamp=2023-12-26T16:22:03.084+0330
-2023-12-26T16:22:03+03:30 INF Registering plugin hooks group=default name=gatewayd-plugin-cache
-2023-12-26T16:22:03+03:30 INF Plugin is ready group=default name=gatewayd-plugin-cache
-2023-12-26T16:22:03+03:30 INF Started the metrics merger scheduler group=default metricsMergerPeriod=5s startDelay=2023-12-26T16:22:08+03:30
-2023-12-26T16:22:03+03:30 INF Starting plugin health check scheduler group=default healthCheckPeriod=5s
-2023-12-26T16:22:03+03:30 INF Metrics are exposed address=http://localhost:9090/metrics group=default readHeaderTimeout=10s timeout=10s
-2023-12-26T16:22:03+03:30 INF There are clients available in the pool count=10 group=default name=default
-2023-12-26T16:22:03+03:30 INF Started the client health check scheduler group=default healthCheckPeriod=1m0s startDelay=2023-12-26T16:23:03+03:30
-2023-12-26T16:22:03+03:30 INF GatewayD is listening address=0.0.0.0:15432 group=default
-2023-12-26T16:22:03+03:30 INF Started the HTTP API address=localhost:18080 group=default
-2023-12-26T16:22:03+03:30 INF Started the gRPC API address=localhost:19090 group=default network=tcp
-2023-12-26T16:22:03+03:30 INF GatewayD is running group=default pid=71426
+2024-03-02T13:24:51+01:00 INF Policies are loaded group=default policies=["passthrough","terminate","log"]
+2024-03-02T13:24:51+01:00 INF configuring client automatic mTLS group=default plugin=gatewayd-plugin-cache
+2024-03-02T13:24:52+01:00 INF Starting metrics server via HTTP over Unix domain socket endpoint=/metrics group=default plugin=gatewayd-plugin-cache timestamp=2024-03-02T13:24:52.427+0100 unixDomainSocket=/tmp/gatewayd-plugin-cache.sock
+2024-03-02T13:24:52+01:00 INF configuring server automatic mTLS group=default plugin=gatewayd-plugin-cache timestamp=2024-03-02T13:24:52.427+0100
+2024-03-02T13:24:52+01:00 INF Registering plugin hooks group=default name=gatewayd-plugin-cache
+2024-03-02T13:24:52+01:00 INF Plugin is ready group=default name=gatewayd-plugin-cache
+2024-03-02T13:24:52+01:00 INF Started the metrics merger scheduler group=default metricsMergerPeriod=5s startDelay=2024-03-02T13:24:57+01:00
+2024-03-02T13:24:52+01:00 INF Starting plugin health check scheduler group=default healthCheckPeriod=5s
+2024-03-02T13:24:52+01:00 INF Metrics are exposed address=http://localhost:9090/metrics group=default readHeaderTimeout=10s timeout=10s
+2024-03-02T13:24:52+01:00 INF There are clients available in the pool count=10 group=default name=default
+2024-03-02T13:24:52+01:00 INF Started the client health check scheduler group=default healthCheckPeriod=1m0s startDelay=2024-03-02T13:25:52+01:00
+2024-03-02T13:24:52+01:00 INF GatewayD is listening address=0.0.0.0:15432 group=default
+2024-03-02T13:24:52+01:00 INF Started the HTTP API address=localhost:18080 group=default
+2024-03-02T13:24:52+01:00 INF Started the gRPC API address=localhost:19090 group=default network=tcp
+2024-03-02T13:24:52+01:00 INF GatewayD is running group=default pid=24658
 ```
 
 {: .note }
