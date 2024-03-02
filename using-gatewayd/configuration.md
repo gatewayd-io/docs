@@ -126,7 +126,6 @@ This is the complete plugins config file with the default values and an example 
 
 ```yaml
 compatibilityPolicy: "strict"
-terminationPolicy: "stop"
 enableMetricsMerger: True
 metricsMergerPeriod: 5s
 healthCheckPeriod: 5s
@@ -187,13 +186,8 @@ An example of this update can be found in the [Go plugin template](https://githu
 
 ```go
 func (p *Plugin) OnConfigLoaded(ctx context.Context, req *v1.Struct) (*v1.Struct, error) {
-  if req.Fields == nil {
-    req.Fields = make(map[string]*v1.Value)
-  }
-
   req.Fields["loggers.default.level"] = v1.NewStringValue("debug")
   req.Fields["loggers.default.noColor"] = v1.NewBoolValue(false)
-
   return req, nil
 }
 ```
