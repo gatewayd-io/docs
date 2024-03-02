@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-02-18 12:58:36 +0100
+last_modified_date: 2024-02-18 16:18:25 +0100
 layout: default
 title: Running GatewayD
 description: How to run GatewayD and test it with psql

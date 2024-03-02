@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-02-18 12:58:36 +0100
+last_modified_date: 2024-03-02 13:13:28 +0100
 layout: default
 title: API
 description: Act is a policy engine that supports signals, policies and actions. It is used to automate the execution of business rules.
