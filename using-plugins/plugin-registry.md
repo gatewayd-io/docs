@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-02-18 16:18:25 +0100
+last_modified_date: 2024-03-02 13:13:55 +0100
 layout: default
 title: Plugin registry
 description: The plugin registry is a central place where all plugins are loaded, configured and executed, and also the main entry point for all plugins.
