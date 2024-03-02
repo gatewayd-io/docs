@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-02 13:13:55 +0100
+last_modified_date: 2024-03-02 12:35:38
 layout: default
 title: Clients
 description: Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket.
