@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-07 22:33:34
+last_modified_date: 2024-03-07 22:35:50
 layout: default
 title: Act
 description: Act is a policy engine that supports signals, policies and actions. It is used to automate the execution of business rules.

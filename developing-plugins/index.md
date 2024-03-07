@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-07 22:33:34
+last_modified_date: 2024-03-07 22:35:51
 layout: default
 title: Developing Plugins
 nav_order: 4
