@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-02 12:35:38
+last_modified_date: 2024-03-07 22:52:53
 layout: default
 title: gatewayd-plugin-js
 description: GatewayD plugin for running JS functions as hooks.
