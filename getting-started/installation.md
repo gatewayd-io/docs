@@ -86,23 +86,11 @@ docker run -v ./:/opt --rm gatewaydio/gatewayd:latest plugin install github.com/
 
 ### Docker Compose
 
-For ease of use, a [docker-compose](https://github.com/gatewayd-io/gatewayd/blob/main/docker-compose.yaml) file is available, which starts a few services to demonstrate the capabilities of GatewayD. The following services are started:
+For ease of use, a [docker-compose](https://github.com/gatewayd-io/gatewayd/blob/main/docker-compose.yaml) file and a [setup.sh](https://github.com/gatewayd-io/gatewayd/blob/main/setup.sh) are available, which starts a few services to demonstrate the capabilities of GatewayD. This is a good starting point to test GatewayD and its plugins.
 
-1. A transient service that installs the cache plugin
-2. PostgreSQL database
-3. Redis
-4. GatewayD with the cache plugin
+#### Download and run the docker-compose file
 
-Multiple ports are exposed from GatewayD to the host machine:
-
-| Port  | Service Name          | Endpoints/Services/Protocols                                                                                                                          | Description                                                                                                                                                                                         |
-| ----- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 15432 | GatewayD server       | [Postgres Wire Protocol](https://www.postgresql.org/docs/current/protocol.html)                                                                       | GatewayD server for PostgreSQL clients to connect to                                                                                                                                                |
-| 9090  | Prometheus metrics    | <http://localhost:9090/metrics>                                                                                                                       | Prometheus metrics                                                                                                                                                                                  |
-| 18080 | GatewayD HTTP gateway | <http://localhost:18080/swagger-ui/><br/><http://localhost:18080/healthz>                                                                             | API documentation and health check                                                                                                                                                                  |
-| 19090 | GatewayD gRPC API     | `api.v1.GatewayDAdminAPIService`<br/>`grpc.health.v1.Health`<br/>`grpc.reflection.v1.ServerReflection`<br/>`grpc.reflection.v1alpha.ServerReflection` | gRPC API with reflection enabled. Use [grpcurl](https://github.com/fullstorydev/grpcurl), [grpc-client-cli](https://github.com/vadimi/grpc-client-cli) or any other gRPC client to interact with it |
-
-To download and run the docker-compose file, use the following commands:
+To download and run the docker-compose and the setup files, use the following commands:
 
 ```bash
 # Create a new directory and navigate to it
@@ -114,7 +102,25 @@ curl -L https://raw.githubusercontent.com/gatewayd-io/gatewayd/main/setup.sh -o 
 docker-compose up -d
 ```
 
-The `setup.sh` script will install the cache plugin and update the `gatewayd_plugins.yaml` configuration file. The `docker-compose.yaml` file will start the services. The services will be available on the host machine on the specified ports.
+The above commands will download the `docker-compose.yaml` file and the `setup.sh` script from the GitHub repository and start the services. The `setup.sh` script will install the cache plugin and update the `gatewayd_plugins.yaml` configuration file. The `docker-compose.yaml` file will start the services the following services:
+
+1. A transient service that installs the cache plugin
+2. PostgreSQL database
+3. Redis
+4. GatewayD with the cache plugin
+
+#### Exposed ports and services
+
+GatewayD will expose a few ports that will be available on the host machine. The ports are one-to-one mapped to the container's ports.
+
+| Port  | Service Name          | Endpoints/Services/Protocols                                                                                                                          | Description                                                                                                                                                                                         |
+| ----- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 15432 | GatewayD server       | [Postgres Wire Protocol](https://www.postgresql.org/docs/current/protocol.html)                                                                       | GatewayD server for PostgreSQL clients to connect to                                                                                                                                                |
+| 9090  | Prometheus metrics    | <http://localhost:9090/metrics>                                                                                                                       | Prometheus metrics                                                                                                                                                                                  |
+| 18080 | GatewayD HTTP gateway | <http://localhost:18080/swagger-ui/><br/><http://localhost:18080/healthz>                                                                             | API documentation and health check                                                                                                                                                                  |
+| 19090 | GatewayD gRPC API     | `api.v1.GatewayDAdminAPIService`<br/>`grpc.health.v1.Health`<br/>`grpc.reflection.v1.ServerReflection`<br/>`grpc.reflection.v1alpha.ServerReflection` | gRPC API with reflection enabled. Use [grpcurl](https://github.com/fullstorydev/grpcurl), [grpc-client-cli](https://github.com/vadimi/grpc-client-cli) or any other gRPC client to interact with it |
+
+#### Test the services
 
 To test the services, you can use the following commands:
 
@@ -122,7 +128,11 @@ To test the services, you can use the following commands:
 docker exec -it postgres-test psql postgresql://postgres:postgres@${DOCKER_HOST}:5432/postgres -c "\d"
 ```
 
-Since the database is just created, no relations exist. You can change the configuration of the services in the `gatewayd.yaml` and `gatewayd_plugins.yaml` configuration files inside the `gatewayd-files` directory. And to stop and remove the services, use the following command:
+Since the database is just created, no relations exist, which is expected. You can change the configuration of the services in the `gatewayd.yaml` and `gatewayd_plugins.yaml` configuration files inside the `gatewayd-files` directory.
+
+#### Stop and remove the services
+
+To stop and remove the services, use the following command:
 
 ```bash
 docker-compose down
