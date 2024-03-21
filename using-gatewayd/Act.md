@@ -59,7 +59,7 @@ The action can be run in sync or async mode, and it can return a result or an er
 3. `sync`: Whether the action should be run in sync or async mode.
 4. `terminal`: Whether the action is terminal or not.
 5. `run`: The function that is executed when the action is triggered. This is currently written in Go, with support for writing actions in other languages to come.
-6. `timeout`: Optional value to indicate the timeout for the action in seconds. If not given, the `actionTimeout` value of [general configuration](/using-gatewayd/plugins-configuration/general-configurations#general-configurations) will be used to determine the timeout. If both of these values have a zero value, the action will run without a timeout.
+6. `timeout`: Optional value to indicate the timeout for the action in seconds. If not given, the `actionTimeout` value of [general configuration](/using-gatewayd/plugins-configuration/general-configurations#configuration-parameters) will be used to determine the timeout. If both of these values have a zero value, the action will run without a timeout.
 
 For example, [the action](https://github.com/gatewayd-io/gatewayd/blob/6ccf9b70be368fb935dbc133bf547eae9f590630/act/builtins.go#L61-L66) that matches the `terminate` policy can be written as:
 
