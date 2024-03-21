@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-10 23:47:43
+last_modified_date: 2024-03-10 23:57:06
 layout: default
 title: Plugins Configuration
 nav_order: 3
