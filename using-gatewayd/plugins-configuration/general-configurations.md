@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-10 23:47:43
+last_modified_date: 2024-03-21 22:49:26
 layout: default
 title: General configurations
 description: General configurations for plugins
@@ -23,6 +23,7 @@ grand_parent: Using GatewayD
 | startTimeout        | string  | 1m            | Valid duration strings | The start timeout controls how long to wait for a plugin to start before timing out.                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | policyTimeout       | string  | 30s           | Valid duration strings | The policy timeout controls how long to wait for a policy to evaluate before timing out.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | policies            | array   | []            | An array of objects    | The policies are a set of rules that are evaluated against the signals to determine whether the actions should be executed.                                                                                                                                                                                                                                                                                                                                                                                                |
+| actionTimeout       | string  | 30s           | Valid duration strings | The action timeout will set a default timeout for all the actions that are going to be executed. Action specific timeout has priority over this value. Set to `0` to remove default action timeout.                                                                                                                                                                                                                                                                                                                        |
 
 ## Example configuration
 
@@ -35,6 +36,7 @@ reloadOnCrash: True
 timeout: 30s
 startTimeout: 1m
 policyTimeout: 30s
+actionTimeout: 30s
 policies:
   name: terminate
   policy: "Signal.terminate == true && Policy.terminate == 'stop'"
