@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-21 22:49:26
+last_modified_date: 2024-04-16 08:43:06
 layout: default
 title: General configurations
 description: General configurations for plugins

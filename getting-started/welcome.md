@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-03-10 23:57:06
+last_modified_date: 2024-04-16 09:17:27
 layout: default
 title: Welcome
 description: Introduction to GatewayD and its key features
@@ -18,9 +18,9 @@ This documentation will help you go from a beginner to an advanced user and deve
 
 ## What is GatewayD
 
-GatewayD is a free and open-source cloud-native database gateway and framework for building data-driven applications. It sits between your database servers and clients and proxies all their communication. It is like API gateways, but for databases.
+GatewayD is a free and open-source cloud-native database gateway and framework for building data-driven applications. It is a middleware that sits between your database servers and clients and proxies all their communication. It is like API gateways in system design, but instead is used for proxying database traffic, rather than HTTP traffic.
 
-GatewayD is an [L4](https://en.wikipedia.org/wiki/Transport_layer) proxy for SQL databases and clients. You can either write your own plugins or make use of our built-in, community and enterprise plugins.
+GatewayD is an [L4](https://en.wikipedia.org/wiki/Transport_layer) proxy for SQL, and eventually NoSQL, databases and clients. The core is database-protocol-agnotic, and the plugins encode, decode and add value to the database traffic flow, hence it can technically support all databases. You can either write your own plugins or make use of our built-in, community and enterprise plugins.
 
 Using GatewayD, you can see through the queries and the data passing between your database server and clients, and take action. For example, you can cache the result of SQL SELECT queries or detect and prevent SQL injection attacks.
 
@@ -42,19 +42,27 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
 - **L4 database gateway**
 
-    GatewayD is optimized for proxying SQL databases and clients.
+    GatewayD is optimized for proxying SQL databases and clients, but proxying is not the main use case, rather an enabler. GatewayD can be used as a database gateway for SQL databases and clients. It can be used to monitor, cache, detect and prevent SQL injection attacks, and more.
 
 - **Caching results of queries**
 
     The [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
 
-- **Advanced caching** (WIP)
+- **Run JavaScript code to manipulate traffic**
+
+    The [`gatewayd-plugin-js`](/plugins/gatewayd-plugin-js) is a free and open-source plugin that allows you to run JavaScript functions as hooks. It is a great way to get started with manipulating traffic in GatewayD.
+
+- **Detect and prevent SQL injection attacks**
+
+    The `gatewayd-plugin-sql-ids-ips` is an enterprise plugin that uses a deep-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data. It differs from WAFs in that it works with database traffic and not just user input, meaning that it has access to the entirety of the query and other messages, thus it can detect and prevent attacks that WAFs can't.
+
+- **Advanced caching using Write-Ahead-Log** (WIP)
 
     The `gatewayd-plugin-cache-advanced` is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
 
-- **SQL injection detection and prevention** (WIP)
+- **Change data capture** (WIP)
 
-    The `gatewayd-plugin-sql-ids-ips` is an enterprise plugin that uses a deep-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data.
+    The `gatewayd-plugin-cdc` is an enterprise plugin that captures changes happening in the database and sends them to another database or message broker like Kafka. It can be used for seamless logical replication and building real-time data pipelines, data warehousing, and more.
 
 These are just a few examples and the list is not exhaustive, as new plugins are constantly developed.
 
@@ -64,6 +72,6 @@ GatewayD is not a silver bullet and won't solve all your database problems overn
 
 You still have to design and normalize your database schema, take and test backups, secure your database and do whatever you used to do before GatewayD. GatewayD came into existence to fix the black box mentality that surrounds databases to this very day.
 
-Over time many plugins will be developed either by us or the community that will try to solve different issues arose from utilizing databases.
+Over time many plugins will be developed either by us or the community that will try to solve many of the problems that you face with databases.
 
 GatewayD is originally designed to be database-neutral, and proxy traffic to and from SQL and NoSQL databases. However, for practicality reasons, we focused on PostgreSQL at the moment. We will be working towards adding support for other SQL and NoSQL databases in the future.
