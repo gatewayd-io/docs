@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-04-16 09:17:27
+last_modified_date: 2024-04-16 15:00:31
 layout: default
 title: Welcome
 description: Introduction to GatewayD and its key features
@@ -44,7 +44,7 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
     GatewayD is optimized for proxying SQL databases and clients, but proxying is not the main use case, rather an enabler. GatewayD can be used as a database gateway for SQL databases and clients. It can be used to monitor, cache, detect and prevent SQL injection attacks, and more.
 
-- **Caching results of queries**
+- **Cache query results**
 
     The [gatewayd-plugin-cache](/plugins/gatewayd-plugin-cache) is a free and open-source plugin that parses PostgreSQL database traffic, extracts the SELECT query and caches its response with a TTL. Further queries will be served from the cached results. TTL, Upsert, delete, alter and drop statements invalidate cached results.
 
