@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-04-16 15:00:31
+last_modified_date: 2024-04-16 15:01:00
 layout: default
 title: Welcome
 description: Introduction to GatewayD and its key features
