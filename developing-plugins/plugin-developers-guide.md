@@ -20,8 +20,7 @@ Follow these steps to create a plugin:
 3. Test your plugin locally using the `make run` target of GatewayD.
 4. Test your plugin in the CI pipeline.
 5. Test your plugin using this [`test.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/test.yaml) workflow.
-6. Publish your plugin to GitHub using this [`release.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/release.yaml) workflow and this [`Makefile`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/Makefile).
-7. Publish your plugin.
+6. Publish your plugin to GitHub using this [`release.yaml`](https://github.com/gatewayd-io/gatewayd/blob/main/plugin/.template/project/%7B%7B%20plugin_name%20%7D%7D/.github/workflows/release.yaml) workflow and this [`Makefile`](https://github.com/gatewayd-io/gatewayd/blob/main/plugin/.template/project/%7B%7B%20plugin_name%20%7D%7D/Makefile).
 
 In the following sections, each step is described in more detail.
 
@@ -84,6 +83,9 @@ The following fields are optional:
 - `args`: The arguments that are passed to the plugin.
 - `checksum`: The checksum of the plugin binary.
 
+{: .note }
+> Use the `./gatewayd run --dev` command to disable plugin checksum verification when developing a plugin. Otherwise, the plugin will not be loaded or you must change the checksum every time you make a change to the plugin. **This is not recommended for production.**
+
 These two environment variables with their exact values are required. They must be passed to the [HandshakeConfig](https://github.com/gatewayd-io/gatewayd/blob/1709235b0629fc591b29473551f8f623926662cb/plugin/.template/project/%7B%7B%20plugin_name%20%7D%7D/main.go#L44-L45) of the plugin. These pieces of information are used by GatewayD to verify and load the plugin:
 
 - `MAGIC_COOKIE_KEY=GATEWAYD_PLUGIN`
@@ -111,24 +113,19 @@ Copy the [`test-plugin`](https://github.com/gatewayd-io/gatewayd/blob/213ba09fbf
 
 If you have written tests for your plugin, you can use the following workflow to test your plugin. Copy the [`test.yaml`](https://github.com/gatewayd-io/gatewayd-plugin-cache/blob/main/.github/workflows/test.yaml) workflow into the `.github/workflows/` directory of your plugin. This workflow will test your plugin using the [GatewayD CLI](/using-gatewayd/CLI) in development mode.
 
-## Step 6: Publish your plugin to GitHub using this `release.yaml` workflow and this `Makefile`
+## Step 6: Publish your plugin to GitHub
 
-If you want to publish your plugin to GitHub, you can use the following workflow and `Makefile` to release your plugin. Copy the [`release.yaml`](https://github.com/gatewayd-io/gatewayd/blob/main/plugin/.template/project/%7B%7B%20plugin_name%20%7D%7D/.github/workflows/release.yaml) workflow and this [`Makefile`](https://github.com/gatewayd-io/gatewayd/blob/main/plugin/.template/project/%7B%7B%20plugin_name%20%7D%7D/Makefile) into the `.github/workflows/` and the root directory of your plugin. This workflow will release your plugin to GitHub.
+If you want to publish your plugin to GitHub, you can use the `release.yaml` workflow and `Makefile` that are generated as part of the scaffold files in the `.github/workflows` directory. All you have to do is to push your changes to your desired GitHub repository and create a release with the tag, for example v0.1.0. The workflow will [build](https://github.com/gatewayd-io/gatewayd/blob/51bb3a48edd783ff623234c8c34c4bfa335ae045/plugin/.template/project/%7B%7B%20plugin_name%20%7D%7D/Makefile#L25-L32) your plugin for three platforms and two CPU architectures, create a release with the given tag, and upload the plugin binaries (as archive files) and `checksums.txt` as release assets, just like [this](https://github.com/gatewayd-io/gatewayd-plugin-cache/releases/latest).
 
-{: .note }
-> You must modify the example `Makefile`, `release.yaml` and `test.yaml` files to match your plugin.
-
-## Step 7: Publish your plugin
-
-If you want GatewayD to install your plugin from GitHub, you must adhere to the following rules:
+Now, if you want GatewayD to install your plugin from GitHub, you must adhere to the following rules:
 
 1. The plugin binary must be named as the repository name, aka. the plugin name.
 2. The plugin binary must be placed in the root directory of the release asset.
-3. The checksums should be generated using sha256sum, published as release assets and named `checksums.txt`.
-4. The release assets must be published as `tar.gz` archives.
-5. The release assets must follow the naming convention: `plugin-name-$GOOS-$GOARCH-version.tar.gz`.
-6. The releases must follow semantic versioning and prefixed with `v`.
-7. The `latest` release must point to the latest release, otherwise the plugin will not be installed if the version is not specified.
+3. Each published release asset that contains a plugin binary must also have a `checksum.txt` file next to the plugin binary in the archive file containing the checksum of the plugin binary.
+4. The checksums of all the release assets should be generated using sha256sum, and published as release assets, and named `checksums.txt`.
+5. The release assets must be published as `tar.gz` or `.zip` archives.
+6. The release assets must follow the naming convention: `plugin-name-$GOOS-$GOARCH-version.tar.gz`. For example, `gatewayd-plugin-cache-linux-amd64-v0.1.0.tar.gz`.
+7. The name of the archive files in the release assets must follow semantic versioning and prefixed with `v`.
 
 <!-- ## Step 9: Publish your plugin to the GatewayD plugin registry
 
