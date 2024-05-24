@@ -65,7 +65,7 @@ The `Hook` field is a map that contains the following fields:
 | --------------- | ------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `Hook.Name`     | The name of the hook.     | string | `HOOK_NAME_ON_TRAFFIC_FROM_CLIENT`                                                                                                               |
 | `Hook.Priority` | The priority of the hook. | string | 1000                                                                                                                                             |
-| `Hook.Params`   | The input parameters.     | map    | `{"server": {"remote": "127.0.0.1:15432", "local": "127.0.0.1:37502"}, "client": {"remote": "127.0.0.1:5432", "local": "127.0.0.1:53684"}, ...}` |
+| `Hook.Params`   | The input parameters.     | map    | `{"server": {"remote": "127.0.0.1:5432", "local": "127.0.0.1:53684"}, "client": {"remote": "127.0.0.1:15432", "local": "127.0.0.1:37502"}, ...}` |
 
    1. `Hook.Name` (string)
    2. `Hook.Priority` (string)
