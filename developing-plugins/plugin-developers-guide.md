@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-11 21:33:25
+last_modified_date: 2024-05-31 20:16:38
 layout: default
 title: Plugin Developers Guide
 description: Plugin developers' guide of GatewayD
