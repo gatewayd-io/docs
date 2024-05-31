@@ -32,7 +32,7 @@ docker run --rm --name postgres-test -p 5432:5432 -e POSTGRES_PASSWORD=postgres 
 Test your database by running the following command:
 
 ```bash
-DOCKER_HOST=$(ip addr show docker0 | grep inet | grep -v inet6 | awk -F' ' '{ print $2 }' | sed 's/\/16//g')
+DOCKER_HOST=$(if ip addr show docker0 > /dev/null 2>&1; then ip addr show docker0 | grep inet | grep -v inet6 | awk -F' ' '{ print $2 }' | sed 's/\/.*//'; else echo "host.docker.internal"; fi);
 docker exec -it postgres-test psql postgresql://postgres:postgres@${DOCKER_HOST}:5432/postgres -c "\d"
 ```
 
@@ -120,7 +120,6 @@ Running GatewayD will produce the following log output, which means that Gateway
 GatewayD is running on the host, while PostgreSQL is running inside a container. You can run the following command to test it. Notice that `${DOCKER_HOST}` holds the IP address of the host machine, that is accessible from inside the container.
 
 ```bash
-DOCKER_HOST=$(ip addr show docker0 | grep inet | grep -v inet6 | awk -F' ' '{ print $2 }' | sed 's/\/16//g')
 docker exec -it postgres-test psql postgresql://postgres:postgres@${DOCKER_HOST}:15432/postgres
 ```
 
