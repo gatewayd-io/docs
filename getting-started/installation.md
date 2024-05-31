@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-11 20:53:27
+last_modified_date: 2024-05-31 20:16:38
 layout: default
 title: Installation
 description: How to install GatewayD and its plugins on different platforms and how to build it from source.
