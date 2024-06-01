@@ -61,3 +61,11 @@ The first parameter is the repository name in the format `owner/repo`. The secon
 For private repositories, you can set the `GITHUB_TOKEN` environment variable with a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to authenticate with GitHub. If the token is not provided, the tag will be displayed as `unknown`.
 
 The tag can be used multiple times in the same page. A single request will be made to the GitHub API to retrieve the latest tag name for each repository.
+
+## Contributing
+
+We welcome contributions from everyone. Just open an [issue](https://github.com/gatewayd-io/docs/issues) or send us a [pull request](https://github.com/gatewayd-io/docs/pulls).
+
+## License
+
+GatewayD is licensed under the [Affero General Public License v3.0](https://github.com/gatewayd-io/docs/blob/main/LICENSE).
