@@ -1,11 +1,17 @@
-#!/usr/bin/bash
-# Replace `last_modified_date` timestamp with current time
-# This script is used to update the `last_modified_date` timestamp in the frontmatter of all Markdown files in the current directory and subdirectories.
+#!/usr/bin/env bash
 
-# Loop through all Markdown files in the current directory and subdirectories
-find . -type f -name "*.md" | while read file; do
-    # Check if the file contains a frontmatter block
-    if grep -q "^---" "$file"; then
+# Replace `last_modified_date` timestamp with current time
+# This script is used to update the `last_modified_date` timestamp
+# in the frontmatter of staged Markdown files.
+
+# Get the list of staged Markdown files
+staged_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$')
+
+# Loop through each staged Markdown file
+echo "$staged_files" | while read file; do
+    # Check if the file exists and contains a frontmatter block
+    if [[ -f "$file" ]] && grep -q "^---" "$file"; then
+        echo "Updating last_modified_date in $file"
         # Get the last modified timestamp of the file
         last_modified_timestamp=$(stat -c %Y "$file")
 
@@ -19,5 +25,8 @@ find . -type f -name "*.md" | while read file; do
             # If last_modified_date does not exist, add it after the first frontmatter delimiter
             sed -i "/^---/a last_modified_date: $last_modified_datetime_utc" "$file"
         fi
+
+        # Stage the updated file
+        git add "$file"
     fi
 done
