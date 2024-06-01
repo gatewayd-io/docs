@@ -12,6 +12,14 @@
     <a href="https://docs.gatewayd.io/">Documentation</a>
 </p>
 
+> [!IMPORTANT]
+> The pre-commit hook is used to update the `last_modified_date` field in the frontmatter for each page. It will run automatically upon committing changes if you run the following commands to enable them:
+>
+> ```bash
+> ln .git/hooks/pre-commit .githooks/pre-commit/01-update-last-modified-date
+> git config core.hooksPath .githooks
+> ```
+
 ## Running the docs locally
 
 The docs are built using [Jekyll](https://jekyllrb.com/) and the [just-the-docs](https://just-the-docs.github.io/just-the-docs/) theme. To run the docs locally, you need to have Git and Ruby installed. Then, install Jekyll and `bundler`:
@@ -53,11 +61,3 @@ The first parameter is the repository name in the format `owner/repo`. The secon
 For private repositories, you can set the `GITHUB_TOKEN` environment variable with a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) to authenticate with GitHub. If the token is not provided, the tag will be displayed as `unknown`.
 
 The tag can be used multiple times in the same page. A single request will be made to the GitHub API to retrieve the latest tag name for each repository.
-
-## Latest modified date
-
-The `generate_last_modified_data.sh` script is used to generate the `last_modified_date` data in the frontmatter for each page. It should be run manually before pushing the changes to the `main` branch.
-
-```bash
-./generate_last_modified_data.sh
-```
