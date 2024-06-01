@@ -102,7 +102,7 @@ curl -L https://raw.githubusercontent.com/gatewayd-io/gatewayd/main/setup.sh -o 
 docker-compose up -d
 ```
 
-The above commands will download the `docker-compose.yaml` file and the `setup.sh` script from the GitHub repository and start the services. The `setup.sh` script will install the cache plugin and update the `gatewayd_plugins.yaml` configuration file. The `docker-compose.yaml` file will start the services the following services:
+The above commands will download the `docker-compose.yaml` file and the `setup.sh` script from the GitHub repository and start the services. The `setup.sh` script will install the cache plugin and update the `gatewayd_plugins.yaml` configuration file. The `docker-compose.yaml` file will start the services as follows:
 
 1. A transient service that installs the cache plugin
 2. PostgreSQL database
