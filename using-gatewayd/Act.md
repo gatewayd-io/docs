@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-06-03 22:06:31
 layout: default
 title: Act
 description: Act is a policy engine that supports signals, policies and actions. It is used to automate the execution of business rules.
@@ -70,18 +70,18 @@ The `Hook` field is a map that contains the following fields:
    1. `Hook.Name` (string)
    2. `Hook.Priority` (string)
    3. `Hook.Params` (map)
-      1. `.server.remote` (string)
-      2. `.server.local` (string)
-      3. `.client.remote` (string)
-      4. `.client.local` (string)
-      5. `.request` (bytes) (currently not usable in Expr language, but will be available in the future via [helper functions](https://github.com/gatewayd-io/gatewayd/issues/541))
+      1. `Hook.Params.server.remote` (string)
+      2. `Hook.Params.server.local` (string)
+      3. `Hook.Params.client.remote` (string)
+      4. `Hook.Params.client.local` (string)
+      5. `Hook.Params.request` (bytes) (currently not usable in Expr language, but will be available in the future via [helper functions](https://github.com/gatewayd-io/gatewayd/issues/541))
    4. `Hook.Result` (map) (usually a superset of `Hook.Params`)
-      1. `.server.remote` (string)
-      2. `.server.local` (string)
-      3. `.client.remote` (string)
-      4. `.client.local` (string)
-      5. `.request` (bytes) (currently not usable in Expr language, but will be available in the future via [helper functions](https://github.com/gatewayd-io/gatewayd/issues/541))
-      6. `.response` (bytes) (currently not usable in Expr language, but will be available in the future via [helper functions](https://github.com/gatewayd-io/gatewayd/issues/541))
+      1. `Hook.Result.server.remote` (string)
+      2. `Hook.Result.server.local` (string)
+      3. `Hook.Result.client.remote` (string)
+      4. `Hook.Result.client.local` (string)
+      5. `Hook.Result.request` (bytes) (currently not usable in Expr language, but will be available in the future via [helper functions](https://github.com/gatewayd-io/gatewayd/issues/541))
+      6. `Hook.Result.response` (bytes) (currently not usable in Expr language, but will be available in the future via [helper functions](https://github.com/gatewayd-io/gatewayd/issues/541))
       7. Fields parsed by the `postgres.HandleClientMessage` and `postgres.HandleServerMessage` functions, see [`wire.go`](https://github.com/gatewayd-io/gatewayd-plugin-sdk/blob/main/databases/postgres/wire.go).
 
 ## Actions
