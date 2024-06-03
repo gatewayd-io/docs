@@ -9,7 +9,9 @@ parent: Using GatewayD
 
 # Act
 
-Act, a core component of GatewayD, is a policy engine that supports signals, policies and actions. It is used to automate the execution of business rules. The business rules are currently written as expressions in the [Expr](https://github.com/expr-lang/expr) language, with support for external policy engines to come. The expressions are evaluated against the signals received from the plugins and the corresponding actions are executed if the policy expressions evaluate to true (boolean) or any other type recognized by the action.
+Act, a core component of GatewayD, is a policy engine that supports signals, policies and actions. It is used to automate the execution of business rules. The business rules are currently written as expressions in the [Expr](https://github.com/expr-lang/expr) language, with support for external policy engines to come. 
+The expressions are evaluated against the signals received from the plugins. If the policy expressions evaluate to true (boolean) or any other type recognized by the corresponding action, then the action will be executed or, if configured, related data and parameters will be published to a redis Pub/Sub queue 
+enabling external systems and plugins to subscribe to it and run any arbitrary actions necessary based on the parameters.
 
 Previously, there were only a single signal, policy and action, called the `terminatePolicy`, which were hard-coded into the GatewayD codebase. This made it difficult to extend and customize the behavior of GatewayD. With the new Act, based on [this proposal](https://github.com/gatewayd-io/proposals/issues/5), the signals, policies and actions are pluggable and can be extended to support custom requirements. This opens up a wide range of possibilities for customizing the behavior of GatewayD to suit the needs of different use cases. For example, a policy can be written to check if the request is coming from a specific IP address, and if so, the action can be to terminate the request.
 
@@ -86,7 +88,10 @@ The `Hook` field is a map that contains the following fields:
 
 ## Actions
 
-The action can be run in sync or async mode, and it can return a result or an error. The actions are executed if the policy expressions evaluate to true (boolean) or any other type recognized by the action. The actions have the following fields:
+The action can be run in sync or async mode, and it can return a result or an error. 
+Async actions can be configured to be published to a redis channel instead of running in a background goroutine.
+To configure Act to publish async actions to a redis channel, use `actionRedis` value of [general configuration](/using-gatewayd/plugins-configuration/general-configurations#Configuration parameters)
+The actions are executed, or published, if the policy expressions evaluate to true (boolean) or any other type recognized by the action. The actions have the following fields:
 
 1. `name`: The name of the action, such as `terminate`, `log`, etc.
 2. `metadata`: The metadata associated with the action, such as the log message and log level.
