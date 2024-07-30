@@ -14,16 +14,19 @@ The server object runs to listen for incoming connections from database clients.
 
 ## Configuration parameters
 
-| Name             | Type    | Default value | Possible values | Description                         |
-| ---------------- | ------- | ------------- | --------------- | ----------------------------------- |
-| network          | string  | tcp           | tcp, unix       | The network protocol to use         |
-| address          | string  | 0.0.0.0:15432 | Valid host:port | The address to listen on            |
-| enableTicker     | boolean | False         | True, False     | Whether to enable the ticker or not |
-| tickInterval     | string  | 5s            | Valid duration  | The interval of the ticker          |
-| enableTLS        | boolean | False         | True, False     | Whether to enable TLS or not        |
-| certFile         | string  |               | Valid path      | The path to the TLS certificate     |
-| keyFile          | string  |               | Valid path      | The path to the TLS key             |
-| handshakeTimeout | string  | 5s            | Valid duration  | The timeout for TLS handshake       |
+| Name                  | Type    | Default value | Possible values | Description                                 |
+| ----------------      | ------- | ------------- | --------------- | ------------------------------------------- |
+| network               | string  | tcp           | tcp, unix       | The network protocol to use                 |
+| address               | string  | 0.0.0.0:15432 | Valid host:port | The address to listen on                    |
+| enableTicker          | boolean | False         | True, False     | Whether to enable the ticker or not         |
+| tickInterval          | string  | 5s            | Valid duration  | The interval of the ticker                  |
+| enableTLS             | boolean | False         | True, False     | Whether to enable TLS or not                |
+| certFile              | string  |               | Valid path      | The path to the TLS certificate             |
+| keyFile               | string  |               | Valid path      | The path to the TLS key                     |
+| handshakeTimeout      | string  | 5s            | Valid duration  | The timeout for TLS handshake               |
+| loadBalancer          | object  |               |                 | Configuration for the load balancer         |
+| loadBalancer.strategy | string  | ROUND_ROBIN   | ROUND_ROBIN     | The strategy used to distribute connections |
+
 
 ## Example configuration
 
@@ -38,4 +41,7 @@ servers:
     certFile: ""
     keyFile: ""
     handshakeTimeout: 5s # duration
+    loadBalancer:
+      # Load balancer strategies can be found in config/constants.go
+      strategy: ROUND_ROBIN
 ```
