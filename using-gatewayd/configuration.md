@@ -164,24 +164,27 @@ plugins:
 
 ## Environment variables
 
-All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_LOGGERS_DEFAULT_OUTPUT` environment variable can be set to the outputs required by the default logger and consists of four parts:
+All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_CLIENTS_DEFAULT_ACTIVEWRITES_NETWORK` environment variable can be set to the network type for the activeWrites in the default client configuration and consists of five parts:
 
 1. Prefix: all environment variables are prefixed with `GATEWAYD`.
-2. Object: the configuration object, in this case `LOGGERS`.
+2. Object: the configuration object, in this case `CLIENTS`.
 3. Group: the configuration group, in this case `DEFAULT`.
-4. Parameter: the configuration parameter, in this case `OUTPUT`.
+4. Block: the configuration block, in this case `ACTIVEWRITES` (if applicable).
+5. Parameter: the configuration parameter, in this case `NETWORK`.
 
 ```mermaid
 flowchart TD
-    A(GATEWAYD_LOGGERS_DEFAULT_OUTPUT)
+    A(GATEWAYD_CLIENTS_DEFAULT_ACTIVEWRITES_NETWORK)
     A --> GATEWAYD
-    A --> LOGGERS
+    A --> CLIENTS
     A --> DEFAULT
-    A --> OUTPUT
+    A --> ACTIVEWRITES
+    A --> NETWORK
     GATEWAYD --> Prefix
-    LOGGERS --> Object
+    CLIENTS --> Object
     DEFAULT --> Group
-    OUTPUT --> Parameter
+    ACTIVEWRITES --> Block
+    NETWORK --> Parameter
 ```
 
 ## Runtime configuration
