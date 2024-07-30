@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-07-30 16:36:53
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -74,28 +74,31 @@ metrics:
 
 clients:
   default:
-    network: tcp
-    address: localhost:5432
-    tcpKeepAlive: False
-    tcpKeepAlivePeriod: 30s # duration
-    receiveChunkSize: 8192
-    receiveDeadline: 0s # duration, 0ms/0s means no deadline
-    receiveTimeout: 0s # duration, 0ms/0s means no timeout
-    sendDeadline: 0s # duration, 0ms/0s means no deadline
-    dialTimeout: 60s # duration, 0ms/0s means no timeout
-    # Retry configuration
-    retries: 3 # 0 means no retry
-    backoff: 1s # duration
-    backoffMultiplier: 2.0 # 0 means no backoff
-    disableBackoffCaps: false
+    activeWrites: # ⬅️ Configuration block
+      network: tcp
+      address: localhost:5432
+      tcpKeepAlive: False
+      tcpKeepAlivePeriod: 30s # duration
+      receiveChunkSize: 8192
+      receiveDeadline: 0s # duration, 0ms/0s means no deadline
+      receiveTimeout: 0s # duration, 0ms/0s means no timeout
+      sendDeadline: 0s # duration, 0ms/0s means no deadline
+      dialTimeout: 60s # duration, 0ms/0s means no timeout
+      # Retry configuration
+      retries: 3 # 0 means no retry
+      backoff: 1s # duration
+      backoffMultiplier: 2.0 # 0 means no backoff
+      disableBackoffCaps: false
 
 pools:
   default:
-    size: 10
+    activeWrites:
+      size: 10
 
 proxies:
   default:
-    healthCheckPeriod: 60s # duration
+    activeWrites:
+      healthCheckPeriod: 60s # duration
 
 servers:
   default:
@@ -107,6 +110,9 @@ servers:
     certFile: ""
     keyFile: ""
     handshakeTimeout: 5s # duration
+    loadBalancer:
+      # Load balancer strategies can be found in config/constants.go
+      strategy: ROUND_ROBIN
 
 api:
   enabled: True

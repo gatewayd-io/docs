@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-07-29 17:35:18
 layout: default
 title: Clients
 description: GatewayD client configuration
@@ -10,7 +10,7 @@ grand_parent: Using GatewayD
 
 # Clients
 
-GatewayD supports multiple client configurations. Each client in each configuration group will connect to the same database server specified in the configuration parameters and will be added to its corresponding [pool](pools) based on their configuration group, i.e. `default`.
+GatewayD supports multiple client configurations. Each client within a configuration group will connect to a database server specified in the configuration parameters and will be added to its corresponding pool based on their configuration group (e.g., `default`) and configuration block (e.g., `activeWrites`).
 
 ## Configuration parameters
 
@@ -33,18 +33,19 @@ GatewayD supports multiple client configurations. Each client in each configurat
 ```yaml
 clients:
   default:
-    network: tcp
-    address: localhost:5432
-    tcpKeepAlive: False
-    tcpKeepAlivePeriod: 30s # duration
-    receiveChunkSize: 8192
-    receiveDeadline: 0s # duration, 0ms/0s means no deadline
-    receiveTimeout: 0s # duration, 0ms/0s means no timeout
-    sendDeadline: 0s # duration, 0ms/0s means no deadline
-    dialTimeout: 60s # duration, 0ms/0s means no timeout
-    # Retry configuration
-    retries: 3 # 0 means no retry
-    backoff: 1s # duration
-    backoffMultiplier: 2.0 # 0 means no backoff
-    disableBackoffCaps: false
+    activeWrites:
+      network: tcp
+      address: localhost:5432
+      tcpKeepAlive: False
+      tcpKeepAlivePeriod: 30s # duration
+      receiveChunkSize: 8192
+      receiveDeadline: 0s # duration, 0ms/0s means no deadline
+      receiveTimeout: 0s # duration, 0ms/0s means no timeout
+      sendDeadline: 0s # duration, 0ms/0s means no deadline
+      dialTimeout: 60s # duration, 0ms/0s means no timeout
+      # Retry configuration
+      retries: 3 # 0 means no retry
+      backoff: 1s # duration
+      backoffMultiplier: 2.0 # 0 means no backoff
+      disableBackoffCaps: false
 ```
