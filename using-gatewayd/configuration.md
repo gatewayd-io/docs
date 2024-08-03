@@ -183,7 +183,7 @@ flowchart TD
     GATEWAYD --> Prefix
     CLIENTS --> Object
     DEFAULT --> Group
-    ACTIVEWRITES --> Block
+    ACTIVEWRITES -.-> Block
     NETWORK --> Parameter
 ```
 
