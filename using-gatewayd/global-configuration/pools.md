@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-07-29 17:37:00
 layout: default
 title: Pools
 description: GatewayD pool configuration
@@ -23,5 +23,6 @@ The size of the pool defines the maximum capacity of the pool. Upon start, Gatew
 ```yaml
 pools:
   default:
-    size: 10
+    activeWrites:
+      size: 10
 ```

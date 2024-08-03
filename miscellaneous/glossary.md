@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-07-30 16:55:16
 layout: default
 title: Glossary
 description: Glossary of GatewayD terms
@@ -27,6 +27,11 @@ Each configuration file contains multiple configuration objects that correspond 
 ## Configuration group
 
 To enable multi-tenancy, GatewayD supports configuring multiple instances of each (configuration) object using configuration groups. All the default configuration objects have a single configuration group called `default`, except the `API`.
+
+## Configuration block
+Within each configuration group, GatewayD allows for further segmentation of settings through the use of configuration blocks. A configuration block represents a specific set of parameters within a configuration group, tailored to a particular instance.
+
+Configuration blocks are supported for the following configuration objects: `clients`, `pools` and `proxies`.
 
 ## Configuration parameter
 
