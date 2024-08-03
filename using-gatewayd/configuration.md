@@ -178,7 +178,7 @@ flowchart TD
     A --> GATEWAYD
     A --> CLIENTS
     A --> DEFAULT
-    A --> ACTIVEWRITES
+    A -.-> ACTIVEWRITES
     A --> NETWORK
     GATEWAYD --> Prefix
     CLIENTS --> Object
