@@ -23,6 +23,6 @@ The size of the pool defines the maximum capacity of the pool. Upon start, Gatew
 ```yaml
 pools:
   default:
-    activeWrites:
+    writes:
       size: 10
 ```

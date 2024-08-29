@@ -10,7 +10,7 @@ grand_parent: Using GatewayD
 
 # Clients
 
-GatewayD supports multiple client configurations. Each client within a configuration group will connect to a database server specified in the configuration parameters and will be added to its corresponding [pool](pools) based on their configuration group (e.g., `default`) and configuration block (e.g., `activeWrites`).
+GatewayD supports multiple client configurations. Each client within a configuration group will connect to a database server specified in the configuration parameters and will be added to its corresponding [pool](pools) based on their configuration group (e.g., `default`) and configuration block (e.g., `writes`).
 
 ## Configuration parameters
 
@@ -33,7 +33,7 @@ GatewayD supports multiple client configurations. Each client within a configura
 ```yaml
 clients:
   default:
-    activeWrites:
+    writes:
       network: tcp
       address: localhost:5432
       tcpKeepAlive: False

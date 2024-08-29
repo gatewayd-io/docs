@@ -32,6 +32,6 @@ Each proxy has two pools:
 ```yaml
 proxies:
   default:
-    activeWrites:
+    writes:
       healthCheckPeriod: 60s # duration
 ```

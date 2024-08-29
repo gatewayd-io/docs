@@ -74,7 +74,7 @@ metrics:
 
 clients:
   default:
-    activeWrites: # ⬅️ Configuration block
+    writes: # ⬅️ Configuration block
       network: tcp
       address: localhost:5432
       tcpKeepAlive: False
@@ -92,12 +92,12 @@ clients:
 
 pools:
   default:
-    activeWrites:
+    writes:
       size: 10
 
 proxies:
   default:
-    activeWrites:
+    writes:
       healthCheckPeriod: 60s # duration
 
 servers:
@@ -166,26 +166,26 @@ plugins:
 
 ## Environment variables
 
-All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_CLIENTS_DEFAULT_ACTIVEWRITES_NETWORK` environment variable can be set to the network type for the activeWrites in the default client configuration and consists of five parts:
+All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_CLIENTS_DEFAULT_WRITES_NETWORK` environment variable can be set to the network type for the writes in the default client configuration and consists of five parts:
 
 1. Prefix: all environment variables are prefixed with `GATEWAYD`.
 2. Object: the configuration object, in this case `CLIENTS`.
 3. Group: the configuration group, in this case `DEFAULT`.
-4. Block: the configuration block, in this case `ACTIVEWRITES` (if applicable).
+4. Block: the configuration block, in this case `WRITES` (if applicable).
 5. Parameter: the configuration parameter, in this case `NETWORK`.
 
 ```mermaid
 flowchart TD
-    A(GATEWAYD_CLIENTS_DEFAULT_ACTIVEWRITES_NETWORK)
+    A(GATEWAYD_CLIENTS_DEFAULT_WRITES_NETWORK)
     A --> GATEWAYD
     A --> CLIENTS
     A --> DEFAULT
-    A -.-> ACTIVEWRITES
+    A -.-> WRITES
     A --> NETWORK
     GATEWAYD --> Prefix
     CLIENTS --> Object
     DEFAULT --> Group
-    ACTIVEWRITES -.-> Block
+    WRITES -.-> Block
     NETWORK --> Parameter
 ```
 
