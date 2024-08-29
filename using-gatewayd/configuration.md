@@ -113,6 +113,8 @@ servers:
     loadBalancer:
       # Load balancer strategies can be found in config/constants.go
       strategy: ROUND_ROBIN
+      consistentHash:
+        useSourceIp: true
 
 api:
   enabled: True
