@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-07-30 16:36:53
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -74,28 +74,31 @@ metrics:
 
 clients:
   default:
-    network: tcp
-    address: localhost:5432
-    tcpKeepAlive: False
-    tcpKeepAlivePeriod: 30s # duration
-    receiveChunkSize: 8192
-    receiveDeadline: 0s # duration, 0ms/0s means no deadline
-    receiveTimeout: 0s # duration, 0ms/0s means no timeout
-    sendDeadline: 0s # duration, 0ms/0s means no deadline
-    dialTimeout: 60s # duration, 0ms/0s means no timeout
-    # Retry configuration
-    retries: 3 # 0 means no retry
-    backoff: 1s # duration
-    backoffMultiplier: 2.0 # 0 means no backoff
-    disableBackoffCaps: false
+    writes: # ⬅️ Configuration block
+      network: tcp
+      address: localhost:5432
+      tcpKeepAlive: False
+      tcpKeepAlivePeriod: 30s # duration
+      receiveChunkSize: 8192
+      receiveDeadline: 0s # duration, 0ms/0s means no deadline
+      receiveTimeout: 0s # duration, 0ms/0s means no timeout
+      sendDeadline: 0s # duration, 0ms/0s means no deadline
+      dialTimeout: 60s # duration, 0ms/0s means no timeout
+      # Retry configuration
+      retries: 3 # 0 means no retry
+      backoff: 1s # duration
+      backoffMultiplier: 2.0 # 0 means no backoff
+      disableBackoffCaps: false
 
 pools:
   default:
-    size: 10
+    writes:
+      size: 10
 
 proxies:
   default:
-    healthCheckPeriod: 60s # duration
+    writes:
+      healthCheckPeriod: 60s # duration
 
 servers:
   default:
@@ -107,6 +110,11 @@ servers:
     certFile: ""
     keyFile: ""
     handshakeTimeout: 5s # duration
+    loadBalancer:
+      # Load balancer strategies can be found in config/constants.go
+      strategy: ROUND_ROBIN
+      consistentHash:
+        useSourceIp: true
 
 api:
   enabled: True
@@ -158,24 +166,27 @@ plugins:
 
 ## Environment variables
 
-All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_LOGGERS_DEFAULT_OUTPUT` environment variable can be set to the outputs required by the default logger and consists of four parts:
+All configuration parameters have a corresponding environment variables, except in certain cases. All environment variables are prefixed with `GATEWAYD` and are in snake case. For example, the `GATEWAYD_CLIENTS_DEFAULT_WRITES_NETWORK` environment variable can be set to the network type for the writes in the default client configuration and consists of five parts:
 
 1. Prefix: all environment variables are prefixed with `GATEWAYD`.
-2. Object: the configuration object, in this case `LOGGERS`.
+2. Object: the configuration object, in this case `CLIENTS`.
 3. Group: the configuration group, in this case `DEFAULT`.
-4. Parameter: the configuration parameter, in this case `OUTPUT`.
+4. Block: the configuration block, in this case `WRITES` (if applicable).
+5. Parameter: the configuration parameter, in this case `NETWORK`.
 
 ```mermaid
 flowchart TD
-    A(GATEWAYD_LOGGERS_DEFAULT_OUTPUT)
+    A(GATEWAYD_CLIENTS_DEFAULT_WRITES_NETWORK)
     A --> GATEWAYD
-    A --> LOGGERS
+    A --> CLIENTS
     A --> DEFAULT
-    A --> OUTPUT
+    A -.-> WRITES
+    A --> NETWORK
     GATEWAYD --> Prefix
-    LOGGERS --> Object
+    CLIENTS --> Object
     DEFAULT --> Group
-    OUTPUT --> Parameter
+    WRITES -.-> Block
+    NETWORK --> Parameter
 ```
 
 ## Runtime configuration

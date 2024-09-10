@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-07-30 16:34:34
 layout: default
 title: Proxies
 description: GatewayD proxy configuration
@@ -12,7 +12,7 @@ grand_parent: Using GatewayD
 
 The proxy object is used to proxy connections between database clients and servers.
 
-GatewayD supports a fixed proxy that creates a pool with a fixed number of connection to the database server. It honors the pool capacity, and if the number of connections from the clients is more than the capacity, new connections will be rejected.
+GatewayD supports multiple proxies, each creating its own pool of connections to the database server. Each proxy pool honors its capacity, and if the number of connections from the clients exceeds the capacity, new connections will be rejected.
 
 The PostgreSQL database expects new connections to authenticate before keeping them connected forever, thus the TCP connections from GatewayD will be timed out and dropped. A health check scheduler is started when creating connections to the database. If there are connections available in the available connections pool after the `healthCheckPeriod` is reached, it will remove and recreate new TCP connections to the database and put them in the pool.
 
@@ -32,5 +32,6 @@ Each proxy has two pools:
 ```yaml
 proxies:
   default:
-    healthCheckPeriod: 60s # duration
+    writes:
+      healthCheckPeriod: 60s # duration
 ```
