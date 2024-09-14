@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-09-14 13:37:00
 layout: default
 title: gatewayd-plugin-cache
 description: GatewayD plugin for caching query results in Redis.
@@ -79,12 +79,13 @@ plugins:
       - METRICS_ENABLED=True
       - METRICS_UNIX_DOMAIN_SOCKET=/tmp/gatewayd-plugin-cache.sock
       - METRICS_PATH=/metrics
+      - API_GRPC_ADDRESS=localhost:19090
       - PERIODIC_INVALIDATOR_ENABLED=True
       - PERIODIC_INVALIDATOR_INTERVAL=1m
       - PERIODIC_INVALIDATOR_START_DELAY=1m
-      - API_ADDRESS=localhost:18080
       - EXIT_ON_STARTUP_ERROR=False
       - SENTRY_DSN=https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328
+      - CACHE_CHANNEL_BUFFER_SIZE=100
     checksum: 3988e10aefce2cd9b30888eddd2ec93a431c9018a695aea1cea0dac46ba91cae
 ```
 
@@ -100,12 +101,13 @@ plugins:
 | `METRICS_ENABLED`                  | Whether to enable metrics.                                                                                                                       | `True`                                                                                         |
 | `METRICS_UNIX_DOMAIN_SOCKET`       | The path to the Unix domain socket for exposing metrics. This must be accessible to GatewayD.                                                    | `/tmp/gatewayd-plugin-cache.sock`                                                              |
 | `METRICS_PATH`                     | The path for exposing metrics.                                                                                                                   | `/metrics`                                                                                     |
+| `API_GRPC_ADDRESS`                 | The address for the GatewayD gRPC API server.                                                                                                    | `localhost:19090`                                                                              |
 | `PERIODIC_INVALIDATOR_ENABLED`     | Whether to enable periodic cache invalidation. This runs every `PERIODIC_INVALIDATOR_INTERVAL` and removes stale client keys, not cached values. | `True`                                                                                         |
 | `PERIODIC_INVALIDATOR_INTERVAL`    | The interval for periodic cache invalidation.                                                                                                    | `1m`                                                                                           |
 | `PERIODIC_INVALIDATOR_START_DELAY` | The delay before starting periodic cache invalidation.                                                                                           | `1m`                                                                                           |
-| `API_ADDRESS`                      | The address for the GatewayD REST API server.                                                                                                    | `localhost:18080`                                                                              |
 | `EXIT_ON_STARTUP_ERROR`            | Whether to exit the plugin if there is an error during startup.                                                                                  | `False`                                                                                        |
 | `SENTRY_DSN`                       | Sentry DSN. Set to empty string to disable Sentry.                                                                                               | `https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328` |
+| `CACHE_CHANNEL_BUFFER_SIZE`        | The buffer size for the cache channel.                                                                                                           | `100`                                                                                          |
 
 ### Command-line arguments
 
