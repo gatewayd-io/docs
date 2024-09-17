@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-07-30 16:36:53
+last_modified_date: 2024-09-17 10:34:46
 layout: default
 title: Configuration
 description: GatewayD is fully configurable via various sources, including default values, YAML config files, environment variables, CLI flags and plugins.
@@ -155,12 +155,13 @@ plugins:
       - METRICS_ENABLED=True
       - METRICS_UNIX_DOMAIN_SOCKET=/tmp/gatewayd-plugin-cache.sock
       - METRICS_PATH=/metrics
+      - API_GRPC_ADDRESS=localhost:19090
       - PERIODIC_INVALIDATOR_ENABLED=True
       - PERIODIC_INVALIDATOR_INTERVAL=1m
       - PERIODIC_INVALIDATOR_START_DELAY=1m
-      - API_ADDRESS=localhost:18080
       - EXIT_ON_STARTUP_ERROR=False
       - SENTRY_DSN=https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328
+      - CACHE_CHANNEL_BUFFER_SIZE=100
     checksum: 28456728dd3427b91d2e22f38b909526355d1b2becc9379581e1b70bb9495aa9
 ```
 
