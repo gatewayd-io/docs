@@ -1,10 +1,11 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-10-09 08:50:27
 layout: default
 title: Template Projects
 description: Template projects can be used to quickly get started with developing plugins.
 nav_order: 4
 parent: Developing Plugins
+published: false
 ---
 
 # Template Projects
