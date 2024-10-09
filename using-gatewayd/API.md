@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-10-09 09:33:30
 layout: default
 title: API
 description: GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `gatewayd` process and its plugins.
@@ -38,7 +38,7 @@ The API exposes the following endpoints on the gRPC server and HTTP gateway:
 
 ## Liveness and Readiness
 
-The gRPC server and the HTTP gateway exposes the health endpoints for liveness and readiness probes in containerized environments and kubernetes. All the probes return whether all the servers are running or not. The health check works both on the gRPC server and the HTTP server and can be tested using the following commands:
+The gRPC server and the HTTP gateway exposes the health endpoints for liveness and readiness probes in containerized environments and Kubernetes. All the probes return whether all the servers are running or not. The health check works both on the gRPC server and the HTTP server and can be tested using the following commands:
 
 ```bash
 # gRPC server

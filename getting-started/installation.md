@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-10-09 09:38:22
 layout: default
 title: Installation
 description: How to install GatewayD and its plugins on different platforms and how to build it from source.
@@ -142,14 +142,14 @@ docker-compose down
 
 Plugins are available as standalone binaries for different platforms. These binaries are available in their GitHub repositories and are distributed as archives that contain the binary and the default configuration file for the plugin. The README file and the LICENSE file might also be included in the archive.
 
-There are currently four ways to install plugins using the `gatewayd plugin install` subcommand:
+You can install plugins using the `gatewayd plugin install` subcommand in four ways:
 
-1. Providing the plugins configuration file with the plugins' URLs and versions.
-2. Using the GitHub URL of the plugin plus the version.
-3. Using the already downloaded archive of the plugin.
-4. Manually downloading, extracting and placing the plugins' binaries in your desired location and updating the plugins configuration file.
+1. Automatic: Providing the plugins configuration file with the plugins' URLs and versions and running the subcommand with no flags.
+2. GitHub URL: Passing the GitHub URL of the plugin plus the version to the subcommand.
+3. Local archive: Passing the already downloaded archive of the plugin to the subcommand.
+4. Manual: Manually downloading, extracting and placing the plugins' binaries in your desired location and updating the plugins configuration file.
 
-### 1. Using the plugins configuration file
+### 1. Automatic installation
 
 In the `gatewayd_plugins.yaml` configuration file, you can specify the URLs and versions of the plugins that you want to install. The `gatewayd plugin install` subcommand will download the archives of the plugins from the specified URLs and extract them to the `plugins` directory in the current working directory and will also update the `gatewayd_plugins.yaml` configuration file.
 
@@ -157,7 +157,7 @@ In the `gatewayd_plugins.yaml` configuration file, you can specify the URLs and 
 gatewayd plugin install
 ```
 
-### 2. Using the GitHub URL of the plugin plus the version
+### 2. GitHub URL installation
 
 You can also install plugins using the GitHub URL of the plugin plus the version. The `gatewayd plugin install` subcommand will download the archive of the plugin from the specified URL and extract it to the `plugins` directory in the current working directory.
 
@@ -177,7 +177,7 @@ You can also specify that you want to pull only and you don't want to extract th
 gatewayd plugin install --pull-only github.com/gatewayd-io/gatewayd-plugin-cache@latest
 ```
 
-### 3. Using the already downloaded archive of the plugin
+### 3. Local archive installation
 
 You can also install plugins using the already downloaded archive of the plugin or using the `--pull-only` flag explained above. The `gatewayd plugin install` subcommand will extract the archive of the plugin to the `plugins` directory in the current working directory. The `--name` flag is mandatory when using this method and it must be the same as the name of the plugin.
 
@@ -185,7 +185,7 @@ You can also install plugins using the already downloaded archive of the plugin 
 gatewayd plugin install --name <plugin-name> <path-to-archive>
 ```
 
-### 4. Manually downloading, extracting and placing the plugins' binaries in your desired location
+### 4. Manual installation
 
 You can manually download, extract and place the plugins' binaries in your desired location that is accessible to GatewayD via the plugins configuration file, aka. `gatewayd_plugins.yaml`. Then you must update the plugins configuration file with the desired plugin's configuration that is available in the plugin's repository as `gatewayd_plugin.yaml` (or inside the archive file of the plugin). Checksum files are also available in the plugin's repository as release assets and also inside the archive file of the plugin.
 
