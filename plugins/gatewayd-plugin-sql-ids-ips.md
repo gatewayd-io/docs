@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-10-28 17:12:08
+last_modified_date: 2024-10-28 17:19:33
 layout: default
 title: gatewayd-plugin-sql-ids-ips
 description: GatewayD plugin for SQL injection detection and prevention.
@@ -13,7 +13,7 @@ The `gatewayd-plugin-sql-ids-ips` is a security-focused GatewayD plugin designed
 
 ## How It Works
 
-1. **Query Detection**: The plugin analyzes incoming SQL queries from clients, looking for patterns that match known SQL injection attacks.
+1. **Injection Detection**: The plugin analyzes incoming SQL queries from clients, looking for patterns that match known SQL injection attacks.
 2. **Blocking Malicious Queries**: If a query is deemed malicious, the plugin blocks it, either returning an error or an empty response to the client.
 3. **Audit Logging**: All detections are logged with details, including the original query and a prediction score.
 4. **Prometheus Metrics**: Metrics are generated for monitoring detection events, enabling administrators to track potential threats and plugin performance.
