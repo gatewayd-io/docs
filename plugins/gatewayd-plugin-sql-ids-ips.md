@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-10-28 17:07:36
+last_modified_date: 2024-10-28 17:12:08
 layout: default
 title: gatewayd-plugin-sql-ids-ips
 description: GatewayD plugin for SQL injection detection and prevention.
@@ -31,6 +31,10 @@ The `gatewayd-plugin-sql-ids-ips` is a security-focused GatewayD plugin designed
 - **Prometheus Metrics Integration**: Captures detection metrics for insights into plugin performance.
 - **Logging**: Detailed logs are maintained for each detected injection attempt, including a prediction confidence score.
 - **Configurable via Environment Variables**: Control plugin behavior and thresholds easily.
+
+## DeepSQLi
+
+The plugin must be used in conjunction with DeepSQLi, a deep-learning model for SQL injection detection. DeepSQLi is available as a separate service and must be started before the plugin. For more information, refer to the [DeepSQLi documentation](https://github.com/gatewayd-io/DeepSQLi).
 
 ## Installation
 

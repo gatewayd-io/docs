@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2024-10-28 17:10:02
 layout: default
 title: Welcome
 description: Introduction to GatewayD and its key features
@@ -54,7 +54,7 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
 - **Detect and prevent SQL injection attacks**
 
-    The `gatewayd-plugin-sql-ids-ips` is an enterprise plugin that uses a deep-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data. It differs from WAFs in that it works with database traffic and not just user input, meaning that it has access to the entirety of the query and other messages, thus it can detect and prevent attacks that WAFs can't.
+    The [`gatewayd-plugin-sql-ids-ips`](/plugins/gatewayd-plugin-sql-ids-ips.md) is an enterprise plugin that uses a deep-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data. It differs from WAFs in that it works with database traffic and not just user input, meaning that it has access to the entirety of the query and other messages, thus it can detect and prevent attacks that WAFs can't.
 
 - **Advanced caching using Write-Ahead-Log** (WIP)
 
