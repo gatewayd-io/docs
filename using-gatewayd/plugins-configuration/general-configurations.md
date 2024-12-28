@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-06-03 22:00:55
+last_modified_date: 2024-12-27 23:54:39
 layout: default
 title: General configurations
 description: General configurations for plugins
@@ -14,7 +14,6 @@ grand_parent: Using GatewayD
 
 | Name                | Type    | Default value    | Possible values              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------------- | ------- | ---------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| compatibilityPolicy | string  | strict           | strict, loose                | The compatibility policy controls how GatewayD treats plugins' requirements. If a plugin requires a specific version of another plugin, the compatibility policy controls whether to allow or reject the plugin.<br/>- strict (default): the plugin is rejected if it requires a specific version of another plugin and that version is not the one currently loaded.<br/>- loose: the plugin is allowed to run even if it requires a specific version of another plugin and that version is not the one currently loaded. |
 | enableMetricsMerger | boolean | True             | True, False                  | If enabled, GatewayD will merge the Prometheus metrics of all plugins over Unix domain socket. The metrics are merged and exposed via the GatewayD [metrics](/global-configuration/metrics) endpoint via HTTP.                                                                                                                                                                                                                                                                                                             |
 | metricsMergerPeriod | string  | 5s               | Valid duration strings       | The metrics merger period controls how often the metrics merger should collect and merge metrics from plugins.                                                                                                                                                                                                                                                                                                                                                                                                             |
 | healthCheckPeriod   | string  | 5s               | Valid duration strings       | The health check period controls how often the health check should be performed. The health check is performed by pinging each plugin. Unhealthy plugins are removed.                                                                                                                                                                                                                                                                                                                                                      |
@@ -32,7 +31,6 @@ grand_parent: Using GatewayD
 ## Example configuration
 
 ```yaml
-compatibilityPolicy: "strict"
 enableMetricsMerger: True
 metricsMergerPeriod: 5s
 healthCheckPeriod: 5s

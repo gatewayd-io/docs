@@ -56,7 +56,6 @@ args
 env
 localPath
 hardcoded
-compatibilityPolicy
 receiveDeadline
 receiveTimeout
 sendDeadline
