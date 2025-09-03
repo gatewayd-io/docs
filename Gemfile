@@ -39,7 +39,10 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "just-the-docs"
 gem 'jekyll-redirect-from'
 gem 'octokit'
-gem 'github_releases'
+# Temporarily comment out github_releases due to Rails 8 dependency issues on Vercel
+# gem 'github_releases'
 gem 'faraday-http-cache'
 gem 'jekyll-sitemap'
 gem "jekyll-last-modified-at"
+
+# Remove psych pin and use simpler dependencies for Vercel compatibility
