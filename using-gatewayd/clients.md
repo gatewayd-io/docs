@@ -9,7 +9,13 @@ parent: Using GatewayD
 
 # Clients
 
-Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](/using-gatewayd/pools). Each client works independently, and a group of connections are connected to the same database server. The connection are gradually recycled.
+Client object is a client that can connect to the database servers over TCP, UDP and Unix Domain Socket. When GatewayD starts, a set of client objects are created that immediately connect to the users' database and are put into the [pool](/using-gatewayd/pools). Each client works independently, and a group of connections are connected to the same database server. The connections are gradually recycled.
+
+## Pre-authentication
+
+When [`startupParams`](/using-gatewayd/global-configuration/clients#startupparams) is configured, each backend connection performs the full PostgreSQL startup handshake (including authentication) immediately after the TCP connection is established. This means pool connections are pre-authenticated and ready for queries before any database client connects. GatewayD supports trust, cleartext, MD5, and SCRAM-SHA-256 authentication methods.
+
+With pre-authentication enabled, GatewayD also uses a lightweight session reset (`DISCARD ALL`) when a database client disconnects, instead of closing and recreating the backend TCP connection. This is significantly cheaper than a full reconnect and reduces latency for subsequent clients.
 
 ## Pools and proxies
 

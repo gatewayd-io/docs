@@ -13,7 +13,7 @@ The connection lifecycle is the process of establishing a connection between a c
 
 The connection lifecycle is composed of the following steps:
 
-1. GatewayD starts with a pool of client connections to database server.
+1. GatewayD starts with a pool of client connections to database server. If [`startupParams`](/using-gatewayd/global-configuration/clients#startupparams) is configured, each connection performs the PostgreSQL startup handshake (including authentication) immediately, so pool connections are pre-authenticated and ready for queries.
 2. The database client initiates a connection to the GatewayD.
 3. GatewayD accepts the connection and assigns it to a client connection.
 4. The client sends a query to the GatewayD.
@@ -21,8 +21,8 @@ The connection lifecycle is composed of the following steps:
 6. GatewayD receives the response from the database server.
 7. GatewayD sends the response to the client.
 8. Database client disconnects from GatewayD.
-9. The client connection closes and a new client connection is created.
-10. The new client connection is added to the pool of client connections.
+9. The client connection is recycled. If `startupParams` is configured, GatewayD sends `DISCARD ALL` to reset the session state without closing the TCP connection. Otherwise, the connection is closed and a new one is created.
+10. The recycled or new client connection is returned to the pool of client connections.
 11. The process repeats from step 2.
 
 The above steps are partially illustrated in [traffic handling diagram](/using-gatewayd/proxies#traffic-handling) of the proxies page.
