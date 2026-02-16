@@ -29,6 +29,19 @@ GatewayD supports multiple client configurations. Each client within a configura
 | backoff            | duration (string) | 1s             | Valid duration strings | The amount of time to wait before retrying a failed connection. `0s` means no backoff.                                |
 | backoffMultiplier  | number            | 2.0            | Positive integers      | The multiplier to apply to the backoff duration. `0` means no backoff.                                                |
 | disableBackoffCaps | boolean           | False          | True, False            | Whether to disable the backoff caps for backoff multiplier and backoff duration.                                      |
+| startupParams      | object            | (not set)      | See below              | PostgreSQL startup parameters for pre-authenticating backend connections. When set, GatewayD performs the PostgreSQL startup handshake (including authentication) immediately after establishing each backend TCP connection. |
+
+### startupParams
+
+The `startupParams` option enables pre-authentication of backend pool connections. When configured, GatewayD performs the full PostgreSQL startup handshake (including authentication via trust, cleartext, MD5, or SCRAM-SHA-256) right after each backend TCP connection is established. This means pool connections are already authenticated and ready for queries when a database client connects.
+
+When `startupParams` is configured, GatewayD also uses a lightweight `DISCARD ALL` session reset instead of tearing down and recreating backend connections when a database client disconnects. This is significantly cheaper than a full reconnect.
+
+| Name     | Type   | Default value | Possible values | Description                                      |
+| -------- | ------ | ------------- | --------------- | ------------------------------------------------ |
+| user     | string | (required)    | Valid username  | The PostgreSQL user for backend authentication.  |
+| database | string | (required)    | Valid database  | The PostgreSQL database for backend connections.  |
+| password | string | (required)    | Valid password  | The password for backend authentication.          |
 
 ```yaml
 clients:
@@ -48,4 +61,9 @@ clients:
       backoff: 1s # duration
       backoffMultiplier: 2.0 # 0 means no backoff
       disableBackoffCaps: false
+      # PostgreSQL pre-authentication (optional)
+      # startupParams:
+      #   user: postgres
+      #   database: postgres
+      #   password: postgres
 ```
