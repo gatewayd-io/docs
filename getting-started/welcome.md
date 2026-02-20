@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-10-28 17:15:41
+last_modified_date: 2026-02-20 20:35:00
 layout: default
 title: Welcome
 description: Introduction to GatewayD and its key features
@@ -56,13 +56,13 @@ GatewayD users are typically developers, DBAs, DBREs, security engineers, compli
 
     The [`gatewayd-plugin-sql-ids-ips`](/plugins/gatewayd-plugin-sql-ids-ips) is an enterprise plugin that uses a deep-learning model trained with lots of SQL injection attack patterns. It can detect SQL injection attacks and take immediate and preventive actions to stop attackers from compromising your database and your precious data. It differs from WAFs in that it works with database traffic and not just user input, meaning that it has access to the entirety of the query and other messages, thus it can detect and prevent attacks that WAFs can't.
 
-- **Advanced caching using Write-Ahead-Log** (WIP)
+- **Authentication and identity brokering**
 
-    The `gatewayd-plugin-cache-advanced` is an enterprise plugin that works like its free and open-source counterpart, except it monitors the Write-Ahead-Log (WAL) of PostgreSQL for invalidating cached results. Even if a client accesses the database directly and changes something, the plugin checks the WAL and invalidates all the matching cached results immediately.
+    The [`gatewayd-plugin-auth`](/plugins/gatewayd-plugin-auth) is an open-source plugin that decouples frontend and backend authentication. Combined with GatewayD's pre-authenticated backend pool connections, it enables an identity broker model: clients authenticate against GatewayD using custom credentials (and soon federated identity providers) while backend connections are pre-authenticated with a shared service account. When a client disconnects, the backend session is reset via `DISCARD ALL` instead of tearing down the TCP connection, making connection recycling fast and efficient.
 
-- **Change data capture** (WIP)
+- **Change data capture**
 
-    The `gatewayd-plugin-cdc` is an enterprise plugin that captures changes happening in the database and sends them to another database or message broker like Kafka. It can be used for seamless logical replication and building real-time data pipelines, data warehousing, and more.
+    The [`gatewayd-plugin-cdc`](/plugins/gatewayd-plugin-cdc) is an open-source plugin that captures changes happening in the database and sends them to another database or message broker like Kafka. It can be used for seamless logical replication and building real-time data pipelines, data warehousing, and more.
 
 These are just a few examples and the list is not exhaustive, as new plugins are constantly developed.
 
