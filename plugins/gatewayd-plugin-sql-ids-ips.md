@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2026-02-21 21:44:00
+last_modified_date: 2026-02-22 00:27:00
 layout: default
 title: gatewayd-plugin-sql-ids-ips
 description: GatewayD plugin for SQL injection detection and prevention.
@@ -34,7 +34,18 @@ The `gatewayd-plugin-sql-ids-ips` is a security-focused GatewayD plugin designed
 
 ## DeepSQLi
 
-The plugin must be used in conjunction with DeepSQLi, a deep-learning model for SQL injection detection. DeepSQLi is available as a separate service and must be started before the plugin. For more information, refer to the [DeepSQLi documentation](https://github.com/gatewayd-io/DeepSQLi).
+The plugin must be used in conjunction with [DeepSQLi](https://github.com/gatewayd-io/DeepSQLi), a deep-learning model for SQL injection detection. DeepSQLi uses a CNN-BiLSTM architecture with a custom SQL tokenizer to classify queries as malicious or legitimate.
+
+DeepSQLi is available as a Docker container and must be started before the plugin:
+
+```bash
+cd DeepSQLi
+docker compose up -d prediction-api
+```
+
+The prediction API exposes a `/predict` endpoint on port 8000 by default, along with a `/health` endpoint for health checks. Configure the plugin to point to this address via the `PREDICTION_API_ADDRESS` environment variable.
+
+For more information, refer to the [DeepSQLi documentation](https://github.com/gatewayd-io/DeepSQLi).
 
 ## Installation
 
@@ -71,6 +82,7 @@ plugins:
       - METRICS_UNIX_DOMAIN_SOCKET=/tmp/gatewayd-plugin-sql-ids-ips.sock
       - METRICS_PATH=/metrics
       - PREDICTION_API_ADDRESS=http://localhost:8000
+      - PREDICTION_TIMEOUT=10
       - THRESHOLD=0.8
       - ENABLE_LIBINJECTION=True
       - LIBINJECTION_PERMISSIVE_MODE=True
@@ -86,24 +98,25 @@ plugins:
 
 ## Environment Variables
 
-| Name                           | Description                                                                                   | Default                                                                                                           |
-| ------------------------------ | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `MAGIC_COOKIE_KEY`             | The key for the magic cookie.                                                                 | `GATEWAYD_PLUGIN`                                                                                                 |
-| `MAGIC_COOKIE_VALUE`           | The value for the magic cookie.                                                               | `5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872`                                                |
-| `METRICS_ENABLED`              | Whether to enable metrics.                                                                    | `True`                                                                                                            |
-| `METRICS_UNIX_DOMAIN_SOCKET`   | The path to the Unix domain socket for exposing metrics. This must be accessible to GatewayD. | `/tmp/gatewayd-plugin-sql-ids-ips.sock`                                                                           |
-| `METRICS_PATH`                 | The path for exposing metrics.                                                                | `/metrics`                                                                                                        |
-| `PREDICTION_API_ADDRESS`       | The address for the prediction API server.                                                    | `http://localhost:8000`                                                                                           |
-| `THRESHOLD`                    | The threshold for the prediction confidence score.                                            | `0.8`                                                                                                             |
-| `ENABLE_LIBINJECTION`          | Whether to enable syntax-based detection using `libinjection`.                                | `True`                                                                                                            |
-| `LIBINJECTION_PERMISSIVE_MODE` | Whether to enable permissive mode for `libinjection`.                                         | `True`                                                                                                            |
-| `RESPONSE_TYPE`                | The response type for SQL injection attempts. Choose between `error` or `empty`.              | `error`                                                                                                           |
-| `ERROR_SEVERITY`               | The severity level for the error response.                                                    | `EXCEPTION`. See [this](https://www.postgresql.org/docs/current/protocol-error-fields.html) for more information. |
-| `ERROR_NUMBER`                 | The error number for the error response.                                                      | `42000`. See [this](https://www.postgresql.org/docs/current/errcodes-appendix.html) for more information.         |
-| `ERROR_MESSAGE`                | The error message for the error response.                                                     | `SQL injection detected`                                                                                          |
-| `ERROR_DETAIL`                 | The error detail for the error response.                                                      | `Back off, you're not welcome here.`                                                                              |
-| `LOG_LEVEL`                    | The log level for the plugin.                                                                 | `error`                                                                                                           |
-| `SENTRY_DSN`                   | Sentry DSN. Set to empty string to disable Sentry.                                            | `https://379ef59ea0c55742957b06c94bc496e1@o4504550475038720.ingest.us.sentry.io/4507282732810240`                 |
+| Name                           | Description                                                                                                                                           | Default                                                                                                           |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `MAGIC_COOKIE_KEY`             | The key for the magic cookie.                                                                                                                         | `GATEWAYD_PLUGIN`                                                                                                 |
+| `MAGIC_COOKIE_VALUE`           | The value for the magic cookie.                                                                                                                       | `5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872`                                                |
+| `METRICS_ENABLED`              | Whether to enable metrics.                                                                                                                            | `True`                                                                                                            |
+| `METRICS_UNIX_DOMAIN_SOCKET`   | The path to the Unix domain socket for exposing metrics. This must be accessible to GatewayD.                                                         | `/tmp/gatewayd-plugin-sql-ids-ips.sock`                                                                           |
+| `METRICS_PATH`                 | The path for exposing metrics.                                                                                                                        | `/metrics`                                                                                                        |
+| `PREDICTION_API_ADDRESS`       | The address for the prediction API server.                                                                                                            | `http://localhost:8000`                                                                                           |
+| `PREDICTION_TIMEOUT`           | Timeout in seconds for the prediction API request. If the API does not respond within this time, the request falls back to libinjection (if enabled). | `10`                                                                                                              |
+| `THRESHOLD`                    | The threshold for the prediction confidence score.                                                                                                    | `0.8`                                                                                                             |
+| `ENABLE_LIBINJECTION`          | Whether to enable syntax-based detection using `libinjection`.                                                                                        | `True`                                                                                                            |
+| `LIBINJECTION_PERMISSIVE_MODE` | Whether to enable permissive mode for `libinjection`.                                                                                                 | `True`                                                                                                            |
+| `RESPONSE_TYPE`                | The response type for SQL injection attempts. Choose between `error` or `empty`.                                                                      | `error`                                                                                                           |
+| `ERROR_SEVERITY`               | The severity level for the error response.                                                                                                            | `EXCEPTION`. See [this](https://www.postgresql.org/docs/current/protocol-error-fields.html) for more information. |
+| `ERROR_NUMBER`                 | The error number for the error response.                                                                                                              | `42000`. See [this](https://www.postgresql.org/docs/current/errcodes-appendix.html) for more information.         |
+| `ERROR_MESSAGE`                | The error message for the error response.                                                                                                             | `SQL injection detected`                                                                                          |
+| `ERROR_DETAIL`                 | The error detail for the error response.                                                                                                              | `Back off, you're not welcome here.`                                                                              |
+| `LOG_LEVEL`                    | The log level for the plugin.                                                                                                                         | `error`                                                                                                           |
+| `SENTRY_DSN`                   | Sentry DSN. Set to empty string to disable Sentry.                                                                                                    | `https://379ef59ea0c55742957b06c94bc496e1@o4504550475038720.ingest.us.sentry.io/4507282732810240`                 |
 
 ### Command-line arguments
 

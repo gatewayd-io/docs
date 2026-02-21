@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-09-14 13:37:00
+last_modified_date: 2026-02-22 00:27:00
 layout: default
 title: gatewayd-plugin-cache
 description: GatewayD plugin for caching query results in Redis.
@@ -85,6 +85,7 @@ plugins:
       - PERIODIC_INVALIDATOR_START_DELAY=1m
       - EXIT_ON_STARTUP_ERROR=False
       - SENTRY_DSN=https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328
+      - SCAN_COUNT=1000
       - CACHE_CHANNEL_BUFFER_SIZE=100
     checksum: 3988e10aefce2cd9b30888eddd2ec93a431c9018a695aea1cea0dac46ba91cae
 ```
@@ -106,6 +107,7 @@ plugins:
 | `PERIODIC_INVALIDATOR_INTERVAL`    | The interval for periodic cache invalidation.                                                                                                    | `1m`                                                                                           |
 | `PERIODIC_INVALIDATOR_START_DELAY` | The delay before starting periodic cache invalidation.                                                                                           | `1m`                                                                                           |
 | `EXIT_ON_STARTUP_ERROR`            | Whether to exit the plugin if there is an error during startup.                                                                                  | `False`                                                                                        |
+| `SCAN_COUNT`                       | The number of keys to scan per iteration during periodic cache invalidation.                                                                     | `1000`                                                                                         |
 | `SENTRY_DSN`                       | Sentry DSN. Set to empty string to disable Sentry.                                                                                               | `https://70eb1abcd32e41acbdfc17bc3407a543@o4504550475038720.ingest.sentry.io/4505342961123328` |
 | `CACHE_CHANNEL_BUFFER_SIZE`        | The buffer size for the cache channel.                                                                                                           | `100`                                                                                          |
 

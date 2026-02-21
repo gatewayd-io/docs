@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2026-02-22 00:28:00
 layout: default
 title: gatewayd-plugin-js
 description: GatewayD plugin for running JS functions as hooks.
@@ -26,10 +26,21 @@ The gatewayd-plugin-js is a GatewayD plugin for running JS functions as hooks an
 > }
 > ```
 
+## Helper Functions
+
+The following built-in helper functions are available in the JavaScript runtime:
+
+| Function   | Description                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
+| `parseSQL` | Parses a SQL query string and returns a stringified JSON representation of the parsed AST. Takes one argument. |
+| `btoa`     | Encodes a string to base64. Takes one argument.                                                                |
+| `atob`     | Decodes a base64-encoded string. Takes one argument.                                                           |
+
 ## Features
 
 - Run JS functions as hooks
 - Helper functions for common tasks such as parsing incoming queries
+- Thread-safe JavaScript execution via mutex-protected runtime
 - Support for running multiple JS functions as hooks
 - Prometheus metrics for monitoring
 - Logging
@@ -67,23 +78,30 @@ plugins:
   - name: gatewayd-plugin-js
     enabled: True
     localPath: ../gatewayd-plugin-js/gatewayd-plugin-js
+    url: github.com/gatewayd-io/gatewayd-plugin-js@latest
     args: ["--log-level", "info"]
     env:
       - MAGIC_COOKIE_KEY=GATEWAYD_PLUGIN
       - MAGIC_COOKIE_VALUE=5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872
       - SCRIPT_PATH=./scripts/index.js
+      - METRICS_ENABLED=True
+      - METRICS_UNIX_DOMAIN_SOCKET=/tmp/gatewayd-plugin-js.sock
+      - METRICS_PATH=/metrics
       - SENTRY_DSN=https://439b580ade4a947cf16e5cfedd18f51f@o4504550475038720.ingest.sentry.io/4506475229413376
     checksum: d310772152467d9c6ab4ba17fd9dd40d3f724dee4aa014a722e1865d91744a4f
 ```
 
 ### Environment variables
 
-| Name                 | Description                                                                  | Default                                                                                        |
-| -------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `MAGIC_COOKIE_KEY`   | The key for the magic cookie.                                                | `GATEWAYD_PLUGIN`                                                                              |
-| `MAGIC_COOKIE_VALUE` | The value for the magic cookie.                                              | `5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872`                             |
-| `SCRIPT_PATH`        | The path to the JS file that contains the functions to be executed as hooks. | `./scripts/index.js`                                                                           |
-| `SENTRY_DSN`         | Sentry DSN. Set to empty string to disable Sentry.                           | `https://439b580ade4a947cf16e5cfedd18f51f@o4504550475038720.ingest.sentry.io/4506475229413376` |
+| Name                         | Description                                                                                   | Default                                                                                        |
+| ---------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `MAGIC_COOKIE_KEY`           | The key for the magic cookie.                                                                 | `GATEWAYD_PLUGIN`                                                                              |
+| `MAGIC_COOKIE_VALUE`         | The value for the magic cookie.                                                               | `5712b87aa5d7e9f9e9ab643e6603181c5b796015cb1c09d6f5ada882bf2a1872`                             |
+| `SCRIPT_PATH`                | The path to the JS file that contains the functions to be executed as hooks.                  | `./scripts/index.js`                                                                           |
+| `METRICS_ENABLED`            | Whether to enable metrics.                                                                    | `True`                                                                                         |
+| `METRICS_UNIX_DOMAIN_SOCKET` | The path to the Unix domain socket for exposing metrics. This must be accessible to GatewayD. | `/tmp/gatewayd-plugin-js.sock`                                                                 |
+| `METRICS_PATH`               | The path for exposing metrics.                                                                | `/metrics`                                                                                     |
+| `SENTRY_DSN`                 | Sentry DSN. Set to empty string to disable Sentry.                                            | `https://439b580ade4a947cf16e5cfedd18f51f@o4504550475038720.ingest.sentry.io/4506475229413376` |
 
 ### Command-line arguments
 
