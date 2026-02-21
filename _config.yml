@@ -19,7 +19,7 @@ plugins:
 
 mermaid:
   # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "10.9.1"
+  version: "11"
 
 back_to_top: true
 back_to_top_text: "Back to top"
@@ -36,7 +36,7 @@ callouts:
     color: blue
   warning:
     title: ⚠️ Warning
-    color: yellow
+    color: red
 
 aux_links:
   Home:
@@ -45,7 +45,7 @@ aux_links:
     - "https://github.com/gatewayd-io/docs"
   Twitter:
     - "https://twitter.com/gatewaydio"
-  Linkedin:
+  LinkedIn:
     - "https://www.linkedin.com/company/gatewayd/"
   # Email:
   #   - "mailto:docs@gatewayd.io"
@@ -66,7 +66,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-footer_content: "© 2022-2024 GatewayD Labs."
+footer_content: "© 2022-2026 GatewayD Labs."
 last_edit_timestamp: true
 last_edit_time_format: "%A %e %b %Y at %I:%M %p"
 gh_edit_link: true

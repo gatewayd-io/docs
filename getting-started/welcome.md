@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2026-02-20 20:35:00
+last_modified_date: 2026-02-21 21:44:00
 layout: default
 title: Welcome
 description: Introduction to GatewayD and its key features
@@ -20,7 +20,7 @@ This documentation will help you go from a beginner to an advanced user and deve
 
 GatewayD is a free and open-source cloud-native database gateway and framework for building data-driven applications. It is a middleware that sits between your database servers and clients and proxies all their communication. It is like API gateways in system design, but instead is used for proxying database traffic, rather than HTTP traffic.
 
-GatewayD is an [L4](https://en.wikipedia.org/wiki/Transport_layer) proxy for SQL, and eventually NoSQL, databases and clients. The core is database-protocol-agnotic, and the plugins encode, decode and add value to the database traffic flow, hence it can technically support all databases. You can either write your own plugins or make use of our built-in, community and enterprise plugins.
+GatewayD is an [L4](https://en.wikipedia.org/wiki/Transport_layer) proxy for SQL, and eventually NoSQL, databases and clients. The core is database-protocol-agnostic, and the plugins encode, decode and add value to the database traffic flow, hence it can technically support all databases. You can either write your own plugins or make use of our built-in, community and enterprise plugins.
 
 Using GatewayD, you can see through the queries and the data passing between your database server and clients, and take action. For example, you can cache the result of SQL SELECT queries or detect and prevent SQL injection attacks.
 

@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2026-02-21 21:44:00
 layout: default
 title: Proposals
 description: GatewayD proposals are used to propose new ideas and features for GatewayD.
@@ -9,10 +9,23 @@ parent: Using Plugins
 
 # Proposals
 
-Plugin are a powerful way to extend functionality of GatewayD. Based on our experience, we have identified a few areas where we think plugins should be developed first. We constantly write proposals for developing the plugins. You can find them in the [proposals](https://github.com/gatewayd-io/proposals/issues) repository. It is a good place to start if you want to contribute to GatewayD.
+Plugins are a powerful way to extend the functionality of GatewayD. Based on our experience, we have identified a few areas where we think plugins should be developed first. We constantly write proposals for developing plugins. You can find them in the [proposals](https://github.com/gatewayd-io/proposals/issues) repository. It is a good place to start if you want to contribute to GatewayD.
 
-The proposals usually start with a one-liner idea, and possibly a one or two paragraph(s) draft of the proposal. Later on, the proposal is refined using [this issue template](https://github.com/gatewayd-io/proposals/blob/main/.github/ISSUE_TEMPLATE/00x---plugin-name.md) and the implementation is discussed. The proposals are open for discussion, so feel free to comment on them. We would be very happy to have your feedback.
+## Proposal lifecycle
 
-The proposals are not limited to plugins. They can be used to propose any idea worth discussing about GatewayD core, plugins and other related repositories. If you have an idea, feel free to open a proposal.
+1. **Idea**: A proposal starts with a one-liner idea and possibly a brief draft of one or two paragraphs.
+2. **Refinement**: The proposal is refined using [this issue template](https://github.com/gatewayd-io/proposals/blob/main/.github/ISSUE_TEMPLATE/00x---plugin-name.md) and the implementation approach is discussed.
+3. **Discussion**: The community reviews and provides feedback. All proposals are open for discussion.
+4. **Implementation**: Once the proposal is accepted, development begins. The resulting plugin is published and documented.
 
-Please read the [contribution guidelines](https://github.com/gatewayd-io/proposals/blob/main/CONTRIBUTING.md) and the [code of conduct](https://github.com/gatewayd-io/proposals/blob/main/CODE_OF_CONDUCT.md) before opening a proposal. Note that the proposals are subject to the [Apache  Contributor License Agreement](https://www.apache.org/licenses/contributor-agreements.html), as also mentioned in the contribution guidelines.
+## Scope
+
+Proposals are not limited to plugins. They can be used to propose any idea worth discussing about GatewayD core, plugins, and other related repositories. If you have an idea, feel free to open a proposal.
+
+## How to contribute
+
+1. Browse [existing proposals](https://github.com/gatewayd-io/proposals/issues) to see what has been suggested.
+2. Comment on proposals you find interesting -- feedback is highly valued.
+3. To create a new proposal, open an issue in the [proposals repository](https://github.com/gatewayd-io/proposals/issues/new/choose).
+
+Please read the [contribution guidelines](https://github.com/gatewayd-io/proposals/blob/main/CONTRIBUTING.md) and the [code of conduct](https://github.com/gatewayd-io/proposals/blob/main/CODE_OF_CONDUCT.md) before opening a proposal. Note that proposals are subject to the [Apache Contributor License Agreement](https://www.apache.org/licenses/contributor-agreements.html), as also mentioned in the contribution guidelines.

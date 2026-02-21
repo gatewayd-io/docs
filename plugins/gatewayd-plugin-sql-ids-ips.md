@@ -1,9 +1,9 @@
 ---
-last_modified_date: 2024-10-28 17:19:33
+last_modified_date: 2026-02-21 21:44:00
 layout: default
 title: gatewayd-plugin-sql-ids-ips
 description: GatewayD plugin for SQL injection detection and prevention.
-nav_order: 2
+nav_order: 4
 parent: Plugins
 ---
 

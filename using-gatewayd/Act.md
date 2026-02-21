@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-06-03 22:06:31
+last_modified_date: 2026-02-21 21:44:00
 layout: default
 title: Act
 description: Act is a policy engine that supports signals, policies and actions. It is used to automate the execution of business rules.
@@ -88,7 +88,7 @@ The `Hook` field is a map that contains the following fields:
 
 The action can be run in sync or async mode, and it can return a result or an error.
 Async actions can be configured to be published to a Redis channel instead of running in a background goroutine.
-To configure Act to publish async actions to a Redis channel, use `actionRedis` value of [general configuration](/using-gatewayd/plugins-configuration/general-configurations#Configuration parameters)
+To configure Act to publish async actions to a Redis channel, use `actionRedis` value of [general configuration](/using-gatewayd/plugins-configuration/general-configurations#configuration-parameters)
 The actions are executed, or published, if the policy expressions evaluate to true (boolean) or any other type recognized by the action. The actions have the following fields:
 
 1. `name`: The name of the action, such as `terminate`, `log`, etc.

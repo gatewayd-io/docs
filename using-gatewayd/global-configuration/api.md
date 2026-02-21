@@ -1,5 +1,5 @@
 ---
-last_modified_date: 2024-05-31 20:16:38
+last_modified_date: 2026-02-21 21:44:00
 layout: default
 title: API
 description: GatewayD gRPC API configuration
@@ -25,7 +25,7 @@ GatewayD exposes a gRPC API with an HTTP gateway for querying and managing the `
 | grpcAddress | string  | localhost:19090 | Valid host:port | The address to listen on for gRPC requests.                                    |
 
 {: .note }
-> If you change the default values for `httpAddress` or `grpcAddress`, you must also update the [plugin configuration](/plugins-configuration/plugins-configuration) to reflect the new values.
+> If you change the default values for `httpAddress` or `grpcAddress`, you must also update the [plugin configuration](/using-gatewayd/plugins-configuration/plugins-configuration) to reflect the new values.
 
 ## Example configuration
 
